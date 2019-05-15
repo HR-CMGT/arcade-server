@@ -1,0 +1,118 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    font-family: 'Press Start 2P', cursive;
+    background: rgb(93, 138, 168);
+    color: #FFF;
+    box-sizing: border-box;
+  }
+  
+  header {
+    padding: 30px 0px 10px 0px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 3em;
+    
+  }
+  
+  .first-menu span, .second-menu span {
+    display: inline-block;
+    border: 4px solid rgb(93, 138, 168);
+  }
+  
+  .first-menu span {
+    padding: 30px;
+  }
+  
+  .second-menu span {
+    padding: 10px;
+  }
+  
+  .second-menu {
+    display: flex;
+  }
+  
+  .first-menu {
+    padding: 10px 0px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    font-size: 24px;
+    justify-content: space-between;
+  }
+  
+  .second-menu {
+    margin: 0px 50px;
+    padding: 10px 5px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    font-size: 1em;
+    justify-content: space-between;
+    border-bottom: 2px solid #f2f2f2;
+    overflow: auto;
+  }
+  
+  .bottom-text {
+    color: gray;
+    font-style: italic;
+  }
+  
+  /* Link container styling */
+  .thirth-menu {
+    margin: 0px 50px;
+    padding: 10px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #f2f2f2;
+  }
+  
+  /* Link element inside the container styling */
+  .thirth-menu a {
+    flex: 1 0 20%;
+    height: 120px;
+    padding: 20px;
+    text-decoration: none;
+    color: white; 
+    border: 4px solid rgb(93, 138, 168);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .thirth-menu a span {
+    font-size: 18px;
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  .selection {
+    border: 4px solid #FFF!important;
+  }
+  
+  .rainbow {
+    background: linear-gradient(270deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #8B00FF);
+    background-size: 400% 400%;
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  
+    -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
+  }
+  
+  @-webkit-keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @-moz-keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @keyframes AnimationName { 
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
