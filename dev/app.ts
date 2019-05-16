@@ -1,7 +1,7 @@
 class App {
     private joystick : Joystick
     private position : Grid = {row:0, col:0}
-    private rows : HTMLCollection[] = []                    // een array van htmlcollections
+    private grid : HTMLCollection[] = []                    // een array van htmlcollections
     private data : GameData[]
 
     constructor(){
@@ -32,12 +32,12 @@ class App {
         }
 
         // create rows of buttons
-        this.rows.push(document.querySelector("#player-menu")!.children)
-        this.rows.push(document.querySelector("#genre-menu")!.children)
-        this.rows.push(document.querySelectorAll(".game-row")[0]!.children)
-        this.rows.push(document.querySelectorAll(".game-row")[1]!.children)
-        this.rows.push(document.querySelector("#page-menu")!.children)
-        this.rows.push(document.querySelector("#credits-menu")!.children)
+        this.grid.push(document.querySelector("#player-menu")!.children)
+        this.grid.push(document.querySelector("#genre-menu")!.children)
+        this.grid.push(document.querySelectorAll(".game-row")[0]!.children)
+        this.grid.push(document.querySelectorAll(".game-row")[1]!.children)
+        this.grid.push(document.querySelector("#page-menu")!.children)
+        this.grid.push(document.querySelector("#credits-menu")!.children)
     
         this.joystick = new Joystick(6)
 
@@ -58,14 +58,14 @@ class App {
 
     private selectRow(dir:number){
         // selecteer nieuwe row binnen min en max aantal rows
-        this.position.row = Math.min(Math.max(this.position.row + dir, 0), this.rows.length - 1)
+        this.position.row = Math.min(Math.max(this.position.row + dir, 0), this.grid.length - 1)
         // pas selected column ook aan, aan max columns van deze row, want het kan gebeuren dat deze rij minder columns heeft
         this.selectColumn(0)
     }
 
     private selectColumn(dir:number){
         let row = this.position.row
-        let maxColumn = this.rows[row].length - 1
+        let maxColumn = this.grid[row].length - 1
         this.position.col = Math.min(Math.max(this.position.col + dir, 0), maxColumn)
         this.updateSelection()
     }
@@ -81,11 +81,14 @@ class App {
         if (this.position.row != 5) {
             this.clearRow(5)
         }
-        this.getSelectedElement().classList.add("selected")
+        let c = document.querySelector(".cursor")
+        if(c) c.classList.remove("cursor")
+
+        this.getSelectedElement().classList.add("selected", "cursor")
     }
 
     private clearRow(row:number){
-        let buttons: HTMLCollection = this.rows[row]
+        let buttons: HTMLCollection = this.grid[row]
         let arr = Array.from(buttons)
         for (let b of arr) {
             b.classList.remove("selected")
@@ -93,7 +96,7 @@ class App {
     }
 
     private getSelectedElement(){
-        return this.rows[this.position.row][this.position.col]
+        return this.grid[this.position.row][this.position.col]
     }
 
     private onKeyDown(e:KeyboardEvent) {

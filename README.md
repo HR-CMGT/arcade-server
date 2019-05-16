@@ -1,16 +1,22 @@
 # Arcade Server
 
-The Frontend for the CMGT Arcade Machine
+The Frontend for the [CMGT Arcade Machine](https://hr-cmgt.github.io/arcade-server/)
+
+![screenshot](./docs/images/screenshot.png)
+
+## Game requirements
 
 - Resolution: 1280 x 720
 - Audio: WAV or OGG files
-- Games: a JSON file with links to the github Page of game repositories
+- Support the Arcade stick and buttons. [Example code here](https://github.com/HR-CMGT/arcade-server/dev/joystick.ts)
+- The game needs to redirect back to [https://hr-cmgt.github.io/arcade-server/](https://hr-cmgt.github.io/arcade-server/) when buttons 5 and 6 are pressed!
 
-## Pages
+## The interface
 
-- Intro page
+- `data/games.json` a JSON file with links to the github Page of game repositories, and genres.
+- Grid page
 - Controls explanation
-- Game page
+- Redirects to Game pages
 
 ## Browser
 

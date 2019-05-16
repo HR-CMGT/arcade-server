@@ -148,7 +148,7 @@ body {
     background-repeat:no-repeat;
 }
 
-/* SELECTION */
+/* SELECTION AND CURSOR POSITION */
 
 #player-menu .selected, #genre-menu .selected, .game-row .selected {
     /*border: 4px solid #FFF !important;*/
@@ -157,8 +157,14 @@ body {
 }
 
 #credits-menu .selected, #page-menu .selected {
-    background-color:rgba(255,255,255,0.4);
+    outline: 3px solid white;
+    outline-offset: 3px;
 }
+
+.cursor {
+    outline: 3px solid magenta !important;
+}
+
 
 /* CRAZY TITLE */
 
@@ -182,6 +188,7 @@ container {
     -webkit-animation: BlurScale 7s ease infinite alternate-reverse;
     animation: BlurScale 7s ease infinite alternate-reverse;
 }
+
 
 @-webkit-keyframes BlurScale {
     0% {

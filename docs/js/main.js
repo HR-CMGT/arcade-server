@@ -1,8 +1,8 @@
 "use strict";
 class App {
     constructor() {
-        this.cursorPosition = [0, 0];
-        this.rows = [];
+        this.position = { row: 0, col: 0 };
+        this.grid = [];
         this.loadGames();
     }
     loadGames() {
@@ -23,12 +23,12 @@ class App {
             document.querySelectorAll(".game-row")[1].appendChild(div);
             div.innerHTML = this.data[i].name;
         }
-        this.rows.push(document.querySelector("#player-menu").children);
-        this.rows.push(document.querySelector("#genre-menu").children);
-        this.rows.push(document.querySelectorAll(".game-row")[0].children);
-        this.rows.push(document.querySelectorAll(".game-row")[1].children);
-        this.rows.push(document.querySelector("#page-menu").children);
-        this.rows.push(document.querySelector("#credits-menu").children);
+        this.grid.push(document.querySelector("#player-menu").children);
+        this.grid.push(document.querySelector("#genre-menu").children);
+        this.grid.push(document.querySelectorAll(".game-row")[0].children);
+        this.grid.push(document.querySelectorAll(".game-row")[1].children);
+        this.grid.push(document.querySelector("#page-menu").children);
+        this.grid.push(document.querySelector("#credits-menu").children);
         this.joystick = new Joystick(6);
         document.addEventListener("cursorX", (e) => {
             this.selectColumn(e.detail);
@@ -41,35 +41,38 @@ class App {
         this.update();
     }
     selectRow(dir) {
-        this.cursorPosition[1] = Math.min(Math.max(this.cursorPosition[1] + dir, 0), this.rows.length - 1);
+        this.position.row = Math.min(Math.max(this.position.row + dir, 0), this.grid.length - 1);
         this.selectColumn(0);
     }
     selectColumn(dir) {
-        let row = this.cursorPosition[1];
-        let maxColumn = this.rows[row].length - 1;
-        this.cursorPosition[0] = Math.min(Math.max(this.cursorPosition[0] + dir, 0), maxColumn);
+        let row = this.position.row;
+        let maxColumn = this.grid[row].length - 1;
+        this.position.col = Math.min(Math.max(this.position.col + dir, 0), maxColumn);
         this.updateSelection();
     }
     updateSelection() {
-        this.clearRow(this.cursorPosition[1]);
-        if (this.cursorPosition[1] == 2)
+        this.clearRow(this.position.row);
+        if (this.position.row == 2)
             this.clearRow(3);
-        if (this.cursorPosition[1] == 3)
+        if (this.position.row == 3)
             this.clearRow(2);
-        if (this.cursorPosition[1] != 5) {
+        if (this.position.row != 5) {
             this.clearRow(5);
         }
-        this.getSelectedElement().classList.add("selected");
+        let c = document.querySelector(".cursor");
+        if (c)
+            c.classList.remove("cursor");
+        this.getSelectedElement().classList.add("selected", "cursor");
     }
     clearRow(row) {
-        let buttons = this.rows[row];
+        let buttons = this.grid[row];
         let arr = Array.from(buttons);
         for (let b of arr) {
             b.classList.remove("selected");
         }
     }
     getSelectedElement() {
-        return this.rows[this.cursorPosition[1]][this.cursorPosition[0]];
+        return this.grid[this.position.row][this.position.col];
     }
     onKeyDown(e) {
         let charCode = e.which;
@@ -90,11 +93,11 @@ class App {
         }
     }
     selectGame() {
-        if (this.cursorPosition[1] == 2) {
-            this.gotoGame(this.cursorPosition[0]);
+        if (this.position.row == 2) {
+            this.gotoGame(this.position.col);
         }
-        if (this.cursorPosition[1] == 3) {
-            this.gotoGame(this.cursorPosition[0] + 4);
+        if (this.position.row == 3) {
+            this.gotoGame(this.position.col + 4);
         }
     }
     gotoGame(index) {
