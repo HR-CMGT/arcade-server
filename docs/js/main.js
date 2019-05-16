@@ -16,9 +16,11 @@ class App {
     initMenus(data) {
         this.data = data;
         this.page = 0;
-        this.numpages = this.data.length / 8;
+        this.numpages = Math.ceil(this.data.length / 8);
         this.grid = document.querySelector("#game-grid");
-        this.showGamePage(0);
+        this.paging = document.querySelector("#page-menu");
+        this.generateGamePage(this.page);
+        this.generatePaging();
         this.menu.push(document.querySelector("#player-menu").children);
         this.menu.push(document.querySelector("#genre-menu").children);
         this.menu.push(document.querySelector("#game-grid").children);
@@ -33,15 +35,35 @@ class App {
         });
         document.addEventListener("button0", () => this.selectGame());
         document.addEventListener("keydown", (e) => this.onKeyDown(e));
+        this.grid.addEventListener("animationend", () => {
+            this.grid.classList.remove("leftAnimation", "rightAnimation");
+        });
         this.update();
     }
-    showGamePage(p) {
+    generateGamePage(p) {
         this.page = Math.min(Math.max(this.page + p, 0), this.numpages - 1);
         this.grid.innerHTML = "";
-        for (let i = this.page; i < this.page + 8; i++) {
+        let start = this.page * 8;
+        let num = Math.min(this.data.length - start, 8);
+        for (let i = start; i < start + num; i++) {
             let div = document.createElement("div");
             this.grid.appendChild(div);
             div.innerHTML = this.data[i].name;
+        }
+        if (p < 0) {
+            this.grid.classList.add("leftAnimation");
+        }
+        else if (p > 0) {
+            this.grid.classList.add("rightAnimation");
+        }
+    }
+    generatePaging() {
+        for (let i = 0; i < this.numpages; i++) {
+            let div = document.createElement("div");
+            div.innerHTML = (i + 1).toString();
+            this.paging.appendChild(div);
+            if (i == 0)
+                div.classList.add("selected");
         }
     }
     selectRow(dir) {
@@ -60,6 +82,9 @@ class App {
     selectColumn(dir) {
         let maxColumn = this.menu[this.position.row].length - 1;
         this.position.col = Math.min(Math.max(this.position.col + dir, 0), maxColumn);
+        if (this.position.row == 3) {
+            this.generateGamePage(dir);
+        }
         this.updateSelection();
     }
     updateSelection() {

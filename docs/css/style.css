@@ -89,7 +89,20 @@ header {
     grid-row-gap: 10px;
     justify-items: stretch;
     align-items: stretch;
+    text-align: center;
  }
+
+ .leftAnimation {
+     -webkit-animation: GridLeftAnimation 0.5s ease-out;
+     animation: GridLeftAnimation 0.5s ease-out;
+ }
+
+  .rightAnimation {
+     -webkit-animation: GridRightAnimation 0.5s ease-out;
+     animation: GridRightAnimation 0.5s ease-out;
+ }
+
+
 
  #game-grid div {
     padding: 20px;
@@ -145,15 +158,25 @@ body {
 /* SELECTION AND CURSOR POSITION */
 
 #player-menu .selected, #genre-menu .selected, .game-row .selected {
-    /*border: 4px solid #FFF !important;*/
     outline: 3px solid white;
     outline-offset: -3px;
 }
 
-#credits-menu .selected, #page-menu .selected {
+#credits-menu .selected {
     outline: 3px solid white;
     outline-offset: 3px;
 }
+
+#page-menu div {
+    padding:4px;
+    margin:0px 10px;
+}
+
+#page-menu .selected {
+    color:rgba(61,19,95,0.6);
+    background-color:white;
+}
+
 
 .cursor {
     color: magenta !important;
@@ -217,4 +240,48 @@ container {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
+}
+
+@-webkit-keyframes GridLeftAnimation { 
+    0% {
+        transform:translateX(-30px);
+        opacity:0;
+    }
+    100% {
+        transform:translateX(0px);
+        opacity:1;
+    }   
+}
+
+ @keyframes GridLeftAnimation { 
+    0% {
+        transform:translateX(-30px);
+        opacity:0;
+    }
+    100% {
+        transform:translateX(0px);
+        opacity:1;
+    }   
+}
+
+@-webkit-keyframes GridRightAnimation { 
+    0% {
+        transform:translateX(30px);
+        opacity:0;
+    }
+    100% {
+        transform:translateX(0px);
+        opacity:1;
+    }   
+}
+
+ @keyframes GridRightAnimation { 
+    0% {
+        transform:translateX(30px);
+        opacity:0;
+    }
+    100% {
+        transform:translateX(0px);
+        opacity:1;
+    }   
 }

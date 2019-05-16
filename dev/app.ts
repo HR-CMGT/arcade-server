@@ -6,6 +6,7 @@ class App {
     private grid : Element
     private page : number = 0
     private numpages : number = 1
+    private paging : Element
 
     constructor(){
         this.loadGames()
@@ -21,11 +22,13 @@ class App {
     private initMenus(data:GameData[]){
         this.data = data
         this.page = 0
-        this.numpages = this.data.length/8
+        this.numpages = Math.ceil(this.data.length/8)
         this.grid = document.querySelector("#game-grid")!
+        this.paging = document.querySelector("#page-menu")!
 
         // generate game page with 8 thumbnails
-        this.showGamePage(0)
+        this.generateGamePage(this.page)
+        this.generatePaging()
 
         // create rows of buttons - TODO just store the amount of rows and columns!
         this.menu.push(document.querySelector("#player-menu")!.children)
@@ -48,16 +51,39 @@ class App {
         document.addEventListener("button0", () => this.selectGame())
         document.addEventListener("keydown", (e:KeyboardEvent)=>this.onKeyDown(e))
 
+        this.grid.addEventListener("animationend", () => {
+            this.grid.classList.remove("leftAnimation", "rightAnimation")
+        })
+
         this.update()
     }
 
-    private showGamePage(p:number) {
-        this.page = Math.min(Math.max(this.page+ p, 0), this.numpages - 1)
+    private generateGamePage(p:number) {
+        this.page = Math.min(Math.max(this.page + p, 0), this.numpages - 1)
         this.grid.innerHTML = ""
-        for (let i = this.page; i < this.page+8; i++) {
+        
+        let start = this.page * 8
+        let num = Math.min(this.data.length - start, 8)
+        
+        for (let i = start; i < start+num; i++) {
             let div = document.createElement("div")
             this.grid.appendChild(div)
             div.innerHTML = this.data[i].name
+        }
+
+        if(p < 0) {
+            this.grid.classList.add("leftAnimation")
+        } else if (p > 0) {
+            this.grid.classList.add("rightAnimation")
+        }
+    }
+
+    private generatePaging(){
+        for(let i = 0; i<this.numpages; i++) {
+            let div = document.createElement("div")
+            div.innerHTML = (i+1).toString()
+            this.paging.appendChild(div)
+            if(i == 0) div.classList.add("selected")
         }
     }
 
@@ -80,6 +106,11 @@ class App {
     private selectColumn(dir:number){
         let maxColumn = this.menu[this.position.row].length - 1
         this.position.col = Math.min(Math.max(this.position.col + dir, 0), maxColumn)
+
+        // als we in het page menu zijn, dan meteen de nieuwe page tonen
+        if(this.position.row == 3) {
+            this.generateGamePage(dir)
+        }
         
         this.updateSelection()
     }
