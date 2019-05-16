@@ -68,7 +68,7 @@ header {
 
 #genre-menu {
     display:flex;
-    margin: 0px 14px;
+    margin: 12px 14px;
     padding: 8px 4px;
     font-size: 0.9em;
     justify-content: space-between;
@@ -79,29 +79,23 @@ header {
     padding: 8px;
 }
 
-/* MENU ROW */
+/* GAME MENU GRID */
 
-.games {
-    border-top: 2px solid #f2f2f2;
-    border-bottom: 2px solid #f2f2f2;
-    height:330px;
-}
-.game-row {
-    display: flex;
-    
-    justify-content: space-between;
-    width:1280px;
-    height:165px;
-}
+#game-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 145px 145px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    justify-items: stretch;
+    align-items: stretch;
+ }
 
-.game-row div {
-    flex: 1 1 0;
-    margin:10px;
-    height: 145px;
+ #game-grid div {
     padding: 20px;
     background-color:rgba(255,255,255,0.2);
-    text-decoration: none;
     color: white; 
+    /* to center the text horizontally and vertically */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,7 +105,7 @@ header {
 /* MENU ROW */
 
 #page-menu {
-    margin: 0px 14px;
+    margin: 10px 14px;
     padding: 8px 4px;
     font-size: 0.9em;
     justify-content: center;
@@ -162,6 +156,7 @@ body {
 }
 
 .cursor {
+    color: magenta !important;
     outline: 3px solid magenta !important;
 }
 
@@ -194,8 +189,8 @@ container {
     0% {
         -webkit-filter: blur(1px);
     }
-    80% {
-        -webkit-filter: blur(1px) hue-rotate(90deg);
+    75% {
+        -webkit-filter: blur(1px) hue-rotate(20deg);
     }
     100% {
         -webkit-filter: blur(3px) hue-rotate(110deg);
@@ -205,8 +200,8 @@ container {
     0% {
         filter: blur(1px);
     }
-    80% {
-        filter: blur(1px) hue-rotate(90deg);
+    75% {
+        filter: blur(1px) hue-rotate(20deg);
     }
     100% {
         filter: blur(3px) hue-rotate(110deg);

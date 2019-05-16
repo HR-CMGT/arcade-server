@@ -7,7 +7,7 @@ The Frontend for the [CMGT Arcade Machine](https://hr-cmgt.github.io/arcade-serv
 ## Game requirements
 
 - Resolution: 1280 x 720
-- Audio: WAV or OGG files
+- Audio: WAV or OGG files. Autoplay only works after a user interaction on the page!
 - Support the Arcade stick and buttons. [Example code here](https://github.com/HR-CMGT/arcade-server/dev/joystick.ts)
 - The game needs to redirect back to [https://hr-cmgt.github.io/arcade-server/](https://hr-cmgt.github.io/arcade-server/) when buttons 5 and 6 are pressed!
 
@@ -34,7 +34,8 @@ The DOCS folder of this repository will be [served](https://hr-cmgt.github.io/ar
 
 ## Nice to have
 
-Open Unity games from NWJS menu
+- Mobile view (just for showcase purposes)
+- Open Unity games from NWJS menu
 ```
 var exec = require('child_process').execFile;
 

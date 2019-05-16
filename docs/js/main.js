@@ -2,7 +2,9 @@
 class App {
     constructor() {
         this.position = { row: 0, col: 0 };
-        this.grid = [];
+        this.menu = [];
+        this.page = 0;
+        this.numpages = 1;
         this.loadGames();
     }
     loadGames() {
@@ -13,23 +15,16 @@ class App {
     }
     initMenus(data) {
         this.data = data;
-        for (let i = 0; i < 4; i++) {
-            let div = document.createElement("div");
-            document.querySelectorAll(".game-row")[0].appendChild(div);
-            div.innerHTML = this.data[i].name;
-        }
-        for (let i = 4; i < 8; i++) {
-            let div = document.createElement("div");
-            document.querySelectorAll(".game-row")[1].appendChild(div);
-            div.innerHTML = this.data[i].name;
-        }
-        this.grid.push(document.querySelector("#player-menu").children);
-        this.grid.push(document.querySelector("#genre-menu").children);
-        this.grid.push(document.querySelectorAll(".game-row")[0].children);
-        this.grid.push(document.querySelectorAll(".game-row")[1].children);
-        this.grid.push(document.querySelector("#page-menu").children);
-        this.grid.push(document.querySelector("#credits-menu").children);
-        this.joystick = new Joystick(6);
+        this.page = 0;
+        this.numpages = this.data.length / 8;
+        this.grid = document.querySelector("#game-grid");
+        this.showGamePage(0);
+        this.menu.push(document.querySelector("#player-menu").children);
+        this.menu.push(document.querySelector("#genre-menu").children);
+        this.menu.push(document.querySelector("#game-grid").children);
+        this.menu.push(document.querySelector("#page-menu").children);
+        this.menu.push(document.querySelector("#credits-menu").children);
+        this.joystick = new Joystick(2);
         document.addEventListener("cursorX", (e) => {
             this.selectColumn(e.detail);
         });
@@ -40,24 +35,37 @@ class App {
         document.addEventListener("keydown", (e) => this.onKeyDown(e));
         this.update();
     }
+    showGamePage(p) {
+        this.page = Math.min(Math.max(this.page + p, 0), this.numpages - 1);
+        this.grid.innerHTML = "";
+        for (let i = this.page; i < this.page + 8; i++) {
+            let div = document.createElement("div");
+            this.grid.appendChild(div);
+            div.innerHTML = this.data[i].name;
+        }
+    }
     selectRow(dir) {
-        this.position.row = Math.min(Math.max(this.position.row + dir, 0), this.grid.length - 1);
-        this.selectColumn(0);
+        if (this.position.row == 2 && this.position.col < 4 && dir == 1) {
+            this.position.col += 4;
+        }
+        else if (this.position.row == 2 && this.position.col > 3 && dir == -1) {
+            this.position.col -= 4;
+        }
+        else {
+            this.position.row = Math.min(Math.max(this.position.row + dir, 0), this.menu.length - 1);
+            this.position.col = 0;
+        }
+        this.updateSelection();
     }
     selectColumn(dir) {
-        let row = this.position.row;
-        let maxColumn = this.grid[row].length - 1;
+        let maxColumn = this.menu[this.position.row].length - 1;
         this.position.col = Math.min(Math.max(this.position.col + dir, 0), maxColumn);
         this.updateSelection();
     }
     updateSelection() {
         this.clearRow(this.position.row);
-        if (this.position.row == 2)
-            this.clearRow(3);
-        if (this.position.row == 3)
-            this.clearRow(2);
-        if (this.position.row != 5) {
-            this.clearRow(5);
+        if (this.position.row != 4) {
+            this.clearRow(4);
         }
         let c = document.querySelector(".cursor");
         if (c)
@@ -65,14 +73,14 @@ class App {
         this.getSelectedElement().classList.add("selected", "cursor");
     }
     clearRow(row) {
-        let buttons = this.grid[row];
+        let buttons = this.menu[row];
         let arr = Array.from(buttons);
         for (let b of arr) {
             b.classList.remove("selected");
         }
     }
     getSelectedElement() {
-        return this.grid[this.position.row][this.position.col];
+        return this.menu[this.position.row][this.position.col];
     }
     onKeyDown(e) {
         let charCode = e.which;

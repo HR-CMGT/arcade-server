@@ -1,8 +1,11 @@
 class App {
     private joystick : Joystick
     private position : Grid = {row:0, col:0}
-    private grid : HTMLCollection[] = []                    // een array van htmlcollections
+    private menu : HTMLCollection[] = []                    // een array van htmlcollections
     private data : GameData[]
+    private grid : Element
+    private page : number = 0
+    private numpages : number = 1
 
     constructor(){
         this.loadGames()
@@ -17,29 +20,21 @@ class App {
 
     private initMenus(data:GameData[]){
         this.data = data
-        // add eight game divs to game rows
-        // TODO paging system for more than eight games
-        // TODO CSS grid of flex-wrap in enkele loop
-        for(let i = 0; i<4; i++) {
-            let div = document.createElement("div")
-            document.querySelectorAll(".game-row")[0].appendChild(div)
-            div.innerHTML = this.data[i].name
-        }
-        for (let i = 4; i < 8; i++) {
-            let div = document.createElement("div")
-            document.querySelectorAll(".game-row")[1].appendChild(div)
-            div.innerHTML = this.data[i].name
-        }
+        this.page = 0
+        this.numpages = this.data.length/8
+        this.grid = document.querySelector("#game-grid")!
 
-        // create rows of buttons
-        this.grid.push(document.querySelector("#player-menu")!.children)
-        this.grid.push(document.querySelector("#genre-menu")!.children)
-        this.grid.push(document.querySelectorAll(".game-row")[0]!.children)
-        this.grid.push(document.querySelectorAll(".game-row")[1]!.children)
-        this.grid.push(document.querySelector("#page-menu")!.children)
-        this.grid.push(document.querySelector("#credits-menu")!.children)
+        // generate game page with 8 thumbnails
+        this.showGamePage(0)
+
+        // create rows of buttons - TODO just store the amount of rows and columns!
+        this.menu.push(document.querySelector("#player-menu")!.children)
+        this.menu.push(document.querySelector("#genre-menu")!.children)
+        this.menu.push(document.querySelector("#game-grid")!.children)
+        this.menu.push(document.querySelector("#page-menu")!.children)
+        this.menu.push(document.querySelector("#credits-menu")!.children)
     
-        this.joystick = new Joystick(6)
+        this.joystick = new Joystick(2)
 
         document.addEventListener("cursorX", (e:Event)=> {
             //console.log("X GAMEPAD " + (e as CustomEvent).detail)
@@ -56,32 +51,47 @@ class App {
         this.update()
     }
 
+    private showGamePage(p:number) {
+        this.page = Math.min(Math.max(this.page+ p, 0), this.numpages - 1)
+        this.grid.innerHTML = ""
+        for (let i = this.page; i < this.page+8; i++) {
+            let div = document.createElement("div")
+            this.grid.appendChild(div)
+            div.innerHTML = this.data[i].name
+        }
+    }
+
     private selectRow(dir:number){
-        // selecteer nieuwe row binnen min en max aantal rows
-        this.position.row = Math.min(Math.max(this.position.row + dir, 0), this.grid.length - 1)
-        // pas selected column ook aan, aan max columns van deze row, want het kan gebeuren dat deze rij minder columns heeft
-        this.selectColumn(0)
+        // the game grid really has 8 columns - but they are displayed as two rows with 4 columns in a grid
+        // this if statement adds the ability to switch vertically between columns
+        if (this.position.row == 2 && this.position.col < 4 && dir == 1) {
+            this.position.col += 4
+        } else if (this.position.row == 2 && this.position.col > 3 && dir == -1) {
+            this.position.col -= 4
+        } else {
+            // selecteer nieuwe row binnen min en max aantal rows
+            this.position.row = Math.min(Math.max(this.position.row + dir, 0), this.menu.length - 1)
+            this.position.col = 0
+        }
+
+        this.updateSelection()
     }
 
     private selectColumn(dir:number){
-        let row = this.position.row
-        let maxColumn = this.grid[row].length - 1
+        let maxColumn = this.menu[this.position.row].length - 1
         this.position.col = Math.min(Math.max(this.position.col + dir, 0), maxColumn)
+        
         this.updateSelection()
     }
 
     private updateSelection(){
         this.clearRow(this.position.row)
-        
-        // als we in een game row zijn, dan ook de andere game row leeg maken
-        if (this.position.row == 2) this.clearRow(3)
-        if (this.position.row == 3) this.clearRow(2)
-        
-        // row 5 altijd clear als we daar niet zijn
-        if (this.position.row != 5) {
-            this.clearRow(5)
+                
+        // bottom row altijd clear als we daar niet zijn
+        if (this.position.row != 4) {
+            this.clearRow(4)
         }
-        
+
         let c = document.querySelector(".cursor")
         if(c) c.classList.remove("cursor")
 
@@ -89,7 +99,7 @@ class App {
     }
 
     private clearRow(row:number){
-        let buttons: HTMLCollection = this.grid[row]
+        let buttons: HTMLCollection = this.menu[row]
         let arr = Array.from(buttons)
         for (let b of arr) {
             b.classList.remove("selected")
@@ -97,7 +107,7 @@ class App {
     }
 
     private getSelectedElement(){
-        return this.grid[this.position.row][this.position.col]
+        return this.menu[this.position.row][this.position.col]
     }
 
     private onKeyDown(e:KeyboardEvent) {
