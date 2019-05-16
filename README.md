@@ -25,7 +25,7 @@ The DOCS folder of this repository will be [served](https://hr-cmgt.github.io/ar
 
 ## TODO
 
-- paging for multiple games
+- improve paging (detect left right in game menu)
 - select by criteria (players and genre)
 - credits page
 - instructions page
