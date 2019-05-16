@@ -81,6 +81,7 @@ class App {
         if (this.position.row != 5) {
             this.clearRow(5)
         }
+        
         let c = document.querySelector(".cursor")
         if(c) c.classList.remove("cursor")
 

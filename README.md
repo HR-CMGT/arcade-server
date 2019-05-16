@@ -13,14 +13,14 @@ The Frontend for the [CMGT Arcade Machine](https://hr-cmgt.github.io/arcade-serv
 
 ## The interface
 
-- `data/games.json` a JSON file with links to the github Page of game repositories, and genres.
+- [games.json](./docs/data/games.json) a JSON file with links to the github Page of game repositories, and genres.
 - Grid page
 - Controls explanation
 - Redirects to Game pages
 
 ## Browser
 
-The DOCS folder of this repository will be served on the arcade machine at CMGT. The browser is
+The DOCS folder of this repository will be [served](https://hr-cmgt.github.io/arcade-server/) on the arcade machine at CMGT. The browser is
 [NWJS](http://docs.nwjs.io/en/latest/For%20Users/Getting%20Started/#get-nwjs) in Kiosk Mode
 
 ## TODO
@@ -34,7 +34,7 @@ The DOCS folder of this repository will be served on the arcade machine at CMGT.
 
 ## Nice to have
 
-Open Unity games vanuit NWJS menu
+Open Unity games from NWJS menu
 ```
 var exec = require('child_process').execFile;
 
