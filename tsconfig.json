@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "es6",
+        "removeComments": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": true,
+        "strictPropertyInitialization": false,
+        "sourceMap": true,
+        "outFile": "docs/js/main.js"
+    },
+    "include": [
+        "dev/**/*"
+    ]
+}
