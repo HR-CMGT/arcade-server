@@ -1,8 +1,8 @@
 html, body {
     margin: 0px;
     padding: 0px;
-    width:1280px;
-    height:720px;
+    width:1440px;
+    height:900px;
     overflow:hidden;
     font-family: 'Press Start 2P', cursive;
     background:black;
@@ -17,8 +17,8 @@ a, a:visited, a:hover {
 background {
     display:block;
     position : absolute;
-    width:1280px;
-    height:720px;
+    width:1440px;
+    height:900px;
     /*background-image: url(../images/static.jpg);
     background-size:cover;*/
 }
@@ -26,16 +26,16 @@ background {
 /* image in background to allow animation */
 
 background img {
-  width: 1280px;
-  height: 720px;
+  width: 1440px;
+  height: 900px;
   object-fit: cover;
 }
 
 foreground {
     display:block;
     position : absolute; 
-    width:1280px;
-    height:720px;
+    width:1440px;
+    height:900px;
     overflow:hidden;
     background-color:rgba(51, 26, 141, 0.6)
 }
@@ -47,17 +47,19 @@ div, header, foreground {
 }
 
 header {
-    padding: 0px 0px 10px 0px;
+    padding-top:6px;
+    margin:50px 0px;
     text-align: center;
+    font-size:1.3em;
 }
 
 /* MENU ROW */
 
 #player-menu {
     display:flex;
-    padding: 8px 0px;
-    font-size: 20px;
+    font-size: 25px;
     justify-content: center;
+    margin-bottom:10px;
 }
 
 #player-menu div {
@@ -68,7 +70,7 @@ header {
 
 #genre-menu {
     display:flex;
-    margin: 12px 14px;
+    margin: 0px 10px;
     padding: 8px 4px;
     font-size: 0.9em;
     justify-content: space-between;
@@ -84,12 +86,13 @@ header {
 #game-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 145px 145px;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-template-rows: 165px 165px;
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
     justify-items: stretch;
     align-items: stretch;
     text-align: center;
+    padding:10px;
  }
 
  .leftAnimation {
@@ -101,9 +104,7 @@ header {
      -webkit-animation: GridRightAnimation 0.5s ease-out;
      animation: GridRightAnimation 0.5s ease-out;
  }
-
-
-
+ 
  #game-grid div {
     padding: 20px;
     background-color:rgba(255,255,255,0.2);
@@ -139,17 +140,11 @@ header {
     display:flex;
 }
 
-/*
-body {
-    filter: hue-rotate(90deg) blur(2px);
-}
-*/
-
 #logo { 
     display:block;
     position: absolute;
     width:40px; height:30px;
-    top:20px; left:1220px;
+    top:20px; left:1380px;
     background-image:url(../images/hrlogo.png);
     background-size:contain;
     background-repeat:no-repeat;
@@ -210,18 +205,19 @@ container {
 
 @-webkit-keyframes BlurScale {
     0% {
-        -webkit-filter: blur(1px);
+        filter: blur(1px) hue-rotate(0deg);
     }
     75% {
-        -webkit-filter: blur(1px) hue-rotate(20deg);
+        filter: blur(1px) hue-rotate(20deg);
     }
     100% {
-        -webkit-filter: blur(3px) hue-rotate(110deg);
-    }   
+        filter: blur(3px) hue-rotate(110deg);
+    }     
 }
+
 @keyframes BlurScale { 
     0% {
-        filter: blur(1px);
+        filter: blur(1px) hue-rotate(0deg);
     }
     75% {
         filter: blur(1px) hue-rotate(20deg);

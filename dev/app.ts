@@ -100,14 +100,24 @@ class App {
             this.position.col = 0
         }
 
+        // als we naar de page row zijn gegaan, dan is de column de huidige page
+        if(this.position.row == 3) {
+            this.position.col = this.page
+        }
+
         this.updateSelection()
     }
 
     private selectColumn(dir:number){
-        let maxColumn = this.menu[this.position.row].length - 1
-        this.position.col = Math.min(Math.max(this.position.col + dir, 0), maxColumn)
+        // TODO als we in de games row zijn, dan kan je met links/rechts ook naar een nieuwe page gaan
+        //if (this.position.row == 2 && this.position.col == 0 && dir == -1) {
+        //    this.generateGamePage(dir)
+        //}
 
-        // als we in het page menu zijn, dan meteen de nieuwe page tonen
+        let maxColumn = this.menu[this.position.row].length - 1
+        this.position.col = Math.min(Math.max(this.position.col + dir, 0), maxColumn)      
+
+        // als we in de paging row zijn, dan meteen de nieuwe page tonen
         if(this.position.row == 3) {
             this.generateGamePage(dir)
         }

@@ -6,9 +6,9 @@ The Frontend for the [CMGT Arcade Machine](https://hr-cmgt.github.io/arcade-serv
 
 ## Game requirements
 
-- Resolution: 1280 x 720
+- Resolution: 1440 x 900 (16:10)
 - Audio: WAV or OGG files. Autoplay only works after a user interaction on the page!
-- Support the Arcade stick and buttons. [Example code here](https://github.com/HR-CMGT/arcade-server/dev/joystick.ts)
+- Support the Arcade stick and buttons with the [GamePad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API). [Typescript Example code here](https://github.com/HR-CMGT/arcade-server/dev/joystick.ts)
 - The game needs to redirect back to [https://hr-cmgt.github.io/arcade-server/](https://hr-cmgt.github.io/arcade-server/) when buttons 5 and 6 are pressed!
 
 ## The interface

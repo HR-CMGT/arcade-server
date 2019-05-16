@@ -77,6 +77,9 @@ class App {
             this.position.row = Math.min(Math.max(this.position.row + dir, 0), this.menu.length - 1);
             this.position.col = 0;
         }
+        if (this.position.row == 3) {
+            this.position.col = this.page;
+        }
         this.updateSelection();
     }
     selectColumn(dir) {
