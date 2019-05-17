@@ -141,12 +141,6 @@ class App {
         window.location.href = this.data[index].url;
     }
     update() {
-        if (Math.random() > 0.99) {
-            document.body.classList.add("zoom");
-        }
-        else if (Math.random() > 0.9) {
-            document.body.classList.remove("zoom");
-        }
         this.joystick.update();
         requestAnimationFrame(() => this.update());
     }

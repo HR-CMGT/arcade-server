@@ -196,11 +196,13 @@ class App {
     }
 
     private update() {
+        /*
         if(Math.random() > 0.99) {
             document.body.classList.add("zoom")
         } else if (Math.random() > 0.9) {
             document.body.classList.remove("zoom")
         }
+        */
 
         // gamepad has no event system, we have to poll the gamepad manually
         this.joystick.update()

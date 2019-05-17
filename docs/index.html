@@ -7,19 +7,21 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>CMGT ARCADE</title>
 </head>
 
 <body>
-<container>
-    <background>
-        <img src="images/grid.gif">
-    </background>
-    <foreground>
-    <header>
-<!-- http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=CMGT%20ARCADE -->
-<pre class="rainbow">
+    <container>
+        <background>
+            <img src="images/grid.gif">
+        </background>
+
+        <foreground>
+            <header>
+    <!-- http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=CMGT%20ARCADE -->
+    <pre class="rainbow">
 
  ██████╗███╗   ███╗ ██████╗████████╗     █████╗ ██████╗  ██████╗ █████╗ ██████╗ ███████╗
 ██╔════╝████╗ ████║██╔════╝╚══██╔══╝    ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝
@@ -29,48 +31,57 @@
  ╚═════╝╚═╝     ╚═╝ ╚═════╝   ╚═╝       ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═════╝ ╚══════╝
                                                                                         
 </pre>
-    </header>
-    <div id="player-menu">
-        <div class="selected cursor">
-            <i class="fas fa-male"></i>
-            Singleplayer
-        </div>
-        <div>
-            <i class="fas fa-male"></i>
-            <i class="fas fa-male"></i>
-            Multiplayer
-        </div>
-    </div>
+            </header>
 
-    <div id="genre-menu">
-        <div class="selected">All</div>
-        <div>Strategy</div>
-        <div>Action</div>
-        <div>Puzzle</div>
-        <div>Shooter</div>
-        <div>RPG</div>
-        <div>Simulation</div>
-        <div>Stealth</div>
-        <div>Race</div>
-        <div>Sports</div>
-    </div>
+            <div id="player-menu">
+                <div class="selected cursor">
+                    <i class="fas fa-male"></i>
+                    Singleplayer
+                </div>
+                <div>
+                    <i class="fas fa-male"></i>
+                    <i class="fas fa-male"></i>
+                    Multiplayer
+                </div>
+            </div>
+            
+            <div id="genre-menu">
+                <div class="selected">All</div>
+                <div>Strategy</div>
+                <div>Action</div>
+                <div>Puzzle</div>
+                <div>Shooter</div>
+                <div>RPG</div>
+                <div>Simulation</div>
+                <div>Stealth</div>
+                <div>Race</div>
+                <div>Sports</div>
+            </div>
 
-    <div id="game-grid"></div>
+            <div id="game-grid"></div>
+            
+            <div id="page-menu"></div>
+            
+            <div id="credits-menu">
+                <div>SOUND:ON</div>
+                <div>Credits</div>
+                <div>Instructions</div>
+                <div>About CMGT</div>
+            </div>
 
-    <div id="page-menu"></div>
+        </foreground>
 
-    <div id="credits-menu">
-        <div>Credits</div>
-        <div>Instructions</div>
-        <div>About CMGT</div>
-    </div>
+        <div id="logo"></div>
 
-    </foreground>
+    </container>
 
-    <div id="logo"></div>
-</container>
+    <warning>
+        <h3>HR CMGT ARCADE SERVER</h3>
+        <p>You are viewing the Game Selection of the <a style="color:magenta" href="https://cmgt.hr.nl/#/home">HR CMGT</a> Arcade Cabinet</p>
+        <p><i class="fas fa-undo fa-3x"></i></p>
+        <p>Please rotate your device to landscape mode</p>
+    </warning>
+
+    <script src="js/main.js"></script>
 </body>
-
-<script src="js/main.js"></script>
-
 </html>
