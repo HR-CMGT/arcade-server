@@ -30,7 +30,8 @@ The DOCS folder of this repository will be [served](https://hr-cmgt.github.io/ar
 - credits page
 - instructions page
 - about page
-- grid selection code
+- keyboard input separate
+- enable touch input when touch detected
 
 ## Nice to have
 

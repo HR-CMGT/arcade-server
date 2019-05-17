@@ -5,6 +5,7 @@ class App {
         this.menu = [];
         this.page = 0;
         this.numpages = 1;
+        this.allowSound = true;
         this.loadGames();
     }
     loadGames() {
@@ -16,6 +17,7 @@ class App {
     initMenus(data) {
         this.data = data;
         this.page = 0;
+        this.allowSound = !Boolean(localStorage.getItem('sound'));
         this.numpages = Math.ceil(this.data.length / 8);
         this.grid = document.querySelector("#game-grid");
         this.paging = document.querySelector("#page-menu");
@@ -26,6 +28,7 @@ class App {
         this.menu.push(document.querySelector("#game-grid").children);
         this.menu.push(document.querySelector("#page-menu").children);
         this.menu.push(document.querySelector("#credits-menu").children);
+        this.menu[4][0].innerHTML = (this.allowSound) ? "SOUND:ON" : "SOUND:OFF";
         this.joystick = new Joystick(2);
         document.addEventListener("cursorX", (e) => {
             this.selectColumn(e.detail);
@@ -33,7 +36,7 @@ class App {
         document.addEventListener("cursorY", (e) => {
             this.selectRow(e.detail);
         });
-        document.addEventListener("button0", () => this.selectGame());
+        document.addEventListener("button0", () => this.buttonPressed());
         document.addEventListener("keydown", (e) => this.onKeyDown(e));
         this.grid.addEventListener("animationend", () => {
             this.grid.classList.remove("leftAnimation", "rightAnimation");
@@ -125,19 +128,23 @@ class App {
             this.selectRow(-1);
         }
         if (charCode == 69 || charCode == 75 || charCode == 32) {
-            this.selectGame();
+            this.buttonPressed();
         }
     }
-    selectGame() {
+    buttonPressed() {
         if (this.position.row == 2) {
             this.gotoGame(this.position.col);
         }
-        if (this.position.row == 3) {
-            this.gotoGame(this.position.col + 4);
+        if (this.position.row == 4 && this.position.col == 0) {
+            this.toggleSound();
         }
     }
+    toggleSound() {
+        this.allowSound = !this.allowSound;
+        localStorage.setItem('sound', String(this.allowSound));
+        this.menu[4][0].innerHTML = (this.allowSound) ? "SOUND:ON" : "SOUND:OFF";
+    }
     gotoGame(index) {
-        console.log(this.data[index]);
         window.location.href = this.data[index].url;
     }
     update() {

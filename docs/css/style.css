@@ -41,8 +41,6 @@ header {
     height: 22vh;
 }
 
-
-
 /* MENU SYSTEM */
 /* PLAYER ROW */
 
@@ -89,14 +87,14 @@ header {
 
  
  #game-grid div {
-    padding: 5vw;
+    padding: 1vw;
     background-color:rgba(255,255,255,0.2);
     color: white; 
     /* to center the text horizontally and vertically */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.1vw;
+    font-size: 1.3vw;
 }
 
 
@@ -171,9 +169,6 @@ header {
 
 warning {
     display:none;
-    background-color:white;
-    color:purple;
-    text-align:center;
 }
 
 @media screen and (orientation:portrait) {
@@ -186,5 +181,13 @@ warning {
         padding:4vw;
         width:100vw; height:100vh;
         z-index:10;
+        background-color:white;
+        color:purple;
+        text-align:center;
+        font-size:3.6vw;
+        line-height:2.4vh;
+    }
+    .small {
+        font-size:2.2vw;
     }
 }

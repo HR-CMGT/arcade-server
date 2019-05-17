@@ -7,6 +7,7 @@ class App {
     private page : number = 0
     private numpages : number = 1
     private paging : Element
+    private allowSound : boolean = true
 
     constructor(){
         this.loadGames()
@@ -22,6 +23,7 @@ class App {
     private initMenus(data:GameData[]){
         this.data = data
         this.page = 0
+        this.allowSound = !Boolean(localStorage.getItem('sound')) // als niet gevonden dan aan zetten
         this.numpages = Math.ceil(this.data.length/8)
         this.grid = document.querySelector("#game-grid")!
         this.paging = document.querySelector("#page-menu")!
@@ -36,6 +38,9 @@ class App {
         this.menu.push(document.querySelector("#game-grid")!.children)
         this.menu.push(document.querySelector("#page-menu")!.children)
         this.menu.push(document.querySelector("#credits-menu")!.children)
+
+        // sound status
+        this.menu[4][0].innerHTML = (this.allowSound) ? "SOUND:ON" : "SOUND:OFF"
     
         this.joystick = new Joystick(2)
 
@@ -48,7 +53,7 @@ class App {
             this.selectRow((e as CustomEvent).detail)
         })
 
-        document.addEventListener("button0", () => this.selectGame())
+        document.addEventListener("button0", () => this.buttonPressed())
         document.addEventListener("keydown", (e:KeyboardEvent)=>this.onKeyDown(e))
 
         this.grid.addEventListener("animationend", () => {
@@ -176,22 +181,27 @@ class App {
 
         // confirm selection, only needed for games
         if (charCode == 69 || charCode == 75 || charCode == 32) {
-            this.selectGame()
+            this.buttonPressed()
         }
     }
 
-    private selectGame(){
-        // TODO niet handig
+    // button pressed may be called by spacebar and arcade stick fire button 
+    private buttonPressed(){
         if (this.position.row == 2) {
             this.gotoGame(this.position.col)
         }
-        if (this.position.row == 3) {
-            this.gotoGame(this.position.col + 4)
+        if(this.position.row == 4 && this.position.col == 0){
+            this.toggleSound()
         }
     }
 
+    private toggleSound(){
+        this.allowSound = !this.allowSound
+        localStorage.setItem('sound', String(this.allowSound))
+        this.menu[4][0].innerHTML = (this.allowSound) ? "SOUND:ON" : "SOUND:OFF"
+    }
+
     private gotoGame(index:number){
-        console.log(this.data[index])
         window.location.href = this.data[index].url
     }
 
