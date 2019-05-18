@@ -23,6 +23,10 @@ The Frontend for the [CMGT Arcade Machine](https://hr-cmgt.github.io/arcade-serv
 The DOCS folder of this repository will be [served](https://hr-cmgt.github.io/arcade-server/) on the arcade machine at CMGT. The browser is
 [NWJS](http://docs.nwjs.io/en/latest/For%20Users/Getting%20Started/#get-nwjs) in Kiosk Mode
 
+## Header generator
+
+http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=CMGT%20ARCADE
+
 ## TODO
 
 - improve paging (detect left right in game menu)

@@ -17,7 +17,6 @@ class App {
     initMenus(data) {
         this.data = data;
         this.page = 0;
-        this.allowSound = !Boolean(localStorage.getItem('sound'));
         this.numpages = Math.ceil(this.data.length / 8);
         this.grid = document.querySelector("#game-grid");
         this.paging = document.querySelector("#page-menu");
@@ -41,6 +40,9 @@ class App {
         this.grid.addEventListener("animationend", () => {
             this.grid.classList.remove("leftAnimation", "rightAnimation");
         });
+        this.allowSound = Boolean(localStorage.getItem('sound'));
+        this.audio = new Audio();
+        this.updateAudio();
         this.update();
     }
     generateGamePage(p) {
@@ -143,6 +145,24 @@ class App {
         this.allowSound = !this.allowSound;
         localStorage.setItem('sound', String(this.allowSound));
         this.menu[4][0].innerHTML = (this.allowSound) ? "SOUND:ON" : "SOUND:OFF";
+        this.updateAudio();
+    }
+    updateAudio() {
+        if (this.allowSound) {
+            this.audio.src = "./sound/bgmusic.mp3";
+            let promise = this.audio.play();
+            if (promise !== undefined) {
+                promise.then(_ => {
+                    console.log("Playing audio");
+                }).catch(error => {
+                    console.log("Foutje! " + error);
+                    this.toggleSound();
+                });
+            }
+        }
+        else {
+            this.audio.pause();
+        }
     }
     gotoGame(index) {
         window.location.href = this.data[index].url;

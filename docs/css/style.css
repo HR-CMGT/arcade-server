@@ -147,6 +147,9 @@ header {
     background-color:white;
 }
 
+#game-grid div.cursor {
+    background-color:rgba(255, 0, 255, 0.185) !important;
+}
 
 .cursor {
     color: magenta !important;

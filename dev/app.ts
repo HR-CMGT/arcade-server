@@ -8,6 +8,7 @@ class App {
     private numpages : number = 1
     private paging : Element
     private allowSound : boolean = true
+    private audio:HTMLAudioElement
 
     constructor(){
         this.loadGames()
@@ -23,7 +24,7 @@ class App {
     private initMenus(data:GameData[]){
         this.data = data
         this.page = 0
-        this.allowSound = !Boolean(localStorage.getItem('sound')) // als niet gevonden dan aan zetten
+        
         this.numpages = Math.ceil(this.data.length/8)
         this.grid = document.querySelector("#game-grid")!
         this.paging = document.querySelector("#page-menu")!
@@ -60,6 +61,10 @@ class App {
             this.grid.classList.remove("leftAnimation", "rightAnimation")
         })
 
+        // todo in NWJS checken of audio autoplay mag of niet
+        this.allowSound = Boolean(localStorage.getItem('sound')) // als niet gevonden dan uit zetten
+        this.audio = new Audio()
+        this.updateAudio();
         this.update()
     }
 
@@ -199,6 +204,27 @@ class App {
         this.allowSound = !this.allowSound
         localStorage.setItem('sound', String(this.allowSound))
         this.menu[4][0].innerHTML = (this.allowSound) ? "SOUND:ON" : "SOUND:OFF"
+        this.updateAudio()
+    }
+    private updateAudio(){
+        if (this.allowSound) {
+            this.audio.src = "./sound/bgmusic.mp3";
+
+            let promise = this.audio.play()
+            if (promise !== undefined) {
+                promise.then(_ => {
+                    // Autoplay started!
+                    console.log("Playing audio")
+                }).catch(error => {
+                    // Autoplay was prevented.
+                    // User interaction with audio button will allow playback, set it to off
+                    console.log("Foutje! " + error)
+                    this.toggleSound()
+                });
+            }
+        } else {
+            this.audio.pause()
+        }
     }
 
     private gotoGame(index:number){
