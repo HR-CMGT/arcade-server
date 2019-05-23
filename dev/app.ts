@@ -22,6 +22,7 @@ class App {
     }
 
     private initMenus(data:GameData[]){
+
         this.data = data
         this.page = 0
         
@@ -46,11 +47,9 @@ class App {
         this.joystick = new Joystick(2)
 
         document.addEventListener("cursorX", (e:Event)=> {
-            //console.log("X GAMEPAD " + (e as CustomEvent).detail)
             this.selectColumn((e as CustomEvent).detail)
         })
         document.addEventListener("cursorY", (e: Event) => {
-            //console.log("Y GAMEPAD " + (e as CustomEvent).detail)
             this.selectRow((e as CustomEvent).detail)
         })
 
@@ -68,6 +67,12 @@ class App {
         this.update()
     }
 
+    private cartBgNotLoaded(div: HTMLElement, data: GameData){
+        console.log(data.name)
+        console.log(div)
+        div.innerHTML = "NOT LOADED"
+    }
+
     private generateGamePage(p:number) {
         this.page = Math.min(Math.max(this.page + p, 0), this.numpages - 1)
         this.grid.innerHTML = ""
@@ -77,8 +82,23 @@ class App {
         
         for (let i = start; i < start+num; i++) {
             let div = document.createElement("div")
+            let data = this.data[i]
+
             this.grid.appendChild(div)
-            div.innerHTML = this.data[i].name
+
+            // cartridge color
+            div.style.filter = `hue-rotate(${Math.floor(Math.random()*360)}deg) saturate(0.6)`;
+
+            // cartridge cover image has to be in same repo. cross-domain not working.
+            // TODO TWO BACKGROUND IMAGES! ONE HAS TRANSPARENT CARTRIDGE, OTHER HAS SQUARE GAME IMAGE
+            // TODO only hue rotate if there is no original cover image
+            let cover = data.cover
+            if(cover && cover != "") {
+                div.style.backgroundImage = `url(./covers/${cover})`
+            } else {
+                div.style.backgroundImage = `url(./images/cart.png)`
+                div.innerHTML = data.name
+            }
         }
 
         if(p < 0) {
@@ -94,13 +114,22 @@ class App {
             div.innerHTML = (i+1).toString()
             this.paging.appendChild(div)
             if(i == 0) div.classList.add("selected")
+
+            // random cartridge color
+            div.style.filter = `hue-rotate(160deg);`
+
+
         }
     }
 
     private selectRow(dir:number){
-        // the game grid really has 8 columns - but they are displayed as two rows with 4 columns in a grid
-        // this if statement adds the ability to switch vertically between columns
-        if (this.position.row == 2 && this.position.col < 4 && dir == 1) {
+        if(this.position.row == 3 && dir == -1) {
+            // als we van row 3 naar row 2 gaan, dan altijd column 4 selecteren
+            this.position.row = 2
+            this.position.col = 4
+        } else if (this.position.row == 2 && this.position.col < 4 && dir == 1) {
+            // the game grid really has 8 columns - but they are displayed as two rows with 4 columns in a grid
+            // this if statement adds the ability to switch vertically between columns
             this.position.col += 4
         } else if (this.position.row == 2 && this.position.col > 3 && dir == -1) {
             this.position.col -= 4
@@ -110,10 +139,10 @@ class App {
             this.position.col = 0
         }
 
-        // als we naar de page row zijn gegaan, dan is de column de huidige page
+        // als we naar de paging row zijn gegaan, dan is de column de huidige page
         if(this.position.row == 3) {
             this.position.col = this.page
-        }
+        }        
 
         this.updateSelection()
     }
@@ -143,9 +172,22 @@ class App {
             this.clearRow(4)
         }
 
+        // TODO cleanup - cartridges also have an UNselected class...
+        if (this.position.row == 2) {
+            for (let c of this.menu[2]) {
+                c.classList.add("unselected")
+            }
+        } else {
+           for (let c of this.menu[2]) {
+                c.classList.remove("unselected")
+           }
+        }
+
+        // remove cursor from wherever it is now
         let c = document.querySelector(".cursor")
         if(c) c.classList.remove("cursor")
 
+        // add selectbox and cursor box to current position
         this.getSelectedElement().classList.add("selected", "cursor")
     }
 
@@ -206,6 +248,7 @@ class App {
         this.menu[4][0].innerHTML = (this.allowSound) ? "SOUND:ON" : "SOUND:OFF"
         this.updateAudio()
     }
+
     private updateAudio(){
         if (this.allowSound) {
             this.audio.src = "./sound/bgmusic.mp3";

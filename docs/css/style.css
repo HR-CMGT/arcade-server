@@ -18,12 +18,19 @@ container, foreground, background {
 
 container {
     cursor:none;
-    -webkit-animation: BlurScale 7s ease infinite alternate-reverse;
-    animation: BlurScale 7s ease infinite alternate-reverse;
+    /* animation: RotateColor 7s ease infinite alternate-reverse; */
+    /*animation: BlurScale 4s ease 2 alternate-reverse;*/
 }
 
-/* image in background to allow animation */
+/* TODO blur scale af en toe toevoegen */
+/* blur causes 130% CPU */
+/*
+containerAnimation {
+    animation: BlurScale 7s ease infinite alternate-reverse;
+}
+*/
 
+/* image in background to allow animation */
 background img {
     width:100vw;
     height:100vh;
@@ -76,7 +83,7 @@ header {
 #game-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 23vh 23vh;
+    grid-template-rows: 22vh 22vh;
     grid-column-gap: 12px;
     grid-row-gap: 12px;
     justify-items: stretch;
@@ -85,17 +92,48 @@ header {
     padding:1vh 1vw;  /* Y X */
  }
 
- 
+ /* cartridges */
  #game-grid div {
-    padding: 1vw;
-    background-color:rgba(255,255,255,0.2);
+    box-sizing:border-box;
+    padding: 2vw 5vw;
+    background-size:contain;
+    background-position: center;
+    background-repeat:no-repeat;
     color: white; 
-    /* to center the text horizontally and vertically */
+    /* center text horizontally and vertically */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3vw;
+    font-size: 1.2vw;
+    line-height:160%;
+    transition: transform 0.2s ease-out;
 }
+
+/* will get added if we are in the games row for all unselected games */
+.unselected {
+    transform:scale(0.92);
+    opacity:0.6;
+}
+
+/* select a cartridge */
+#game-grid div.cursor {
+    transform:scale(1.15);
+    opacity:1;
+}
+
+/* works but only on divs AFTER the selection.... 
+#game-grid div.cursor ~ div {
+    transform:scale(0.92);
+    opacity:0.6;
+}
+*/
+
+/* works but should only be used when there is a cursor class on a sibling
+#game-grid div:not(.cursor) {
+    transform:scale(0.92);
+    opacity:0.6;
+}
+*/
 
 
 /* MENU ROW */
@@ -127,7 +165,7 @@ header {
 
 /* SELECTION AND CURSOR POSITION */
 
-#player-menu .selected, #genre-menu .selected, .game-row .selected {
+#player-menu .selected, #genre-menu .selected {
     outline: 3px solid white;
     outline-offset: -3px;
 }
@@ -147,11 +185,8 @@ header {
     background-color:white;
 }
 
-#game-grid div.cursor {
-    background-color:rgba(255, 0, 255, 0.185) !important;
-}
 
-.cursor {
+#player-menu .cursor, #genre-menu .cursor, #credits-menu .cursor, #page-menu .cursor {
     color: magenta !important;
     outline: 3px solid magenta !important;
 }

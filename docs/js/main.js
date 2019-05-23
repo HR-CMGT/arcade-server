@@ -45,6 +45,11 @@ class App {
         this.updateAudio();
         this.update();
     }
+    cartBgNotLoaded(div, data) {
+        console.log(data.name);
+        console.log(div);
+        div.innerHTML = "NOT LOADED";
+    }
     generateGamePage(p) {
         this.page = Math.min(Math.max(this.page + p, 0), this.numpages - 1);
         this.grid.innerHTML = "";
@@ -52,8 +57,17 @@ class App {
         let num = Math.min(this.data.length - start, 8);
         for (let i = start; i < start + num; i++) {
             let div = document.createElement("div");
+            let data = this.data[i];
             this.grid.appendChild(div);
-            div.innerHTML = this.data[i].name;
+            div.style.filter = `hue-rotate(${Math.floor(Math.random() * 360)}deg) saturate(0.6)`;
+            let cover = data.cover;
+            if (cover && cover != "") {
+                div.style.backgroundImage = `url(./covers/${cover})`;
+            }
+            else {
+                div.style.backgroundImage = `url(./images/cart.png)`;
+                div.innerHTML = data.name;
+            }
         }
         if (p < 0) {
             this.grid.classList.add("leftAnimation");
@@ -69,10 +83,15 @@ class App {
             this.paging.appendChild(div);
             if (i == 0)
                 div.classList.add("selected");
+            div.style.filter = `hue-rotate(160deg);`;
         }
     }
     selectRow(dir) {
-        if (this.position.row == 2 && this.position.col < 4 && dir == 1) {
+        if (this.position.row == 3 && dir == -1) {
+            this.position.row = 2;
+            this.position.col = 4;
+        }
+        else if (this.position.row == 2 && this.position.col < 4 && dir == 1) {
             this.position.col += 4;
         }
         else if (this.position.row == 2 && this.position.col > 3 && dir == -1) {
@@ -99,6 +118,16 @@ class App {
         this.clearRow(this.position.row);
         if (this.position.row != 4) {
             this.clearRow(4);
+        }
+        if (this.position.row == 2) {
+            for (let c of this.menu[2]) {
+                c.classList.add("unselected");
+            }
+        }
+        else {
+            for (let c of this.menu[2]) {
+                c.classList.remove("unselected");
+            }
         }
         let c = document.querySelector(".cursor");
         if (c)

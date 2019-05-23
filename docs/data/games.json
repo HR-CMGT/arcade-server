@@ -10,6 +10,18 @@
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1
     },{
+        "name": "Ruimtegruis",
+        "url": "https://kokodoko.github.io/ruimtegruis/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover" : "cover_ruimtegruis.png"
+    },{
+        "name": "Ruimtegruis",
+        "url": "https://kokodoko.github.io/ruimtegruis/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "cover_ruimtegruis.png"
+    },{
         "name": "Frog and Pig",
         "url": "https://bpikaar.github.io/frog-and-pig/",
         "genres" : [1,1,1,0,0,0,0,0,0],
@@ -23,22 +35,14 @@
         "name": "Ruimtegruis",
         "url": "https://kokodoko.github.io/ruimtegruis/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover": "cover_ruimtegruis.png"
     },{
         "name": "Ruimtegruis",
         "url": "https://kokodoko.github.io/ruimtegruis/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
-    },{
-        "name": "Ruimtegruis",
-        "url": "https://kokodoko.github.io/ruimtegruis/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
-    },{
-        "name": "Ruimtegruis",
-        "url": "https://kokodoko.github.io/ruimtegruis/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover": "cover_ruimtegruis.png"
     },{
         "name" : "Flying Frogs",
         "url" : "https://bpikaar.github.io/frog-and-pig/",
@@ -68,9 +72,10 @@
         "name": "Gruis in de Ruimte",
         "url": "https://kokodoko.github.io/ruimtegruis/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover": "cover_ruimtegruis.png"
     },{
-        "name": "Klik Hier",
+        "name": "Wasbeer Lanceer TV",
         "url": "https://kokodoko.github.io/ruimtegruis/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1
@@ -99,5 +104,27 @@
         "url": "https://bpikaar.github.io/frog-and-pig/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1
+    },{
+        "name": "Frog and Pig",
+        "url": "https://bpikaar.github.io/frog-and-pig/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1
+    },{
+        "name": "Frog and Pig",
+        "url": "https://bpikaar.github.io/frog-and-pig/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1
+    },{
+        "name": "Ruimtegruis",
+        "url": "https://kokodoko.github.io/ruimtegruis/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover" : "cover_ruimtegruis.png"
+    },{
+        "name": "Ruimtegruis",
+        "url": "https://kokodoko.github.io/ruimtegruis/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "cover_ruimtegruis.png"
     }
 ]
