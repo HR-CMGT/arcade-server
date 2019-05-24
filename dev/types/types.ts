@@ -10,3 +10,9 @@ interface Grid {
     row:number
     col:number
 }
+
+interface InputListener {
+    selectRow(dir:number):void
+    selectColumn(dir:number):void
+    pressButton():void
+}

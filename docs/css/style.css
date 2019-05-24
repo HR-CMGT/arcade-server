@@ -1,3 +1,9 @@
+html {
+    width:100vw; height:100vh;
+    margin: 0; padding: 0;
+    overflow:hidden;
+}
+
 body {
     width:100vw; height:100vh;
     margin: 0; padding: 0;
@@ -18,20 +24,27 @@ container, foreground, background {
 
 container {
     cursor:none;
-    /* animation: RotateColor 7s ease infinite alternate-reverse; */
-    /*animation: BlurScale 4s ease 2 alternate-reverse;*/
 }
 
-/* TODO blur scale af en toe toevoegen */
-/* blur causes 130% CPU */
-/*
-containerAnimation {
+/* animation kan niet op video > CPU hit, video stutter */
+foreground {
     animation: BlurScale 7s ease infinite alternate-reverse;
 }
-*/
+
+/* textpage web components */
+about-page, credits-page, instructions-page {
+    display:block;
+    padding:0px 4vw;
+    height:55vh;
+    border:1px solid transparent; /*hack*/
+}
+
+instructions-page.cursor, credits-page.cursor, about-page.cursor {
+    color: magenta;
+}
 
 /* image in background to allow animation */
-background img {
+background img, background video {
     width:100vw;
     height:100vh;
     object-fit: cover;
@@ -47,6 +60,13 @@ header {
     font-size:1.14vw;
     height: 22vh;
 }
+
+#content-page {
+    box-sizing:border-box;
+    display:block;
+    height:72vh;
+}
+
 
 /* MENU SYSTEM */
 /* PLAYER ROW */
@@ -121,20 +141,6 @@ header {
     opacity:1;
 }
 
-/* works but only on divs AFTER the selection.... 
-#game-grid div.cursor ~ div {
-    transform:scale(0.92);
-    opacity:0.6;
-}
-*/
-
-/* works but should only be used when there is a cursor class on a sibling
-#game-grid div:not(.cursor) {
-    transform:scale(0.92);
-    opacity:0.6;
-}
-*/
-
 
 /* MENU ROW */
 
@@ -150,14 +156,16 @@ header {
 }
 /* MENU ROW */
 
-#credits-menu {
+navigation-page {
+    display:block;
+    box-sizing:border-box;
     padding: 0vw 1vw;
     justify-content: space-between;
     display:flex;
     height:4vh;
 }
 
-#credits-menu div {
+navigation-page div {
     font-size: 1.3vw;
     height:1.3vw;
 }
@@ -170,7 +178,7 @@ header {
     outline-offset: -3px;
 }
 
-#credits-menu .selected {
+navigation-page .selected {
     outline: 3px solid white;
     outline-offset: 3px;
 }
@@ -186,9 +194,13 @@ header {
 }
 
 
-#player-menu .cursor, #genre-menu .cursor, #credits-menu .cursor, #page-menu .cursor {
+#player-menu .cursor, #genre-menu .cursor, navigation-page .cursor, #page-menu .cursor {
     color: magenta !important;
     outline: 3px solid magenta !important;
+}
+
+navigation-page .cursor {
+    outline-offset: 3px;
 }
 
 /* LOGO ALWAYS TOP RIGHT */

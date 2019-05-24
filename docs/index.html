@@ -9,13 +9,14 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="./css/animations.css">
     <link rel="stylesheet" href="./css/style.css">
+    
     <title>CMGT ARCADE</title>
 </head>
 
 <body>
     <container>
         <background>
-            <img src="images/grid.gif">
+            <video id="bgvideo" src="./images/grid.mp4" preload autoplay loop muted></video>
         </background>
 
         <foreground>
@@ -32,41 +33,15 @@
 </pre>
             </header>
 
-            <div id="player-menu">
-                <div class="selected cursor">
-                    <i class="fas fa-male"></i>
-                    Singleplayer
-                </div>
-                <div>
-                    <i class="fas fa-male"></i>
-                    <i class="fas fa-male"></i>
-                    Multiplayer
-                </div>
-            </div>
+            <div id="content-page"></div>
             
-            <div id="genre-menu">
-                <div class="selected">All</div>
-                <div>Strategy</div>
-                <div>Action</div>
-                <div>Puzzle</div>
-                <div>Shooter</div>
-                <div>RPG</div>
-                <div>Simulation</div>
-                <div>Stealth</div>
-                <div>Race</div>
-                <div>Sports</div>
-            </div>
-
-            <div id="game-grid"></div>
-            
-            <div id="page-menu"></div>
-            
-            <div id="credits-menu">
-                <div>SOUND:ON</div>
-                <div>Credits</div>
+            <navigation-page>
+                <div>Games</div>
                 <div>Instructions</div>
+                <div>Credits</div>
                 <div>About CMGT</div>
-            </div>
+                <div>SOUND:ON</div>
+            </navigation-page>
 
         </foreground>
 
@@ -81,6 +56,63 @@
         <p>Please rotate your device to landscape mode</p>
         <p><span class="small">These games were developed for an Arcade Machine, and may not support touchscreens.</span></p>
     </warning>
+
+    
+    <!-- ********************* -->
+    <!--       TEMPLATES       -->
+    <!-- ********************* -->
+
+    <template id="creditspage">
+            <h2>Credits</h2>
+            <p>This is the credits page</p>
+
+    </template>
+    
+    <template id="aboutpage">
+            <h2>Creative Media and Game Technologies</h2>
+            <p>Todo...</p>
+
+    </template>
+    
+    <template id="instructionspage">
+            <h2>Instructions</h2>
+            <p>Press the yellow buttons to return to this menu any time</p>
+            <p>To upload your own game, publish it on a github page and add it to the json file on https://www.github.com/hr-cmgt/arcade-server</p>
+
+    </template>
+    
+    <template id="gamepage">
+    
+        <div id="player-menu">
+            <div class="selected cursor">
+                <i class="fas fa-male"></i>
+                Singleplayer
+            </div>
+            <div>
+                <i class="fas fa-male"></i>
+                <i class="fas fa-male"></i>
+                Multiplayer
+            </div>
+        </div>
+    
+        <div id="genre-menu">
+            <div class="selected">All</div>
+            <div>Strategy</div>
+            <div>Action</div>
+            <div>Puzzle</div>
+            <div>Shooter</div>
+            <div>RPG</div>
+            <div>Simulation</div>
+            <div>Stealth</div>
+            <div>Race</div>
+            <div>Sports</div>
+        </div>
+    
+        <div id="game-grid"></div>
+    
+        <div id="page-menu"></div>
+    
+    </template>
 
     <script src="js/main.js"></script>
 </body>
