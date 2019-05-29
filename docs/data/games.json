@@ -1,5 +1,16 @@
 [
     {
+        "name": "Ruimtegruis",
+        "url": "https://kokodoko.github.io/ruimtegruis/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "cover_ruimtegruis.png"
+    },{
+        "name": "Frog and Pig",
+        "url": "https://bpikaar.github.io/frog-and-pig/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1
+    },{
         "name" : "Circles & Squares",
         "url" : "https://sunnydegraaf.github.io/circlesandsquares/",
         "genres" : [1,1,1,0,0,0,0,0,0],
