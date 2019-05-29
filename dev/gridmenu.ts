@@ -158,7 +158,8 @@ class GridMenu {
     // button pressed may be called by spacebar and arcade stick fire button 
     public buttonPressed() {
         if (this.position.y == 2) {
-            this.gotoGame(this.position.x)
+            let index = this.position.x + (this.page * 8)
+            this.gotoGame(index)
         }
         if (this.position.y == 4 && this.position.x == 0) {
             App.instance.toggleSound()

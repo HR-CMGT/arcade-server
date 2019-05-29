@@ -25,7 +25,7 @@ class App {
 
         this.container = document.querySelector("foreground")! as HTMLElement   // test on foreground, background, container
         this.container.addEventListener("animationend", () => {
-            console.log("removing animation effect")
+            // console.log("removing animation effect")
             this.container.classList.remove("monitorEffect")
         })       
 
@@ -44,7 +44,7 @@ class App {
 
         /* instead of having a css animation constantly running, sporadically add it */
         setInterval(() => {
-            console.log("adding animation effect")
+            //console.log("adding animation effect")
             this.container.classList.add("monitorEffect")
         }, 40000)
 
@@ -94,11 +94,11 @@ class App {
             if (promise !== undefined) {
                 promise.then(_ => {
                     // Autoplay started!
-                    console.log("Playing audio")
+                    // console.log("Playing audio")
                 }).catch(error => {
                     // Autoplay was prevented.
                     // User interaction with audio button will allow playback, set it to off
-                    console.log("FOUT " + error)
+                    console.log("AUDIO FOUT " + error)
                     this.toggleSound()
                 });
             }

@@ -16,7 +16,6 @@ class App {
         this.gridMenu = new GridMenu(data);
         this.container = document.querySelector("foreground");
         this.container.addEventListener("animationend", () => {
-            console.log("removing animation effect");
             this.container.classList.remove("monitorEffect");
         });
         document.addEventListener("cursorX", (e) => this.gridMenu.selectColumn(e.detail));
@@ -28,7 +27,6 @@ class App {
         this.updateAudio();
         this.update();
         setInterval(() => {
-            console.log("adding animation effect");
             this.container.classList.add("monitorEffect");
         }, 40000);
         this.container.classList.add("monitorEffect");
@@ -62,9 +60,8 @@ class App {
             let promise = this.audio.play();
             if (promise !== undefined) {
                 promise.then(_ => {
-                    console.log("Playing audio");
                 }).catch(error => {
-                    console.log("FOUT " + error);
+                    console.log("AUDIO FOUT " + error);
                     this.toggleSound();
                 });
             }
@@ -196,7 +193,8 @@ class GridMenu {
     }
     buttonPressed() {
         if (this.position.y == 2) {
-            this.gotoGame(this.position.x);
+            let index = this.position.x + (this.page * 8);
+            this.gotoGame(index);
         }
         if (this.position.y == 4 && this.position.x == 0) {
             App.instance.toggleSound();
