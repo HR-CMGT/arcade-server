@@ -3,8 +3,9 @@
         "strict": true,
         "target": "es6",
         "removeComments": true,
+        "allowUnusedLabels": true,
         "noUnusedLocals": false,
-        "noUnusedParameters": true,
+        "noUnusedParameters": false,
         "strictPropertyInitialization": false,
         "sourceMap": true,
         "outFile": "docs/js/main.js"

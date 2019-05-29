@@ -31,7 +31,7 @@ class Joystick {
     constructor(numOfButtons: number) {
         this.numberOfBUttons = numOfButtons
         // add all axes (x:number, y:number) to an array
-        this.axes.push(0,0)
+        this.axes.push(0, 0)
 
         window.addEventListener("gamepadconnected", (e: Event) => this.onGamePadConnected(e as GamepadEvent))
         window.addEventListener("gamepaddisconnected", () => this.onGamePadDisConnected())
@@ -60,7 +60,7 @@ class Joystick {
 
             let gamepad: Gamepad | null = gamepads[0]
 
-            if(gamepad) {
+            if (gamepad) {
 
                 for (let index = 0; index < this.numberOfBUttons; index++) {
                     if (this.buttonPressed(gamepad.buttons[index]) &&
@@ -70,12 +70,12 @@ class Joystick {
                     // in the menu we need events for the x y axes too
                     if (Math.abs(gamepad.axes[0]) > 0.9 && Math.abs(this.previousGamepad.axes[0]) < 0.9) {
                         this.previousGamepad = gamepad
-                        document.dispatchEvent(new CustomEvent('cursorX', { detail: Math.round(gamepad.axes[0])}))
-                    } 
+                        document.dispatchEvent(new CustomEvent('cursorX', { detail: Math.round(gamepad.axes[0]) }))
+                    }
                     if (Math.abs(gamepad.axes[1]) > 0.9 && Math.abs(this.previousGamepad.axes[1]) < 0.9) {
                         this.previousGamepad = gamepad
-                        document.dispatchEvent(new CustomEvent('cursorY', { detail: Math.round(gamepad.axes[1])}))
-                    } 
+                        document.dispatchEvent(new CustomEvent('cursorY', { detail: Math.round(gamepad.axes[1]) }))
+                    }
                 }
 
                 // can be used to check left right up down at any time

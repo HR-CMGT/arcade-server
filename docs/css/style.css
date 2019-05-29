@@ -18,20 +18,21 @@ container, foreground, background {
 
 container {
     cursor:none;
-    /* animation: RotateColor 7s ease infinite alternate-reverse; */
-    /*animation: BlurScale 4s ease 2 alternate-reverse;*/
 }
 
-/* TODO blur scale af en toe toevoegen */
-/* blur causes 130% CPU */
-/*
-containerAnimation {
-    animation: BlurScale 7s ease infinite alternate-reverse;
+/* animation op video testen - CPU hit */
+foreground {
+   /*filter: blur(2px);*/
 }
-*/
+
+/* add this class to container or foreground sporadically */
+.monitorEffect {
+    animation: MonitorAnimation 6s 2; 
+    /* animation: BlurScale 6s ease infinite alternate-reverse; */
+}
 
 /* image in background to allow animation */
-background img {
+background img, background video {
     width:100vw;
     height:100vh;
     object-fit: cover;

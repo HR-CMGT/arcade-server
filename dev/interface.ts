@@ -6,7 +6,7 @@ interface GameData {
     cover?:string
 }
 
-interface Grid {
-    row:number
-    col:number
+interface Vector {
+    x:number
+    y:number
 }

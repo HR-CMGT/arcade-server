@@ -1,11 +1,8 @@
 "use strict";
 class App {
     constructor() {
-        this.position = { row: 0, col: 0 };
-        this.menu = [];
-        this.page = 0;
-        this.numpages = 1;
         this.allowSound = true;
+        App.instance = this;
         this.loadGames();
     }
     loadGames() {
@@ -15,11 +12,86 @@ class App {
             .catch(error => console.log(error));
     }
     initMenus(data) {
-        this.data = data;
+        this.joystick = new Joystick(2);
+        this.gridMenu = new GridMenu(data);
+        this.container = document.querySelector("foreground");
+        this.container.addEventListener("animationend", () => {
+            console.log("removing animation effect");
+            this.container.classList.remove("monitorEffect");
+        });
+        document.addEventListener("cursorX", (e) => this.gridMenu.selectColumn(e.detail));
+        document.addEventListener("cursorY", (e) => this.gridMenu.selectRow(e.detail));
+        document.addEventListener("button0", () => this.gridMenu.buttonPressed());
+        document.addEventListener("keydown", (e) => this.onKeyDown(e));
+        this.allowSound = (localStorage.getItem('sound') == "true") ? true : false;
+        this.audio = new Audio();
+        this.updateAudio();
+        this.update();
+        setInterval(() => {
+            console.log("adding animation effect");
+            this.container.classList.add("monitorEffect");
+        }, 40000);
+        this.container.classList.add("monitorEffect");
+    }
+    onKeyDown(e) {
+        let charCode = e.which;
+        if (charCode == 39 || charCode == 68) {
+            this.gridMenu.selectColumn(1);
+        }
+        if (charCode == 37 || charCode == 65) {
+            this.gridMenu.selectColumn(-1);
+        }
+        if (charCode == 40 || charCode == 83) {
+            this.gridMenu.selectRow(1);
+        }
+        if (charCode == 38 || charCode == 87) {
+            this.gridMenu.selectRow(-1);
+        }
+        if (charCode == 69 || charCode == 75 || charCode == 32) {
+            this.gridMenu.buttonPressed();
+        }
+    }
+    toggleSound() {
+        this.allowSound = !this.allowSound;
+        localStorage.setItem('sound', String(this.allowSound));
+        this.updateAudio();
+    }
+    updateAudio() {
+        if (this.allowSound) {
+            this.audio.src = "./sound/bgmusic.mp3";
+            let promise = this.audio.play();
+            if (promise !== undefined) {
+                promise.then(_ => {
+                    console.log("Playing audio");
+                }).catch(error => {
+                    console.log("FOUT " + error);
+                    this.toggleSound();
+                });
+            }
+        }
+        else {
+            this.audio.pause();
+        }
+        this.gridMenu.updateSound(this.allowSound);
+    }
+    update() {
+        this.joystick.update();
+        requestAnimationFrame(() => this.update());
+    }
+}
+window.addEventListener("load", () => new App());
+class GridMenu {
+    constructor(data) {
+        this.position = { x: 0, y: 0 };
+        this.menu = [];
         this.page = 0;
+        this.numpages = 1;
+        this.page = 0;
+        this.data = data;
         this.numpages = Math.ceil(this.data.length / 8);
-        this.grid = document.querySelector("#game-grid");
+        this.carts = document.querySelector("#game-grid");
         this.paging = document.querySelector("#page-menu");
+        this.carts.addEventListener("animationend", () => this.carts.classList.remove("leftAnimation", "rightAnimation"));
         this.generateGamePage(this.page);
         this.generatePaging();
         this.menu.push(document.querySelector("#player-menu").children);
@@ -27,53 +99,32 @@ class App {
         this.menu.push(document.querySelector("#game-grid").children);
         this.menu.push(document.querySelector("#page-menu").children);
         this.menu.push(document.querySelector("#credits-menu").children);
-        this.menu[4][0].innerHTML = (this.allowSound) ? "SOUND:ON" : "SOUND:OFF";
-        this.joystick = new Joystick(2);
-        document.addEventListener("cursorX", (e) => {
-            this.selectColumn(e.detail);
-        });
-        document.addEventListener("cursorY", (e) => {
-            this.selectRow(e.detail);
-        });
-        document.addEventListener("button0", () => this.buttonPressed());
-        document.addEventListener("keydown", (e) => this.onKeyDown(e));
-        this.grid.addEventListener("animationend", () => {
-            this.grid.classList.remove("leftAnimation", "rightAnimation");
-        });
-        this.allowSound = Boolean(localStorage.getItem('sound'));
-        this.audio = new Audio();
-        this.updateAudio();
-        this.update();
-    }
-    cartBgNotLoaded(div, data) {
-        console.log(data.name);
-        console.log(div);
-        div.innerHTML = "NOT LOADED";
     }
     generateGamePage(p) {
         this.page = Math.min(Math.max(this.page + p, 0), this.numpages - 1);
-        this.grid.innerHTML = "";
+        this.carts.innerHTML = "";
         let start = this.page * 8;
         let num = Math.min(this.data.length - start, 8);
         for (let i = start; i < start + num; i++) {
             let div = document.createElement("div");
             let data = this.data[i];
-            this.grid.appendChild(div);
-            div.style.filter = `hue-rotate(${Math.floor(Math.random() * 360)}deg) saturate(0.6)`;
+            this.carts.appendChild(div);
             let cover = data.cover;
             if (cover && cover != "") {
                 div.style.backgroundImage = `url(./covers/${cover})`;
+                div.style.filter = `saturate(0.8)`;
             }
             else {
+                div.style.filter = `hue-rotate(${Math.floor(Math.random() * 360)}deg) saturate(0.8)`;
                 div.style.backgroundImage = `url(./images/cart.png)`;
                 div.innerHTML = data.name;
             }
         }
         if (p < 0) {
-            this.grid.classList.add("leftAnimation");
+            this.carts.classList.add("leftAnimation");
         }
         else if (p > 0) {
-            this.grid.classList.add("rightAnimation");
+            this.carts.classList.add("rightAnimation");
         }
     }
     generatePaging() {
@@ -83,43 +134,42 @@ class App {
             this.paging.appendChild(div);
             if (i == 0)
                 div.classList.add("selected");
-            div.style.filter = `hue-rotate(160deg);`;
         }
     }
     selectRow(dir) {
-        if (this.position.row == 3 && dir == -1) {
-            this.position.row = 2;
-            this.position.col = 4;
+        if (this.position.y == 3 && dir == -1) {
+            this.position.x = 4;
+            this.position.y = 2;
         }
-        else if (this.position.row == 2 && this.position.col < 4 && dir == 1) {
-            this.position.col += 4;
+        else if (this.position.y == 2 && this.position.x < 4 && dir == 1) {
+            this.position.x += 4;
         }
-        else if (this.position.row == 2 && this.position.col > 3 && dir == -1) {
-            this.position.col -= 4;
+        else if (this.position.y == 2 && this.position.x > 3 && dir == -1) {
+            this.position.x -= 4;
         }
         else {
-            this.position.row = Math.min(Math.max(this.position.row + dir, 0), this.menu.length - 1);
-            this.position.col = 0;
+            this.position.x = 0;
+            this.position.y = Math.min(Math.max(this.position.y + dir, 0), this.menu.length - 1);
         }
-        if (this.position.row == 3) {
-            this.position.col = this.page;
+        if (this.position.y == 3) {
+            this.position.x = this.page;
         }
-        this.updateSelection();
+        this.updateCursor();
     }
     selectColumn(dir) {
-        let maxColumn = this.menu[this.position.row].length - 1;
-        this.position.col = Math.min(Math.max(this.position.col + dir, 0), maxColumn);
-        if (this.position.row == 3) {
+        let maxColumn = this.menu[this.position.y].length - 1;
+        this.position.x = Math.min(Math.max(this.position.x + dir, 0), maxColumn);
+        if (this.position.y == 3) {
             this.generateGamePage(dir);
         }
-        this.updateSelection();
+        this.updateCursor();
     }
-    updateSelection() {
-        this.clearRow(this.position.row);
-        if (this.position.row != 4) {
-            this.clearRow(4);
+    updateCursor() {
+        this.clearSelection(this.position.y);
+        if (this.position.y != 4) {
+            this.clearSelection(4);
         }
-        if (this.position.row == 2) {
+        if (this.position.y == 2) {
             for (let c of this.menu[2]) {
                 c.classList.add("unselected");
             }
@@ -134,7 +184,7 @@ class App {
             c.classList.remove("cursor");
         this.getSelectedElement().classList.add("selected", "cursor");
     }
-    clearRow(row) {
+    clearSelection(row) {
         let buttons = this.menu[row];
         let arr = Array.from(buttons);
         for (let b of arr) {
@@ -142,66 +192,23 @@ class App {
         }
     }
     getSelectedElement() {
-        return this.menu[this.position.row][this.position.col];
-    }
-    onKeyDown(e) {
-        let charCode = e.which;
-        if (charCode == 39 || charCode == 68) {
-            this.selectColumn(1);
-        }
-        if (charCode == 37 || charCode == 65) {
-            this.selectColumn(-1);
-        }
-        if (charCode == 40 || charCode == 83) {
-            this.selectRow(1);
-        }
-        if (charCode == 38 || charCode == 87) {
-            this.selectRow(-1);
-        }
-        if (charCode == 69 || charCode == 75 || charCode == 32) {
-            this.buttonPressed();
-        }
+        return this.menu[this.position.y][this.position.x];
     }
     buttonPressed() {
-        if (this.position.row == 2) {
-            this.gotoGame(this.position.col);
+        if (this.position.y == 2) {
+            this.gotoGame(this.position.x);
         }
-        if (this.position.row == 4 && this.position.col == 0) {
-            this.toggleSound();
+        if (this.position.y == 4 && this.position.x == 0) {
+            App.instance.toggleSound();
         }
     }
-    toggleSound() {
-        this.allowSound = !this.allowSound;
-        localStorage.setItem('sound', String(this.allowSound));
-        this.menu[4][0].innerHTML = (this.allowSound) ? "SOUND:ON" : "SOUND:OFF";
-        this.updateAudio();
-    }
-    updateAudio() {
-        if (this.allowSound) {
-            this.audio.src = "./sound/bgmusic.mp3";
-            let promise = this.audio.play();
-            if (promise !== undefined) {
-                promise.then(_ => {
-                    console.log("Playing audio");
-                }).catch(error => {
-                    console.log("Foutje! " + error);
-                    this.toggleSound();
-                });
-            }
-        }
-        else {
-            this.audio.pause();
-        }
+    updateSound(b) {
+        this.menu[4][0].innerHTML = (b) ? "SOUND:ON" : "SOUND:OFF";
     }
     gotoGame(index) {
         window.location.href = this.data[index].url;
     }
-    update() {
-        this.joystick.update();
-        requestAnimationFrame(() => this.update());
-    }
 }
-window.addEventListener("load", () => new App());
 class Joystick {
     constructor(numOfButtons) {
         this.DEBUG = true;
