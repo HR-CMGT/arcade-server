@@ -13,14 +13,12 @@
         "name": "TONK",
         "url": "https://helemaalniks.github.io/TonkGame",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover" : "cover_ruimtegruis.png"
+        "players" : 1
     },{
         "name": "The Neppers",
         "url": "https://caddeh.github.io/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover": "cover_ruimtegruis.png"
+        "players" : 1
     },{
         "name": "Senpai Games",
         "url": "https://drelofs.github.io/",
@@ -35,14 +33,12 @@
         "name": "transcendence studios",
         "url": "https://wesdewess.github.io/transcendence/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover": "cover_ruimtegruis.png"
+        "players" : 1
     },{
         "name": "Winged Horse",
         "url": "http://jesseduijndam.github.io/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover": "cover_ruimtegruis.png"
+        "players" : 1
     },{
         "name" : "Night Owls",
         "url" : "https://igotnova.github.io/NightOwls/",
@@ -62,14 +58,12 @@
         "name": "FrostLab",
         "url": "https://lontech99.github.io/FrostLab/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover" : "cover_ruimtegruis.png"
+        "players" : 1
     },{
         "name": "PLayN'",
         "url": "null",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover": "cover_ruimtegruis.png"
+        "players" : 1
     },{
         "name": "Truffel",
         "url": "https://github.com/HayenPhan/Truffel.github.io",
@@ -84,13 +78,11 @@
         "name": "Los Hombres",
         "url": "https://ismailyaman.github.io/los-hombres/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover": "cover_ruimtegruis.png"
+        "players" : 1
     },{
         "name": "Steeg Productions",
         "url": "https://grunkhead.github.io/arcade_game",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover": "cover_ruimtegruis.png"
+        "players" : 1
     }
 ]
