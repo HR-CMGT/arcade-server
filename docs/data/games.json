@@ -1,7 +1,7 @@
 [
     {
         "name": "Ruimtegruis",
-        "url": "https://kokodoko.github.io/ruimtegruis/",
+        "url": "https://bpikaar.github.io/ruimtegruis/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
         "cover": "cover_ruimtegruis.png"
