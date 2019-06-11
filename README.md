@@ -23,7 +23,7 @@ The NWJS shortcut CTRL+A will always redirect from any game back to the main pag
 
 [games.json](./docs/data/games.json) a JSON file with links to the github Page of game repositories, and genres.
 
-Supply the game title, url, number of players, genres and *optionally* a cartridge image. Currently, cross-domain loading of cartridge images is not supported. The cartridge images will have to be added to this repository manually...😰
+Supply the game title, url, number of players, genres and *optionally* a cartridge image. Currently, cross-domain loading of cartridge images is not supported. The cartridge images will have to be added to this repository manually...😰 (loading them remotely is too slow...😴)
 
 ```
 {
