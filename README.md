@@ -4,13 +4,20 @@ The Frontend for the [CMGT Arcade Machine](https://hr-cmgt.github.io/arcade-serv
 
 ![screenshot](./docs/images/screenshot.png)
 
+## NWJS
+
+The DOCS folder of this repository will be [served](https://hr-cmgt.github.io/arcade-server/) on the arcade cabinet at CMGT. The browser is [NWJS](http://docs.nwjs.io/en/latest/For%20Users/Getting%20Started/#get-nwjs) in Kiosk Mode.
+
+Student games are also github repositories or other urls where their game is served.
+
+The NWJS shortcut CTRL+A will always redirect from any game back to the main page. The NWJS folder of this repo contains the package.json and index.js files for NWJS. These files have to be placed on the actual arcade machine, with the Linux version of [NWJS](https://nwjs.io/downloads/).
+
 ## Game requirements
 
+[Check the Arcade Game repository](https://github.com/HR-CMGT/arcade-game) for exact game requirements:
+
 - Resolution: 1440 x 900 (16:10), scaling may be preferable for performance reasons
-- Use [this PNG template](./docs/images/cart.png) to create a custom cartridge image!
-- Audio: WAV or OGG files. Autoplay only works after a user interaction on the page!
-- Support the Arcade stick and buttons with this [Arcade stick utility](https://github.com/HR-CMGT/arcade-game). 
-- If you use another Gamepad API, check the arcade stick utility to see how to use button 8 and 9 to redirect back to [https://hr-cmgt.github.io/arcade-server/](https://hr-cmgt.github.io/arcade-server/)
+- Support for Arcade stick and buttons
 
 ## JSON
 
@@ -27,15 +34,6 @@ Supply the game title, url, number of players, genres and *optionally* a cartrid
     "cover": "cover_ruimtegruis.png"
 }
 ```
-
-## Browser
-
-The DOCS folder of this repository will be [served](https://hr-cmgt.github.io/arcade-server/) on the arcade machine at CMGT. The browser is
-[NWJS](http://docs.nwjs.io/en/latest/For%20Users/Getting%20Started/#get-nwjs) in Kiosk Mode
-
-## Header generator
-
-http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=CMGT%20ARCADE
 
 ## TODO
 
