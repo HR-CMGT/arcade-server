@@ -1,15 +1,20 @@
 [
     {
         "name": "Ruimtegruis",
-        "url": "https://kokodoko.github.io/ruimtegruis/",
+        "url": "https://bpikaar.github.io/ruimtegruis/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
+        "players" : 2,
         "cover": "cover_ruimtegruis.png"
     },{
         "name": "Frog and Pig",
         "url": "https://bpikaar.github.io/frog-and-pig/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1
+    },{
+        "name": "ANTIVIRUS",
+        "url": "https://hr-cmgt.github.io/antivirus/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 2
     },{
         "name" : "Circles & Squares",
         "url" : "https://sunnydegraaf.github.io/circlesandsquares/",
@@ -32,7 +37,7 @@
         "players" : 1
     },{
         "name": "Senpai Games",
-        "url": "https://drelofs.github.io/",
+        "url": "https://drelofs.github.io/N-3KO/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1
     },{
@@ -87,7 +92,7 @@
         "players" : 1
     },{
         "name": "Los Hombres",
-        "url": "https://ismailyaman.github.io/los-hombres/",
+        "url": "https://ismailyaman.github.io/loshombres/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1
     },{
