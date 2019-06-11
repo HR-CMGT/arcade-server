@@ -37,6 +37,7 @@ Supply the game title, url, number of players, genres and *optionally* a cartrid
 
 ## TODO
 
+- shortcut doesn't work on LINUX (window args not found)
 - improve paging (detect left right in game menu)
 - select by criteria (players and genre)
 - credits page
