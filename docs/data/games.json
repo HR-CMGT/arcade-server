@@ -16,6 +16,11 @@
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 2
     },{
+        "name": "Grave Rampage",
+        "url": "https://zszj.github.io/CMTTHE01-4-Game",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1
+    },{
         "name" : "Circles & Squares",
         "url" : "https://sunnydegraaf.github.io/circlesandsquares/",
         "genres" : [1,1,1,0,0,0,0,0,0],
