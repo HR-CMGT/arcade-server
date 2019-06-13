@@ -2,7 +2,7 @@
 let option = {
     key: "Ctrl+l",
     active: function () {
-        let NWWindow
+        let NWWindow = nw.Window.get()
         let baseURL = "https://hr-cmgt.github.io/arcade-server/"
         // console.log("Global desktop keyboard shortcut: " + this.key + " active.");
         if (NWWindow != undefined && NWWindow != null) {
