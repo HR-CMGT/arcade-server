@@ -7,7 +7,7 @@ let baseURL = "https://hr-cmgt.github.io/arcade-server/"
 
 // CREATE SHORTCUT
 let option = {
-    key: "Ctrl+A",
+    key: "Ctrl+l",
     active: function () {
         // console.log("Global desktop keyboard shortcut: " + this.key + " active.");
         if (NWWindow != undefined && NWWindow != null) {
