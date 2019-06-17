@@ -29,7 +29,8 @@
         "name": "Nice Melon Studios",
         "url": "https://hasanbaykal.github.io/Nice-Melon-Studios/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover": "cartridge_nice_melon.png"
     },{
         "name": "TONK",
         "url": "https://helemaalniks.github.io/TonkGame",
