@@ -106,6 +106,6 @@
         "url": "https://grunkhead.github.io/arcade_game",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 2,
-        "cover" : "cartridge_steeg_productions.png"
+        "cover" : "cartridge_steeg_productions.gif"
     }
 ]
