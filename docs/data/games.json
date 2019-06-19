@@ -14,7 +14,8 @@
         "name": "ANTIVIRUS",
         "url": "https://hr-cmgt.github.io/antivirus/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 2
+        "players" : 2,
+        "cover" : "cartridge_antivirus.png"
     },{
         "name": "Grave Rampage",
         "url": "https://zszj.github.io/CMTTHE01-4-Game",
