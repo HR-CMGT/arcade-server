@@ -61,7 +61,8 @@
         "name": "Winged Horse",
         "url": "http://jesseduijndam.github.io/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover": "cart_winged_horse.png"
     },{
         "name" : "Night Owls",
         "url" : "https://igotnova.github.io/NightOwls/",
