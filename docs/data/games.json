@@ -111,8 +111,9 @@
         "cover" : "cartridge_steeg_productions.gif"
     },{
         "name": "Team Arcade Studio",
-        "url": "https://github.com/DaveKruithof/Team-Arcade-Studio",
+        "url": "https://davekruithof.github.io/Team-Arcade-Studio/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover" : "cartridge_team_arcade.png"
     }
 ]
