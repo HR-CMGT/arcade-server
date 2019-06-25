@@ -113,7 +113,6 @@
         "name": "Team Arcade Studio",
         "url": "https://davekruithof.github.io/Team-Arcade-Studio/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover" : "cartridge_team_arcade.png"
+        "players" : 1
     }
 ]
