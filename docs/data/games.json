@@ -9,7 +9,8 @@
         "name": "Frog and Pig",
         "url": "https://bpikaar.github.io/frog-and-pig/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover":"cartridge_frog_and_pig.png"
     },{
         "name": "ANTIVIRUS",
         "url": "https://hr-cmgt.github.io/antivirus/",
