@@ -72,7 +72,8 @@
         "name" : "Night Owls",
         "url" : "https://igotnova.github.io/NightOwls/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover":"cartridge_run_lucha_libre.png"
     },{
         "name" : "Addix Studio",
         "url" : "https://tortleturtle.github.io/Addix/",
