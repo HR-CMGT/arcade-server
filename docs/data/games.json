@@ -39,7 +39,7 @@
         "url": "https://helemaalniks.github.io/TonkGame",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
-        "cover": "tonk.jpg"
+        "cover":"cartridge_tonk.png"
     },{
         "name": "The Neppers",
         "url": "https://caddeh.github.io/shitfest/",
