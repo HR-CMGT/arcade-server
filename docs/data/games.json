@@ -47,7 +47,8 @@
         "name": "Senpai Games",
         "url": "https://drelofs.github.io/N-3KO/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover": "cart-senpai.gif"
     },{
         "name": "Balmundi Interactive",
         "url": " https://thijslander97.github.io/Balmundi_project/",
