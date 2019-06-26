@@ -53,7 +53,7 @@
         "url": " https://thijslander97.github.io/Balmundi_project/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
-        "cover": "cartridge_ balmundi.png"
+        "cover": "cartridge_balmundi.png"
     },{
         "name": "transcendence studios",
         "url": "https://wesdewess.github.io/transcendence/",
@@ -79,7 +79,8 @@
         "name": "Third Games",
         "url": "https://timonvw.github.io/ThirdGames/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover" : "cartridge_space_rubbers.png"
     },{
         "name": "FrostLab",
         "url": "https://lontech99.github.io/FrostLab/",
