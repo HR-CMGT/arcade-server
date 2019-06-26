@@ -15,7 +15,7 @@
         "url": "https://hr-cmgt.github.io/antivirus/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 2,
-        "cover" : "cartridge_antivirus.png"
+        "cover": "cartridge_antivirus.png"
     },{
         "name": "Grave Rampage",
         "url": "https://zszj.github.io/CMTTHE01-4-Game",
@@ -26,13 +26,13 @@
         "url" : "https://sunnydegraaf.github.io/circlesandsquares/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
-        "cover" : "cartridge_circles_squares.png"
+        "cover":"cartridge_circles_squares.png"
     },{
         "name": "Nice Melon Studios",
         "url": "https://hasanbaykal.github.io/Nice-Melon-Studios/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
-        "cover": "cartridge_nice_melon.png"
+        "cover":"cartridge_nice_melon.png"
     },{
         "name": "TONK",
         "url": "https://helemaalniks.github.io/TonkGame",
@@ -53,7 +53,7 @@
         "url": " https://thijslander97.github.io/Balmundi_project/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
-        "cover": "cartridge_balmundi.png"
+        "cover":"cartridge_balmundi.png"
     },{
         "name": "transcendence studios",
         "url": "https://wesdewess.github.io/transcendence/",
