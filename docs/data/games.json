@@ -25,7 +25,8 @@
         "name" : "Circles & Squares",
         "url" : "https://sunnydegraaf.github.io/circlesandsquares/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover" : "cartridge_circles_squares.png"
     },{
         "name": "Nice Melon Studios",
         "url": "https://hasanbaykal.github.io/Nice-Melon-Studios/",
@@ -51,7 +52,8 @@
         "name": "Balmundi Interactive",
         "url": " https://thijslander97.github.io/Balmundi_project/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover": "cartridge_ balmundi.png"
     },{
         "name": "transcendence studios",
         "url": "https://wesdewess.github.io/transcendence/",
