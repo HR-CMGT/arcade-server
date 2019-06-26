@@ -21,7 +21,8 @@
         "name": "Grave Rampage",
         "url": "https://zszj.github.io/CMTTHE01-4-Game",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover":"cartridge_grave_rampage.png"
     },{
         "name" : "Circles & Squares",
         "url" : "https://sunnydegraaf.github.io/circlesandsquares/",
