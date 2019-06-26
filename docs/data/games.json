@@ -38,7 +38,8 @@
         "name": "TONK",
         "url": "https://helemaalniks.github.io/TonkGame",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover": "tonk.jpg"
     },{
         "name": "The Neppers",
         "url": "https://caddeh.github.io/",
@@ -76,7 +77,8 @@
         "name" : "Addix Studio",
         "url" : "https://tortleturtle.github.io/Addix/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
+        "players" : 1,
+        "cover": "cart-AddixStudios.png"
     },{
         "name": "Third Games",
         "url": "https://timonvw.github.io/ThirdGames/",
