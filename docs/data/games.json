@@ -5,124 +5,127 @@
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 2,
         "cover": "cover_ruimtegruis.png"
-    },{
-        "name": "Frog and Pig",
-        "url": "https://bpikaar.github.io/frog-and-pig/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover":"cartridge_frog_and_pig.png"
-    },{
+    },
+    {
         "name": "ANTIVIRUS",
         "url": "https://hr-cmgt.github.io/antivirus/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 2,
         "cover": "cartridge_antivirus.png"
-    },{
+    },
+    {
         "name": "Grave Rampage",
         "url": "https://zszj.github.io/CMTTHE01-4-Game",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
         "cover":"cartridge_grave_rampage.png"
-    },{
-        "name" : "Circles & Squares",
-        "url" : "https://sunnydegraaf.github.io/circlesandsquares/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover":"cartridge_circles_squares.png"
-    },{
-        "name": "Nice Melon Studios",
-        "url": "https://hasanbaykal.github.io/Nice-Melon-Studios/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover":"cartridge_nice_melon.png"
-    },{
-        "name": "TONK",
-        "url": "https://helemaalniks.github.io/TonkGame",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover":"cartridge_tonk.png"
-    },{
-        "name": "The Neppers",
-        "url": "https://caddeh.github.io/shitfest/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
-    },{
-        "name": "Senpai Games",
-        "url": "https://drelofs.github.io/N-3KO/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover": "cart-senpai.gif"
-    },{
-        "name": "Balmundi Interactive",
-        "url": " https://thijslander97.github.io/Balmundi_project/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover":"cartridge_balmundi.png"
-    },{
-        "name": "transcendence studios",
-        "url": "https://wesdewess.github.io/transcendence/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
-    },{
-        "name": "Winged Horse",
-        "url": "http://jesseduijndam.github.io/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover": "cart_winged_horse.png"
-    },{
-        "name" : "Night Owls",
-        "url" : "https://igotnova.github.io/NightOwls/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover":"cartridge_run_lucha_libre.png"
-    },{
-        "name" : "Addix Studio",
-        "url" : "https://tortleturtle.github.io/Addix/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover": "cart-AddixStudios.png"
-    },{
+    }
+    ,
+    {
         "name": "Third Games",
         "url": "https://timonvw.github.io/ThirdGames/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
         "cover" : "cartridge_space_rubbers.png"
-    },{
-        "name": "FrostLab",
-        "url": "https://lontech99.github.io/FrostLab/",
+    }
+    ,
+    {
+        "name": "Frog and Pig",
+        "url": "https://bpikaar.github.io/frog-and-pig/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
-    },{
-        "name": "PLayN'",
-        "url": "null",
+        "players" : 1,
+        "cover":"cartridge_frog_and_pig.png"
+    }
+    ,
+    {
+        "name" : "Addix Studio",
+        "url" : "https://tortleturtle.github.io/Addix/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
-    },{
-        "name": "Truffel",
-        "url": "https://github.com/HayenPhan/Truffel.github.io",
+        "players" : 1,
+        "cover": "cart-AddixStudios.png"
+    }
+    ,
+    {
+        "name" : "Circles & Squares",
+        "url" : "https://sunnydegraaf.github.io/circlesandsquares/",
         "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
-    },{
+        "players" : 1,
+        "cover":"cartridge_circles_squares.png"
+    }
+    
+    ,
+    {
+        "name": "Senpai Games",
+        "url": "https://drelofs.github.io/N-3KO/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "cart-senpai.gif"
+    },
+    {
         "name": "9-bit Potatoes",
         "url": "https://louis-lau.github.io/CMGT-CLE4/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1
-    },{
+    }
+    ,
+    {
+        "name": "transcendence studios",
+        "url": "https://wesdewess.github.io/transcendence/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1
+    }
+    ,
+    {
+        "name": "Balmundi Interactive",
+        "url": " https://thijslander97.github.io/Balmundi_project/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover":"cartridge_balmundi.png"
+    }
+    ,
+    {
+        "name": "Winged Horse",
+        "url": "http://jesseduijndam.github.io/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "cart_winged_horse.png"
+    }
+    ,
+    {
+        "name" : "Night Owls",
+        "url" : "https://igotnova.github.io/NightOwls/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover":"cartridge_run_lucha_libre.png"
+    },
+
+    
+    {
         "name": "Los Hombres",
         "url": "https://ismailyaman.github.io/loshombres/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1
-    },{
+    },
+    {
         "name": "Steeg Productions",
         "url": "https://grunkhead.github.io/arcade_game",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 2,
         "cover" : "cartridge_steeg_productions.gif"
-    },{
+    },
+    {
         "name": "Team Arcade Studio",
         "url": "https://davekruithof.github.io/Team-Arcade-Studio/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
         "cover" : "cartridge_spookaway.png"
+    }
+    ,
+    {
+        "name": "TONK",
+        "url": "https://helemaalniks.github.io/TonkGame",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover":"cartridge_tonk.png"
     }
 ]
