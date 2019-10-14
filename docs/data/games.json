@@ -22,19 +22,19 @@
     }
     ,
     {
-        "name": "Third Games",
-        "url": "https://timonvw.github.io/ThirdGames/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover" : "cartridge_space_rubbers.png"
-    }
-    ,
-    {
         "name": "Frog and Pig",
         "url": "https://bpikaar.github.io/frog-and-pig/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
         "cover":"cartridge_frog_and_pig.png"
+    }
+    ,
+    {
+        "name": "Third Games",
+        "url": "https://timonvw.github.io/ThirdGames/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover" : "cartridge_space_rubbers.png"
     }
     ,
     {
@@ -44,14 +44,7 @@
         "players" : 1,
         "cover": "cart-AddixStudios.png"
     }
-    ,
-    {
-        "name" : "Circles & Squares",
-        "url" : "https://sunnydegraaf.github.io/circlesandsquares/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover":"cartridge_circles_squares.png"
-    }
+    
     
     ,
     {
@@ -98,14 +91,6 @@
         "players" : 1,
         "cover":"cartridge_run_lucha_libre.png"
     },
-
-    
-    {
-        "name": "Los Hombres",
-        "url": "https://ismailyaman.github.io/loshombres/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
-    },
     {
         "name": "Steeg Productions",
         "url": "https://grunkhead.github.io/arcade_game",
@@ -127,5 +112,13 @@
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
         "cover":"cartridge_tonk.png"
+    }
+    ,
+    {
+        "name" : "Circles & Squares",
+        "url" : "https://sunnydegraaf.github.io/circlesandsquares/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover":"cartridge_circles_squares.png"
     }
 ]
