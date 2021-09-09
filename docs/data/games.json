@@ -7,6 +7,14 @@
         "cover": "cover_ruimtegruis.png"
     },
     {
+        "name": "Robot Royale",
+        "url": "http://145.24.222.232:8080/viewer/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 2,
+        "cover": "cover_robotroyale.png"
+        
+    },
+    {
         "name": "ANTIVIRUS",
         "url": "https://hr-cmgt.github.io/antivirus/",
         "genres" : [1,1,1,0,0,0,0,0,0],
