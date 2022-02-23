@@ -132,7 +132,7 @@
     ,
     {
         "name" : "Pong",
-        "url" : "https://github.com/MaxvanSchoonderwoerd/pong/tree/main/pong%20game",
+        "url" : "https://stud.hosted.hr.nl/1007212/Games/games/pong%20game/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 2,
         "cover":"pong.png"
