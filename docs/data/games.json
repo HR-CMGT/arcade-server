@@ -67,6 +67,14 @@
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1
     }
+    
+    ,
+    {
+        "name": "Hopper",
+        "url": "https://bpikaar.github.io/hopper/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1
+    }
     ,
     {
         "name": "transcendence studios",
