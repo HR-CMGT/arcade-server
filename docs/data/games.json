@@ -8,7 +8,7 @@
     },
     {
         "name": "Robot Royale",
-        "url": "http://145.24.222.232:8080/viewer/",
+        "url": "https://programmeren9.cmgt.hr.nl:8080/viewer/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 2,
         "cover": "cartridge_robotroyale.png"
