@@ -6,9 +6,9 @@
         "players" : 2,
         "cover": "cover_ruimtegruis.png"
     },
-     {
+    {
         "name": "AKino",
-        "url": "https://github.com/Isissss/CLE4/tree/Arcade",
+        "url": "https://isissss.github.io/CLE4/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
         "cover": ""
