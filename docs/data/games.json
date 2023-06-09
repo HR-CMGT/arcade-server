@@ -13,6 +13,14 @@
         "players" : 1,
         "cover": ""
         
+    },
+    {
+        "name": "Ski Mountain",
+        "url": "https://radiazom.github.io/prg4-javascript-2023/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "cartridge_skimountain.png"
+        
     }, 
     {
         "name": "Robot Royale",
