@@ -21,7 +21,14 @@
         "players" : 1,
         "cover": "cartridge_skimountain.png"
         
-    }, 
+    },
+    {
+        "name": "Soupreme Leader",
+        "url": "https://soupremeleader.github.io/Prg4/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": ""
+    },
     {
         "name": "Robot Royale",
         "url": "https://programmeren9.cmgt.hr.nl:8080/viewer/",
