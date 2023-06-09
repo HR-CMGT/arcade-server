@@ -36,16 +36,7 @@
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 2,
         "cover": "cartridge_antivirus.png"
-    }
-    ,
-    {
-        "name" : "Pong",
-        "url" : "https://stud.hosted.hr.nl/1007212/Games/games/pong%20game/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 2,
-        "cover":"pong.png"
-    }
-    ,
+    },
     {
         "name": "Frog and Pig",
         "url": "https://bpikaar.github.io/frog-and-pig/",
