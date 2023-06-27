@@ -37,6 +37,13 @@
         "cover": ""
     },
     {
+        "name" : "schiejump",
+        "url" : "https://hamid1103.github.io/CLE4Game/",
+        "genres" : [0,1,0,0,0,0,0,0,0],
+        "players" : 2,
+        "cover":"schiejump.png"
+    },	
+    {
         "name": "Robot Royale",
         "url": "https://programmeren9.cmgt.hr.nl:8080/viewer/",
         "genres" : [1,1,1,0,0,0,0,0,0],
@@ -165,13 +172,5 @@
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
         "cover":"cartridge_rob_ai.png"
-    }
-	,
-	{
-        "name" : "schiejump",
-        "url" : "https://hamid1103.github.io/CLE4Game/",
-        "genres" : [0,1,0,0,0,0,0,0,0],
-        "players" : 2,
-        "cover":"schiejump.png"
     }
 ]
