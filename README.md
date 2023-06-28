@@ -41,31 +41,11 @@ Gebruik dit image als basis
 <img src="./docs/images/cart.png">
 
 
-## TODO
-
-- shortcut doesn't work on LINUX (window args not found)
-- improve paging (detect left right in game menu)
-- select by criteria (players and genre)
-- credits page
-- instructions page
-- about page
-- keyboard input separate
-- enable touch input when touch detected
-
-## Nice to have
-
-- Mobile view (just for showcase purposes)
-- Open Unity games from NWJS menu
-```
-var exec = require('child_process').execFile;
-
-exec('C:/asd/test.exe', function(err, data) {  
-        console.log(err)
-        console.log(data.toString());                       
-});
-```
 
 ## Credits
 
 - [Tim Borowy](https://github.com/TimBorowy) and [GrunkHead Dave](https://github.com/Grunkhead) for setting up the first iteration of the UI and the server.
 - [Louis](https://github.com/KokoDoko/ruimtegruis/issues?q=is%3Apr+author%3Alouis-lau) for fixing the game scaling bug.
+- Leanne, Rob, Erik, Bob voor het bestellen en timmeren van de kast
+- Hamid voor het updaten van Ubuntu
+- Antwan voor het boos kijken
