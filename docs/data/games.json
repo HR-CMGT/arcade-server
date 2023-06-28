@@ -42,6 +42,13 @@
         "genres" : [0,1,0,0,0,0,0,0,0],
         "players" : 2,
         "cover":"schiejump.png"
+    },
+    {
+        "name" : "Melodies of Mystery",
+        "url" : "https://zaidprojectsdev.github.io/HA_Agent_CLE4/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover":"Melodies.png"
     },	
     {
         "name": "Robot Royale",
@@ -172,15 +179,5 @@
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
         "cover":"cartridge_rob_ai.png"
-    }
-    
-    ,
-
-    {
-        "name" : "Melodies of Mystery",
-        "url" : "https://zaidprojectsdev.github.io/HA_Agent_CLE4/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover":"Melodies.png"
     }
 ]
