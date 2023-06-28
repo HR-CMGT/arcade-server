@@ -34,6 +34,12 @@ Supply the game title, url, number of players, genres and *optionally* a cartrid
     "cover": "cover_ruimtegruis.png"
 }
 ```
+## Cartridge image
+
+Gebruik dit image als basis 
+
+<img src="./docs/images/cart.png">
+
 
 ## TODO
 
