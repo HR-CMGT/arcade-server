@@ -51,7 +51,16 @@ Je kan een link naar je makecode arcade game toevoegen aan games.json. Dan zet j
 
 ## Running this project
 
-Aanpassingen in de typescript `dev` map moet je publiceren naar de `docs` map met CMD+SHIFT+B.
+Aanpassingen in de typescript `dev` map moet je publiceren naar de `docs` map met `tsc` (typescript compiler). In VS Code doe je ***CMD+SHIFT+B***.
+
+## TODO
+
+Genres aanpassen naar:
+
+- Excalibur
+- Pixi
+- Makecode
+- Unity
 
 ## Credits
 

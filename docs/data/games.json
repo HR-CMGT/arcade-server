@@ -14,14 +14,6 @@
         "cover": "cover_armadillo.png"
     },
     {
-        "name": "Brombeer",
-        "url": "https://arcade.makecode.com/S14111-71227-26685-67016",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover": "",
-        "makecode": true
-    },
-    {
         "name": "Suzy the Witchy",
         "url": "https://arcade.makecode.com/S05263-10706-41937-72354",
         "genres" : [1,1,1,0,0,0,0,0,0],
@@ -44,8 +36,7 @@
         "players" : 1,
         "cover": "",
         "makecode": true
-    },
-     {
+    },{
         "name": "Gobbo Quest",
         "url": "https://arcade.makecode.com/97301-29339-79818-69048",
         "genres" : [1,1,1,0,0,0,0,0,0],
@@ -54,13 +45,62 @@
         "makecode": true
     },{
         "name": "Go Save Duck",
-        "url": "https: //arcade.makecode.com/67259-00201-10477-38534",
+        "url": "https://arcade.makecode.com/67259-00201-10477-38534",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "",
+        "makecode": true
+    },{
+        "name": "Javelin",
+        "url": "https://arcade.makecode.com/22112-78499-75392-08037",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "",
+        "makecode": true
+    },{
+        "name": "Jump Quest",
+        "url": "https://arcade.makecode.com/57358-07743-81626-49869",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
         "cover": "",
         "makecode": true
     },
     {
+        "name": "Spider Hell",
+        "url": "https://arcade.makecode.com/S65382-68460-60306-93511",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "",
+        "makecode": true
+    },{
+        "name": "Mia's monster quest",
+        "url": "https://arcade.makecode.com/S92737-05882-95164-37042",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "",
+        "makecode": true
+    },{
+        "name": "Candy Mountain",
+        "url": "https://arcade.makecode.com/S63501-87583-92670-87101",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "",
+        "makecode": true
+    },{
+        "name": "Gambling Game",
+        "url": "https://arcade.makecode.com/23461-05516-67769-91672",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "",
+        "makecode": true
+    },{
+        "name": "Brombeer",
+        "url": "https://arcade.makecode.com/S14111-71227-26685-67016",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "",
+        "makecode": true
+    },{
         "name": "Shoot all the things",
         "url": "https://bpikaar.github.io/excalibur-shoot-them-up/",
         "genres" : [1,1,1,0,0,0,0,0,0],
@@ -68,19 +108,19 @@
         "cover": ""
     },
     {
-        "name": "AKino",
-        "url": "https://isissss.github.io/CLE4/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover": ""
-        
-    },
-    {
         "name": "Ski Mountain",
         "url": "https://radiazom.github.io/prg4-javascript-2023/",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
         "cover": "cartridge_skimountain.png"
+        
+    },
+    {
+        "name": "AKino",
+        "url": "https://isissss.github.io/CLE4/",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": ""
         
     },
     {
