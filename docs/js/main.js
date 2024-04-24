@@ -164,7 +164,7 @@ class GridMenu {
             this.showPageNumber();
             this.position.x = 8;
         }
-        else if (this.position.y == 1 && this.position.x == 7 && dir == 1 && this.page < this.numpages - 1) {
+        if (this.position.y == 1 && this.position.x == 7 && dir == 1 && this.page < this.numpages - 1) {
             this.generateGamePage(dir);
             this.showPageNumber();
             this.position.x = -1;

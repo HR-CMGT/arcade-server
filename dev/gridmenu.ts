@@ -83,7 +83,6 @@ class GridMenu {
     }
 
     public selectRow(dir: number) {
-        
         if (this.position.y == 2 && dir == -1) {
             // als we van paging naar games gaan, dan altijd column 4 selecteren
             this.position.x = 4
@@ -91,15 +90,15 @@ class GridMenu {
         } else if (this.position.y == 1 && this.position.x < 4 && dir == 1) {
             // the game grid really has 8 columns - but they are displayed as two rows with 4 columns in a grid
             // this if statement adds the ability to switch vertically between columns
-            this.position.x += 4
+           this.position.x += 4
         } else if (this.position.y == 1 && this.position.x > 3 && dir == -1) {
-            this.position.x -= 4
+           this.position.x -= 4
         } else {
             // selecteer nieuwe row binnen min en max aantal rows
             this.position.x = 0
             this.position.y = Math.min(Math.max(this.position.y + dir, 0), this.menu.length - 1)
         }
-        // als we naar de paging row zijn gegaan, dan is de column de huidige page
+        // // als we naar de paging row zijn gegaan, dan is de column de huidige page
         if (this.position.y == 2) {
             this.position.x = this.page
         }
@@ -108,17 +107,21 @@ class GridMenu {
     }
 
     public selectColumn(dir: number) {
-        // als we in de games row zijn, dan kan je met links/rechts ook naar een nieuwe page gaan
+        // todo rewrite the whole paging / row selection
+
+        // links - vorige pagina
         if (this.position.y == 1 && this.position.x == 0 && dir == -1 && this.page > 0) {
             this.generateGamePage(dir)
             this.showPageNumber()
             this.position.x = 8
-        } else if (this.position.y == 1 && this.position.x == 7 && dir == 1 && this.page < this.numpages - 1) {
+        } 
+        
+        // rechts - volgende pagina
+        if (this.position.y == 1 && this.position.x == 7 && dir == 1 && this.page < this.numpages - 1) {
             this.generateGamePage(dir)
             this.showPageNumber()
             this.position.x = -1
         }
-
 
 
         let maxColumn = this.menu[this.position.y].length - 1

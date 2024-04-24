@@ -55,6 +55,7 @@ Aanpassingen in de typescript `dev` map moet je publiceren naar de `docs` map me
 ## TODO
 
 - Vertical flex layout (of css grid)
+- Rewrite the whole pagination spaghetti code
 
 ## Credits
 
