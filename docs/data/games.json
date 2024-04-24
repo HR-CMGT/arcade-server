@@ -14,11 +14,12 @@
         "cover": "cover_armadillo.png"
     },
     {
-        "name": "Brombeer (MakeCode)",
+        "name": "Brombeer",
         "url": "https://arcade.makecode.com/S14111-71227-26685-67016",
         "genres" : [1,1,1,0,0,0,0,0,0],
         "players" : 1,
-        "cover": ""
+        "cover": "",
+        "makecode": true
     },
     {
         "name": "Excalibur gamepad test",
