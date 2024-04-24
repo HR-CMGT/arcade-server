@@ -29,6 +29,37 @@
         "cover": "",
         "makecode": true
     },
+     {
+        "name": "You're aMAZEing",
+        "url": "https://arcade.makecode.com/13421-83082-88835-99355",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "",
+        "makecode": true
+    },
+     {
+        "name": "CMGTerror",
+        "url": "https://arcade.makecode.com/10728-52325-89233-73608",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "",
+        "makecode": true
+    },
+     {
+        "name": "Gobbo Quest",
+        "url": "https://arcade.makecode.com/97301-29339-79818-69048",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "",
+        "makecode": true
+    },{
+        "name": "Go Save Duck",
+        "url": "https: //arcade.makecode.com/67259-00201-10477-38534",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "",
+        "makecode": true
+    },
     {
         "name": "Shoot all the things",
         "url": "https://bpikaar.github.io/excalibur-shoot-them-up/",
