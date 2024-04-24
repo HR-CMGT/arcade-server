@@ -31,7 +31,6 @@ If you set `makecode` to `true`, an alternative cartridge image will be used.
 {
     "name": "Ruimtegruis",
     "url": "https://kokodoko.github.io/ruimtegruis/",
-    "genres" : [1,1,1,0,0,0,0,0,0],
     "players" : 1,
     "cover": "cover_ruimtegruis.png",
     "makecode" : false
