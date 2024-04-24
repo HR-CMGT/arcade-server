@@ -4,6 +4,7 @@ interface GameData {
     genres:number[]
     players:number
     cover?:string
+    makecode?:boolean
 }
 
 interface Vector {

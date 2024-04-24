@@ -53,7 +53,8 @@ class GridMenu {
                 div.style.filter = `saturate(0.8)`;
             } else {
                 div.style.filter = `hue-rotate(${Math.floor(Math.random() * 360)}deg) saturate(0.8)`;
-                div.style.backgroundImage = `url(./images/cart.png)`
+                //let makecode = data.makecode
+                div.style.backgroundImage = (data.makecode) ? `url(./images/cart-makecode.png)` : `url(./images/cart.png)`
                 div.innerHTML = data.name
             }
         }

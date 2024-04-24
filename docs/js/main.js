@@ -113,7 +113,7 @@ class GridMenu {
             }
             else {
                 div.style.filter = `hue-rotate(${Math.floor(Math.random() * 360)}deg) saturate(0.8)`;
-                div.style.backgroundImage = `url(./images/cart.png)`;
+                div.style.backgroundImage = (data.makecode) ? `url(./images/cart-makecode.png)` : `url(./images/cart.png)`;
                 div.innerHTML = data.name;
             }
         }
@@ -208,17 +208,6 @@ class GridMenu {
     }
 }
 class Joystick {
-    constructor(numOfButtons) {
-        this.DEBUG = true;
-        this.numberOfBUttons = 0;
-        this.axes = [];
-        this.isConnected = false;
-        this.numberOfBUttons = numOfButtons;
-        this.axes.push(0, 0);
-        window.addEventListener("gamepadconnected", (e) => this.onGamePadConnected(e));
-        window.addEventListener("gamepaddisconnected", () => this.onGamePadDisConnected());
-        this.update();
-    }
     get Left() {
         return (this.axes[0] == -1);
     }
@@ -230,6 +219,17 @@ class Joystick {
     }
     get Down() {
         return (this.axes[1] == 1);
+    }
+    constructor(numOfButtons) {
+        this.DEBUG = true;
+        this.numberOfBUttons = 0;
+        this.axes = [];
+        this.isConnected = false;
+        this.numberOfBUttons = numOfButtons;
+        this.axes.push(0, 0);
+        window.addEventListener("gamepadconnected", (e) => this.onGamePadConnected(e));
+        window.addEventListener("gamepaddisconnected", () => this.onGamePadDisConnected());
+        this.update();
     }
     onGamePadConnected(e) {
         if (this.DEBUG) {

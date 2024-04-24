@@ -25,13 +25,16 @@ The NWJS shortcut CTRL+A will always redirect from any game back to the main pag
 
 Supply the game title, url, number of players, genres and *optionally* a cartridge image. Currently, cross-domain loading of cartridge images is not supported. The cartridge images will have to be added to this repository manually...😰 (loading them remotely is too slow...😴)
 
+If you set `makecode` to `true`, an alternative cartridge image will be used.
+
 ```
 {
     "name": "Ruimtegruis",
     "url": "https://kokodoko.github.io/ruimtegruis/",
     "genres" : [1,1,1,0,0,0,0,0,0],
     "players" : 1,
-    "cover": "cover_ruimtegruis.png"
+    "cover": "cover_ruimtegruis.png",
+    "makecode" : false
 }
 ```
 ## Cartridge image
@@ -40,7 +43,15 @@ Gebruik dit image als basis
 
 <img src="./docs/images/cart.png">
 
+## Makecode Arcade
 
+Je kan een link naar je makecode arcade game toevoegen aan games.json. Dan zet je `makecode` op true, je krijgt dan automatisch onderstaand cartridge image:
+
+<img src="./docs/images/cart-makecode.png">
+
+## Running this project
+
+Aanpassingen in de typescript `dev` map moet je publiceren met CMD+SHIFT+B.
 
 ## Credits
 
