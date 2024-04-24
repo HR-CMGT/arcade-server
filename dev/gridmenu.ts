@@ -69,6 +69,8 @@ class GridMenu {
         } else if (p > 0) {
             this.carts.classList.add("rightAnimation")
         }
+
+        //this.showPageNumber()
     }
 
     private generatePaging() {
@@ -81,6 +83,7 @@ class GridMenu {
     }
 
     public selectRow(dir: number) {
+        
         if (this.position.y == 2 && dir == -1) {
             // als we van paging naar games gaan, dan altijd column 4 selecteren
             this.position.x = 4
@@ -96,11 +99,6 @@ class GridMenu {
             this.position.x = 0
             this.position.y = Math.min(Math.max(this.position.y + dir, 0), this.menu.length - 1)
         }
-        // console.log("now at " + this.position.y)
-        // console.log("maximum is " + this.menu.length)
-        
-
-
         // als we naar de paging row zijn gegaan, dan is de column de huidige page
         if (this.position.y == 2) {
             this.position.x = this.page
@@ -110,10 +108,18 @@ class GridMenu {
     }
 
     public selectColumn(dir: number) {
-        // TODO als we in de games row zijn, dan kan je met links/rechts ook naar een nieuwe page gaan
-        //if (this.position.y == 2 && this.position.x == 0 && dir == -1) {
-        //    this.generateGamePage(dir)
-        //}
+        // als we in de games row zijn, dan kan je met links/rechts ook naar een nieuwe page gaan
+        if (this.position.y == 1 && this.position.x == 0 && dir == -1 && this.page > 0) {
+            this.generateGamePage(dir)
+            this.showPageNumber()
+            this.position.x = 8
+        } else if (this.position.y == 1 && this.position.x == 7 && dir == 1 && this.page < this.numpages - 1) {
+            this.generateGamePage(dir)
+            this.showPageNumber()
+            this.position.x = -1
+        }
+
+
 
         let maxColumn = this.menu[this.position.y].length - 1
         this.position.x = Math.min(Math.max(this.position.x + dir, 0), maxColumn)
@@ -158,6 +164,18 @@ class GridMenu {
         let arr = Array.from(buttons)
         for (let b of arr) {
             b.classList.remove("selected")
+        }
+    }
+
+    private showPageNumber(){
+        let buttons: HTMLCollection = this.menu[2]
+        let arr = Array.from(buttons)
+        for (let i = 0; i < this.numpages; i++) {
+            if (i == this.page) {
+                arr[i].classList.add("selected")
+            } else {
+                arr[i].classList.remove("selected")
+            }
         }
     }
 

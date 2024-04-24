@@ -159,6 +159,16 @@ class GridMenu {
         this.updateCursor();
     }
     selectColumn(dir) {
+        if (this.position.y == 1 && this.position.x == 0 && dir == -1 && this.page > 0) {
+            this.generateGamePage(dir);
+            this.showPageNumber();
+            this.position.x = 8;
+        }
+        else if (this.position.y == 1 && this.position.x == 7 && dir == 1 && this.page < this.numpages - 1) {
+            this.generateGamePage(dir);
+            this.showPageNumber();
+            this.position.x = -1;
+        }
         let maxColumn = this.menu[this.position.y].length - 1;
         this.position.x = Math.min(Math.max(this.position.x + dir, 0), maxColumn);
         if (this.position.y == 2) {
@@ -191,6 +201,18 @@ class GridMenu {
         let arr = Array.from(buttons);
         for (let b of arr) {
             b.classList.remove("selected");
+        }
+    }
+    showPageNumber() {
+        let buttons = this.menu[2];
+        let arr = Array.from(buttons);
+        for (let i = 0; i < this.numpages; i++) {
+            if (i == this.page) {
+                arr[i].classList.add("selected");
+            }
+            else {
+                arr[i].classList.remove("selected");
+            }
         }
     }
     getSelectedElement() {
