@@ -51,7 +51,7 @@ Je kan een link naar je makecode arcade game toevoegen aan games.json. Dan zet j
 
 ## Running this project
 
-Aanpassingen in de typescript `dev` map moet je publiceren met CMD+SHIFT+B.
+Aanpassingen in de typescript `dev` map moet je publiceren naar de `docs` map met CMD+SHIFT+B.
 
 ## Credits
 

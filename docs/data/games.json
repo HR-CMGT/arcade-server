@@ -22,6 +22,14 @@
         "makecode": true
     },
     {
+        "name": "Suzy the Witchy",
+        "url": "https://arcade.makecode.com/S05263-10706-41937-72354",
+        "genres" : [1,1,1,0,0,0,0,0,0],
+        "players" : 1,
+        "cover": "",
+        "makecode": true
+    },
+    {
         "name": "Shoot all the things",
         "url": "https://bpikaar.github.io/excalibur-shoot-them-up/",
         "genres" : [1,1,1,0,0,0,0,0,0],
