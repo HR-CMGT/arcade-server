@@ -28,8 +28,7 @@
         "players" : 1,
         "cover": "",
         "makecode": true
-    },
-     {
+    },{
         "name": "CMGTerror",
         "url": "https://arcade.makecode.com/10728-52325-89233-73608",
         "genres" : [1,1,1,0,0,0,0,0,0],

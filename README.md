@@ -55,12 +55,7 @@ Aanpassingen in de typescript `dev` map moet je publiceren naar de `docs` map me
 
 ## TODO
 
-Genres aanpassen naar:
-
-- Excalibur
-- Pixi
-- Makecode
-- Unity
+- Vertical flex layout (of css grid)
 
 ## Credits
 

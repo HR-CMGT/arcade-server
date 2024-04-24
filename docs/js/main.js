@@ -92,7 +92,6 @@ class GridMenu {
         this.generateGamePage(this.page);
         this.generatePaging();
         this.menu.push(document.querySelector("#player-menu").children);
-        this.menu.push(document.querySelector("#genre-menu").children);
         this.menu.push(document.querySelector("#game-grid").children);
         this.menu.push(document.querySelector("#page-menu").children);
         this.menu.push(document.querySelector("#credits-menu").children);
@@ -140,21 +139,21 @@ class GridMenu {
         }
     }
     selectRow(dir) {
-        if (this.position.y == 3 && dir == -1) {
+        if (this.position.y == 2 && dir == -1) {
             this.position.x = 4;
-            this.position.y = 2;
+            this.position.y = 1;
         }
-        else if (this.position.y == 2 && this.position.x < 4 && dir == 1) {
+        else if (this.position.y == 1 && this.position.x < 4 && dir == 1) {
             this.position.x += 4;
         }
-        else if (this.position.y == 2 && this.position.x > 3 && dir == -1) {
+        else if (this.position.y == 1 && this.position.x > 3 && dir == -1) {
             this.position.x -= 4;
         }
         else {
             this.position.x = 0;
             this.position.y = Math.min(Math.max(this.position.y + dir, 0), this.menu.length - 1);
         }
-        if (this.position.y == 3) {
+        if (this.position.y == 2) {
             this.position.x = this.page;
         }
         this.updateCursor();
@@ -162,23 +161,23 @@ class GridMenu {
     selectColumn(dir) {
         let maxColumn = this.menu[this.position.y].length - 1;
         this.position.x = Math.min(Math.max(this.position.x + dir, 0), maxColumn);
-        if (this.position.y == 3) {
+        if (this.position.y == 2) {
             this.generateGamePage(dir);
         }
         this.updateCursor();
     }
     updateCursor() {
         this.clearSelection(this.position.y);
-        if (this.position.y != 4) {
-            this.clearSelection(4);
+        if (this.position.y != 3) {
+            this.clearSelection(3);
         }
-        if (this.position.y == 2) {
-            for (let c of this.menu[2]) {
+        if (this.position.y == 1) {
+            for (let c of this.menu[1]) {
                 c.classList.add("unselected");
             }
         }
         else {
-            for (let c of this.menu[2]) {
+            for (let c of this.menu[1]) {
                 c.classList.remove("unselected");
             }
         }
@@ -198,16 +197,18 @@ class GridMenu {
         return this.menu[this.position.y][this.position.x];
     }
     buttonPressed() {
-        if (this.position.y == 2) {
+        if (this.position.y == 0) {
+        }
+        if (this.position.y == 1) {
             let index = this.position.x + (this.page * 8);
             this.gotoGame(index);
         }
-        if (this.position.y == 4 && this.position.x == 0) {
+        if (this.position.y == 3 && this.position.x == 0) {
             App.instance.toggleSound();
         }
     }
     updateSound(b) {
-        this.menu[4][0].innerHTML = (b) ? "SOUND:ON" : "SOUND:OFF";
+        this.menu[3][0].innerHTML = (b) ? "SOUND:ON" : "SOUND:OFF";
     }
     gotoGame(index) {
         window.location.href = this.data[index].url;

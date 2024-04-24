@@ -24,6 +24,8 @@ container {
     cursor: none;
 }
 
+
+
 /* animation op video testen - CPU hit 
 foreground {
    filter: blur(2px);
@@ -62,6 +64,7 @@ header {
     font-size: 1.8vw;
     justify-content: center;
     height: 10vh;
+    margin-bottom:4vh;
 }
 
 #player-menu div {
@@ -110,22 +113,25 @@ header {
     display: flex;
     transition: transform 0.2s ease-out;
     justify-content: center;
+    line-height: 160%;
 
+    box-sizing: border-box;
 }
 
-/* makecode cartridges */
-
+/* regular cartridges */
 .cartridge {
     font-size: 1.2vw;
-    line-height: 160%;
     padding: 2vw 5vw;
     align-items: center;
 }
 
+/* makecode cartridges */
 .makecode {
-    line-height: 110%;
     font-size: 0.75vw;
-    padding: 7vh 10vw;
+    padding-top: 6.2vh;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    background-size:contain;
 }
 
 /* will get added if we are in the games row for all unselected games */
