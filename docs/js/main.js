@@ -115,6 +115,12 @@ class GridMenu {
                 div.style.filter = `hue-rotate(${Math.floor(Math.random() * 360)}deg) saturate(0.8)`;
                 div.style.backgroundImage = (data.makecode) ? `url(./images/cart-makecode.png)` : `url(./images/cart.png)`;
                 div.innerHTML = data.name;
+                if (data.makecode) {
+                    div.classList.add("makecode");
+                }
+                else {
+                    div.classList.add("cartridge");
+                }
             }
         }
         if (p < 0) {

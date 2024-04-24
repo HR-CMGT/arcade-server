@@ -49,13 +49,19 @@ class GridMenu {
             // TODO only hue rotate if there is no original cover image
             let cover = data.cover
             if (cover && cover != "") {
+                // custom cover image
                 div.style.backgroundImage = `url(./covers/${cover})`
                 div.style.filter = `saturate(0.8)`;
             } else {
+                // generic cover for cartdrige or makecode
                 div.style.filter = `hue-rotate(${Math.floor(Math.random() * 360)}deg) saturate(0.8)`;
-                //let makecode = data.makecode
                 div.style.backgroundImage = (data.makecode) ? `url(./images/cart-makecode.png)` : `url(./images/cart.png)`
                 div.innerHTML = data.name
+                if (data.makecode) {
+                    div.classList.add("makecode")
+                } else {
+                    div.classList.add("cartridge")
+                }
             }
         }
 
