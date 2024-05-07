@@ -12,6 +12,12 @@
         "cover": "cover_armadillo.png"
     },
     {
+        "name": "Hefpark Hopper",
+        "url": "https: //hr-cmgt.github.io/Hefpark-Hopper/",
+        "players": 1,
+        "cover": "cover_hefpark.png"
+    },
+    {
         "name": "Suzy the Witchy",
         "url": "https://arcade.makecode.com/S05263-10706-41937-72354",
         "players": 1,
