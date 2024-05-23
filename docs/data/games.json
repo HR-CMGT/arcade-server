@@ -60,6 +60,13 @@
         "makecode": true
     },
     {
+        "name": "Don't Stop Jumping",
+        "url": "https://hr-cmgt.github.io/PRG04-2023-2024-finished/dont-stop-jumping/docs/",
+        "players": 2,
+        "cover": "",
+        "makecode": false
+    },
+    {
         "name": "Jump Quest",
         "url": "https://arcade.makecode.com/57358-07743-81626-49869",
         "players": 1,
