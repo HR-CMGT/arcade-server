@@ -12,6 +12,10 @@ Student games are also github repositories or other urls where their game is ser
 
 The NWJS shortcut CTRL+A will always redirect from any game back to the main page. The NWJS folder of this repo contains the package.json and index.js files for NWJS. These files have to be placed on the actual arcade machine, with the Linux version of [NWJS](https://nwjs.io/downloads/).
 
+### Updating NWJS and Chromium
+
+Download the latest [NWJS](https://nwjs.io/downloads/) on ubuntu. Unzip and place all the files in the existing nwjs project. Do not remove/replace `index.js, app.js, bg.js`.
+
 ## Game requirements
 
 [Check the Arcade Game repository](https://github.com/HR-CMGT/arcade-game) for exact game requirements:
