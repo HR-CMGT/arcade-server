@@ -18,6 +18,12 @@
         "cover": "cover_hefpark.png"
     },
     {
+        "name": "Googly Eyes?",
+        "url": "https://leabits.github.io/PRG04-Googly-Eyes/",
+        "players": 1,
+        "cover": "cart_googly_eyes.png"
+    },
+    {
         "name": "Suzy the Witchy",
         "url": "https://arcade.makecode.com/S05263-10706-41937-72354",
         "players": 1,
