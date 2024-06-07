@@ -248,5 +248,17 @@
         "url": "https://lucashijman6.github.io/Rob.AI/",
         "players": 1,
         "cover": "cartridge_rob_ai.png"
+    },
+    {
+        "name": "Carmageddon v0.1",
+        "url": "https://hr-cmgt.github.io/PRG04-2023-2024-finished/carmageddon/docs/",
+        "players" : 1,
+        "makecode" : false
+    },
+    {
+        "name": "Jump around v0.1beta",
+        "url": "https://basboot.github.io/jump-around/",
+        "players" : 1,
+        "makecode" : false
     }
 ]
