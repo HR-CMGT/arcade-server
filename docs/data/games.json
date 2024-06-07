@@ -30,6 +30,20 @@
         "cover": "cartridge_skimountain.png"
     },
     {
+        "name": "Don't Stop Jumping",
+        "url": "https://hr-cmgt.github.io/PRG04-2023-2024-finished/dont-stop-jumping/docs/",
+        "players": 2,
+        "cover": "cartridge-jumping.png",
+        "makecode": false
+    },
+    {
+        "name": "Bob the Dayman",
+        "url": "https://hidde-scheringa.github.io/Bob-The-Dayman-game/",
+        "players": 1,
+        "cover": "cartridge-dayman.png",
+        "makecode": false
+    },
+    {
         "name": "Suzy the Witchy",
         "url": "https://arcade.makecode.com/S05263-10706-41937-72354",
         "players": 1,
@@ -70,13 +84,6 @@
         "players": 1,
         "cover": "",
         "makecode": true
-    },
-    {
-        "name": "Don't Stop Jumping",
-        "url": "https://hr-cmgt.github.io/PRG04-2023-2024-finished/dont-stop-jumping/docs/",
-        "players": 2,
-        "cover": "",
-        "makecode": false
     },
     {
         "name": "Jump Quest",
@@ -121,10 +128,10 @@
         "makecode": true
     },
     {
-        "name": "Shoot all the things",
-        "url": "https://bpikaar.github.io/excalibur-shoot-them-up/",
+        "name": "ANTIVIRUS",
+        "url": "https://hr-cmgt.github.io/antivirus/",
         "players": 2,
-        "cover": ""
+        "cover": "cartridge_antivirus.png"
     },
     {
         "name": "AKino",
@@ -157,12 +164,6 @@
         "cover": "cartridge_robotroyale.png"
     },
     {
-        "name": "ANTIVIRUS",
-        "url": "https://hr-cmgt.github.io/antivirus/",
-        "players": 2,
-        "cover": "cartridge_antivirus.png"
-    },
-    {
         "name": "Frog and Pig",
         "url": "https://bpikaar.github.io/frog-and-pig/",
         "players": 1,
@@ -179,6 +180,12 @@
         "url": "https://tortleturtle.github.io/Addix/",
         "players": 1,
         "cover": "cart-AddixStudios.png"
+    },
+    {
+        "name": "Shoot all the things",
+        "url": "https://bpikaar.github.io/excalibur-shoot-them-up/",
+        "players": 2,
+        "cover": ""
     },
     {
         "name": "Team Arcade Studio",
@@ -250,13 +257,14 @@
         "cover": "cartridge_rob_ai.png"
     },
     {
-        "name": "Carmageddon v0.1",
+        "name": "Carmageddon",
         "url": "https://hr-cmgt.github.io/PRG04-2023-2024-finished/carmageddon/docs/",
-        "players" : 1,
-        "makecode" : false
+        "players": 1,
+        "cover": "cart-mageddon.png",
+        "makecode": false
     },
     {
-        "name": "Jump around v0.1beta",
+        "name": "Jump around",
         "url": "https://basboot.github.io/jump-around/",
         "players" : 1,
         "makecode" : false

@@ -87,6 +87,7 @@ export class App {
         this.selectedRow = Math.min(Math.max(this.selectedRow + dir, 0), 4)
     }
     
+    // todo just ask the current active menu what to do with the CHANGE ROW command
     private getSelectedMenu() : GameMenu | CreditsMenu | Paging {
         switch(this.selectedRow){
             case 0:
@@ -191,14 +192,6 @@ export class App {
         this.joystick.update()
         requestAnimationFrame(() => this.update())
     }
-
-    // todo test of dit uberhaupt werkt
-    /*
-    private testRemoveListeners(){
-        document.removeEventListener("cursorX", (e: Event) => this.joyStickX(e as CustomEvent))
-        document.removeEventListener("cursorY", (e: Event) => this.joyStickY(e as CustomEvent))
-    }
-    */
 
 }
 

@@ -9,8 +9,8 @@ export class CreditsMenu {
     constructor() {
         const menutexts = [
             "SOUND: ON",
+            "Add your game!",
             "Credits",
-            "Instructions",
             "About CMGT"
         ]
         this.container = document.querySelector("credits-menu")!
