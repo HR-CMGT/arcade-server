@@ -1,0 +1,160 @@
+.rainbow {
+    background: linear-gradient(270deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #8B00FF);
+    background-size: 400% 400%;
+    color: transparent;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-animation: TitleAnimation 10s ease infinite;
+    animation: TitleAnimation 10s ease infinite;
+}
+
+.leftAnimation {
+    animation: GridLeftAnimation 0.5s ease-out;
+}
+
+.rightAnimation {
+    animation: GridRightAnimation 0.5s ease-out;
+}
+
+@keyframes GameSelectAnimation {
+    0% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1.35);
+    }
+}
+
+@keyframes GameChosenAnimation {
+    10% {
+        transform: translateY(-8vh) scale(1.2);
+    }
+
+    100% {
+        transform: translateY(120vh) scale(3);
+    }
+}
+
+
+
+/* don't animate blur */
+@keyframes MonitorAnimation {
+    0% {
+        transform: scale(1);
+        filter: hue-rotate(0deg);
+    }
+
+    40% {
+        transform: scale(1);
+        filter: hue-rotate(40deg);
+    }
+
+    50% {
+        transform: scale(1.02);
+        filter: hue-rotate(120deg);
+    }
+
+    60% {
+        transform: scale(1.02);
+        filter: hue-rotate(40deg);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: hue-rotate(0deg);
+    }
+}
+
+
+
+
+@keyframes BlurScale {
+    0% {
+        transform: scale(1);
+        filter: blur(1px) hue-rotate(0deg);
+    }
+
+    80% {
+        transform: scale(1);
+        filter: blur(1px) hue-rotate(20deg);
+    }
+
+    90% {
+        transform: scale(1.02);
+        filter: blur(1.2px) hue-rotate(60deg);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: blur(3px) hue-rotate(130deg);
+    }
+}
+
+@keyframes RotateColor {
+    0% {
+        transform: scale(1);
+        filter: hue-rotate(0deg);
+    }
+
+    80% {
+        transform: scale(1);
+        filter: hue-rotate(20deg);
+    }
+
+    90% {
+        transform: scale(1);
+        filter: hue-rotate(60deg);
+    }
+
+    100% {
+        transform: scale(1.02);
+        filter: hue-rotate(130deg);
+    }
+}
+
+
+
+@keyframes TitleAnimation {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+
+
+@keyframes GridLeftAnimation {
+    0% {
+        transform: translateX(-40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes GridRightAnimation {
+    0% {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}

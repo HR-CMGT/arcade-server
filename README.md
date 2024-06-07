@@ -4,6 +4,8 @@ The Frontend for the [CMGT Arcade Machine](https://hr-cmgt.github.io/arcade-serv
 
 ![screenshot](./docs/images/screenshot.png)
 
+> Update juni 2024 : vite met typescript development omgeving toegevoegd. Todo custom-components
+
 ## NWJS
 
 The DOCS folder of this repository will be [served](https://hr-cmgt.github.io/arcade-server/) on the arcade cabinet at CMGT. The browser is [NWJS](http://docs.nwjs.io/en/latest/For%20Users/Getting%20Started/#get-nwjs) in Kiosk Mode.
@@ -16,12 +18,23 @@ The NWJS shortcut CTRL+A will always redirect from any game back to the main pag
 
 Download the latest [NWJS](https://nwjs.io/downloads/) on ubuntu. Unzip and place all the files in the existing nwjs project. Do not remove/replace `index.js, app.js, bg.js`.
 
+### Testing
+
+- Development : `npm run dev` to start `vite`.
+- Deploy: build the `docs` folder with `npm run build`.
+- Testing : on mac you can [install Chromium with homebrew](https://dev.to/pixelrena/installing-chromium-on-mac-apple-m2-pro-tutorial-4i4i). Connect gamepad or joystick with USB.
+
+
+<br><br><br>
+
 ## Game requirements
 
 [Check the Arcade Game repository](https://github.com/HR-CMGT/arcade-game) for exact game requirements:
 
-- Resolution: 1440 x 900 (16:10), scaling may be preferable for performance reasons
-- Support for Arcade stick and buttons
+- Screen aspect ratio is 16:10. Resolutions could be: 1440x900, 800x500, etc.
+- Support for Gamepad
+
+<br><br><br>
 
 ## JSON
 

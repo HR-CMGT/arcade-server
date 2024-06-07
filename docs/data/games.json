@@ -24,6 +24,12 @@
         "cover": "cart_googly_eyes.png"
     },
     {
+        "name": "Ski Mountain",
+        "url": "https://radiazom.github.io/prg4-javascript-2023/",
+        "players": 1,
+        "cover": "cartridge_skimountain.png"
+    },
+    {
         "name": "Suzy the Witchy",
         "url": "https://arcade.makecode.com/S05263-10706-41937-72354",
         "players": 1,
@@ -119,12 +125,6 @@
         "url": "https://bpikaar.github.io/excalibur-shoot-them-up/",
         "players": 2,
         "cover": ""
-    },
-    {
-        "name": "Ski Mountain",
-        "url": "https://radiazom.github.io/prg4-javascript-2023/",
-        "players": 1,
-        "cover": "cartridge_skimountain.png"
     },
     {
         "name": "AKino",
