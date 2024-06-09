@@ -20,6 +20,8 @@ On mac you can [install Chromium with homebrew](https://dev.to/pixelrena/install
 #### TODO:
 
 - About page.
+- Drop shadow on cartridges.
+- Index.html cleanup duties.
 - SPA, elke page is een component in plaats van een HTML file.
 
 ## NWJS

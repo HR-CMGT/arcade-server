@@ -8,6 +8,9 @@
 
     -webkit-animation: TitleAnimation 10s ease infinite;
     animation: TitleAnimation 10s ease infinite;
+
+    line-height: 100%;
+    opacity: 0.9;
 }
 
 .leftAnimation {

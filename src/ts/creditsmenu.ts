@@ -1,4 +1,4 @@
-import { clamp } from './interface.ts'
+import { clamp } from './utils.ts'
 
 export class CreditsMenu extends HTMLElement {
 

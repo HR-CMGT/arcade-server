@@ -1,8 +1,8 @@
-import { GameData, Vector, clamp} from './interface.ts'
+import { GameData, Vector, clamp} from './utils.ts'
 
 export class GameMenu extends HTMLElement { 
 
-    public selection: Vector = { x: 0, y: 0 }
+    private selection: Vector = { x: 0, y: 0 }
     private page: number = 0
     private numpages: number = 1
     private data: GameData[]
@@ -92,22 +92,18 @@ export class GameMenu extends HTMLElement {
     //
     public selectColumn(direction: number) {
         this.selection.x += direction
-        //this.selection.y = App.instance.selectedRow
 
-        // go to the next or previous page
-        // reset the cursor to the first or the last available cartridge
+        // go to the next or previous page, reset the cursor to the first or the last available cartridge
         if (this.selection.x < 0) {
             this.page--
             this.generateGamePage(-1)
             this.selection = this.getLastCartPosition()
-            //App.instance.selectedRow = this.selection.y
         }
         if (this.selection.x > 3) {
             this.page++
             this.generateGamePage(1)
             this.selection.x = 0
             this.selection.y = 0
-            //App.instance.selectedRow = 0
         }
 
 
@@ -163,8 +159,7 @@ export class GameMenu extends HTMLElement {
     }
 
     //
-    // create the cover image
-    // todo use DIVS for images so we can have a drop shadow
+    // create the cover image -- todo use DIVS for images so we can have a drop shadow
     //
     private generateCoverImage(mydata: GameData) {
         let div = document.createElement("div")
