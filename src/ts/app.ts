@@ -1,10 +1,11 @@
 import '../css/style.css'
 import '../css/animations.css'
+import { GameData } from './interface.ts'
+import { Joystick } from './joystick.ts'
 import { GameMenu } from './gamemenu.ts'
 import { Paging } from './paging.ts'
-import { Joystick } from './joystick.ts'
-import { GameData } from './interface.ts'
 import { CreditsMenu } from './creditsmenu.ts'
+
 
 
 export class App {
@@ -35,7 +36,6 @@ export class App {
     private initApp(data:GameData[]){
         this.joystick = new Joystick(2)
 
-        this.createNavigation(data)
 
         // remove animations
         this.container = document.querySelector("foreground")! as HTMLElement   // test on foreground, background, container
@@ -48,6 +48,9 @@ export class App {
         document.addEventListener("cursorY", (e: Event) => this.joyStickY(e as CustomEvent))
         document.addEventListener("button0", () => this.getSelectedMenu().buttonPressed())
         document.addEventListener("keydown", (e:KeyboardEvent)=>this.onKeyDown(e))
+
+        // create the three menus
+        this.createNavigation(data)
 
         // audio check
         this.allowSound = (localStorage.getItem('sound') == "true") ? true : false
@@ -66,8 +69,6 @@ export class App {
         
     }
 
-    
-
 
     //
     // row position 0    = gamemenu
@@ -81,6 +82,10 @@ export class App {
         this.gameMenu = new GameMenu(data)
         this.paging = new Paging(data.length)
         this.creditsMenu = new CreditsMenu()
+
+        this.container.append(this.gameMenu)
+        this.container.append(this.paging)
+        this.container.append(this.creditsMenu)
     }
 
     private selectRow(dir: number){
@@ -194,5 +199,11 @@ export class App {
     }
 
 }
+
+
+customElements.define('game-grid', GameMenu)
+customElements.define('page-menu', Paging)
+customElements.define('credits-menu', CreditsMenu)
+
 
 new App()

@@ -160,6 +160,7 @@ credits-menu {
 credits-menu div {
     font-size: 1.3vw;
     height: 1.3vw;
+    padding:3px;
 }
 
 
@@ -185,7 +186,7 @@ page-menu .selected {
 }
 
 
-genre-menu .cursor, credits-menu .cursor, page-menu .cursor {
+credits-menu div.cursor, page-menu .cursor {
     color: magenta !important;
     outline: 3px solid magenta !important;
 }

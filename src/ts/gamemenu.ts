@@ -1,10 +1,10 @@
 import { GameData, Vector } from './interface.ts'
 import { App } from './app'
 
-export class GameMenu {
+export class GameMenu extends HTMLElement { 
 
     private selection: Vector = { x: 0, y: 0 }
-    private carts: Element
+    //private carts: Element
     private page: number = 0
     private numpages: number = 1
     private data: GameData[]
@@ -12,20 +12,21 @@ export class GameMenu {
     private gameloading = false
 
     constructor(data: GameData[]) {
+        super()
+
         this.page = 0
         this.data = data
         this.cartsPerPage = 12
 
         this.numpages = Math.ceil(this.data.length / this.cartsPerPage)
-        this.carts = document.querySelector("game-grid")!
-
-        // cart
-        this.carts.addEventListener("animationend", () => this.carts.classList.remove("leftAnimation", "rightAnimation"))
-
+        
         // generate cart thumbnails
         this.generateGamePage(0)
 
-        // respond to paging events
+        this.addEventListener("animationend", () => this.classList.remove("leftAnimation", "rightAnimation"))
+
+
+        // TODO REMOVE respond to paging events
         document.addEventListener("pagingSelected", (e: Event) => {
             let newPage = (e as CustomEvent).detail
             let direction = (newPage > this.page) ? 1 : -1
@@ -38,7 +39,8 @@ export class GameMenu {
             this.generateGamePage(direction)
         })
 
-        this.carts.classList.add("leftAnimation")
+        this.classList.add("leftAnimation")
+        this.updateCursor()
     }
 
     //
@@ -55,7 +57,7 @@ export class GameMenu {
         // just double checking
         this.page = Math.min(Math.max(this.page, 0), this.numpages - 1)
 
-        this.carts.innerHTML = ""
+        this.innerHTML = ""
         let start = this.page * this.cartsPerPage
         let num = Math.min(this.data.length - start, this.cartsPerPage)
 
@@ -64,9 +66,9 @@ export class GameMenu {
         }
 
         if (direction < 0) {
-            this.carts.classList.add("leftAnimation")
+            this.classList.add("leftAnimation")
         } else if (direction > 0) {
-            this.carts.classList.add("rightAnimation")
+            this.classList.add("rightAnimation")
         }
 
         document.dispatchEvent(new CustomEvent('gamePageSelected', { detail: this.page }))
@@ -131,7 +133,7 @@ export class GameMenu {
 
     private getSelectedElement() {
         let index = this.selection.x + (this.selection.y * 4)
-        return this.carts.children[index]
+        return this.children[index]
     }
 
     public buttonPressed() {
@@ -153,9 +155,9 @@ export class GameMenu {
     //
     private generateCoverImage(mydata: GameData) {
         let div = document.createElement("div")
-        this.carts.append(div)
+        this.append(div)
 
-        // cartridge cover image has to be in same repo. cross-domain not working. TODO only hue rotate if there is no original cover image
+        // cartridge cover image has to be in same repo. cross-domain not working. 
         let cover = mydata.cover
         if (cover && cover != "") {
             // custom cover image

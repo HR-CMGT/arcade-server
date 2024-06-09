@@ -1,17 +1,17 @@
-export class Paging {
+export class Paging extends HTMLElement { 
 
     private selection = 0
-    private container: Element
+    //private container: Element
 
     constructor(maxPages: number) {
-        this.container = document.querySelector("page-menu")!
+        super()
 
         let pages = Math.ceil(maxPages / 12)
 
         for (let i = 0; i < pages; i++) {
             const div = document.createElement("div")
             div.innerHTML = (i+1).toString()
-            this.container.append(div)
+            this.append(div)
         }
 
         this.showPageNumber()
@@ -24,24 +24,24 @@ export class Paging {
 
     public selectPosition(dir: number) {
         this.selection += dir
-        if (this.selection < 0) this.selection = this.container.children.length - 1
-        if (this.selection >= this.container.children.length) this.selection = 0
+        if (this.selection < 0) this.selection = this.children.length - 1
+        if (this.selection >= this.children.length) this.selection = 0
         document.dispatchEvent(new CustomEvent('pagingSelected', { detail: this.selection }))
     }
 
     public updateCursor() {
-        this.container.children[this.selection].classList.add("cursor")
+        this.children[this.selection].classList.add("cursor")
     }
 
     public clearCursor() {
-        this.container.children[this.selection].classList.remove("cursor")
+        this.children[this.selection].classList.remove("cursor")
     }
 
     private showPageNumber() {
-        for (let child of this.container.children) {
+        for (let child of this.children) {
             child.classList.remove("selected")
         }
-        this.container.children[this.selection].classList.add("selected")
+        this.children[this.selection].classList.add("selected")
     }
 
     public buttonPressed() {
