@@ -22,7 +22,12 @@ export class Paging extends HTMLElement {
         })
     }
 
-    public selectPosition(dir: number) {
+    // @ts-ignore
+    public allowRowChange(dir: number) {
+        return true
+    }
+
+    public selectColumn(dir: number) {
         this.selection += dir
         if (this.selection < 0) this.selection = this.children.length - 1
         if (this.selection >= this.children.length) this.selection = 0

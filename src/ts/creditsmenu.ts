@@ -1,9 +1,10 @@
 import { clamp } from './interface.ts'
-import { App } from './app'
 
 export class CreditsMenu extends HTMLElement {
 
     private selection = 0
+    private allowSound = true
+    private audio: HTMLAudioElement
 
     constructor() {
         super() 
@@ -18,9 +19,19 @@ export class CreditsMenu extends HTMLElement {
             div.innerHTML = text
             this.append(div)
         }
+
+        // audio check
+        this.allowSound = (localStorage.getItem('sound') == "true") ? true : false
+        this.audio = new Audio()
+        this.updateAudio()
     }
 
-    public selectPosition(dir: number) {
+    // @ts-ignore
+    public allowRowChange(dir:number) {
+        return true
+    }
+
+    public selectColumn(dir: number) {
         this.selection = clamp(this.selection + dir, 0, this.children.length - 1)
     }
 
@@ -36,20 +47,44 @@ export class CreditsMenu extends HTMLElement {
     public buttonPressed() {
         switch (this.selection) {
         case 0:
-            App.instance.toggleSound();
+            this.toggleSound();
             break;
         case 1:
-            window.location.href = "./src/pages/addgame.html"
+            window.location.href = "./pages/addgame.html"
             break;
         case 2:
             // About CMGT logic here
             break;
         }
-        // 1 = credits
-        // 2 = instructions
-        // 3 = about CMGT
     }
-    public updateSound(b: Boolean) {
-        this.children[0].innerHTML = (b) ? "🔊:ON" : "🔇:OFF"
+ 
+
+    public toggleSound() {
+        this.allowSound = !this.allowSound
+        localStorage.setItem('sound', String(this.allowSound))
+        this.updateAudio()
+    }
+
+    private updateAudio() {
+        if (this.allowSound) {
+            this.audio.src = "./sound/bgmusic.mp3";
+
+            let promise = this.audio.play()
+            if (promise !== undefined) {
+                promise.then(_ => {
+                    // Autoplay started!
+                    // console.log("Playing audio")
+                }).catch(error => {
+                    // Autoplay was prevented.
+                    // User interaction with audio button will allow playback, set it to off
+                    console.error("AUDIO FOUT " + error)
+                    this.toggleSound()
+                });
+            }
+        } else {
+            this.audio.pause()
+        }
+        // display sound status
+        this.children[0].innerHTML = (this.allowSound) ? "🔊:ON" : "🔇:OFF"
     }
 }

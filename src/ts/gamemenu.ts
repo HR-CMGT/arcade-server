@@ -1,10 +1,8 @@
-import { GameData, Vector } from './interface.ts'
-import { App } from './app'
+import { GameData, Vector, clamp} from './interface.ts'
 
 export class GameMenu extends HTMLElement { 
 
-    private selection: Vector = { x: 0, y: 0 }
-    //private carts: Element
+    public selection: Vector = { x: 0, y: 0 }
     private page: number = 0
     private numpages: number = 1
     private data: GameData[]
@@ -75,11 +73,26 @@ export class GameMenu extends HTMLElement {
     }
 
     //
+    // user pressed up or down
+    //
+    public allowRowChange(dir: number) {
+        if(this.selection.y + dir > 2) {
+            return true
+        } else {
+            this.selectRow(dir)
+            return false
+        }
+    }
+    private selectRow(dir: number) {
+        this.selection.y = clamp(this.selection.y + dir, 0, 2)
+    }
+
+    //
     // user pressed left or right
     //
-    public selectPosition(direction: number) {
+    public selectColumn(direction: number) {
         this.selection.x += direction
-        this.selection.y = App.instance.selectedRow
+        //this.selection.y = App.instance.selectedRow
 
         // go to the next or previous page
         // reset the cursor to the first or the last available cartridge
@@ -87,14 +100,14 @@ export class GameMenu extends HTMLElement {
             this.page--
             this.generateGamePage(-1)
             this.selection = this.getLastCartPosition()
-            App.instance.selectedRow = this.selection.y
+            //App.instance.selectedRow = this.selection.y
         }
         if (this.selection.x > 3) {
             this.page++
             this.generateGamePage(1)
             this.selection.x = 0
             this.selection.y = 0
-            App.instance.selectedRow = 0
+            //App.instance.selectedRow = 0
         }
 
 
@@ -115,7 +128,7 @@ export class GameMenu extends HTMLElement {
     // highlight current selected cartridge
     //
     public updateCursor() {
-        this.selection.y = App.instance.selectedRow
+        //this.selection.y = App.instance.selectedRow
         let newSelection = this.getSelectedElement()
         if (newSelection) newSelection.classList.add("cursor")
         //

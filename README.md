@@ -4,25 +4,35 @@ The Frontend for the [CMGT Arcade Machine](https://hr-cmgt.github.io/arcade-serv
 
 ![screenshot](./docs/images/screenshot.png)
 
-> Update juni 2024 : vite met typescript development omgeving toegevoegd. Todo custom-components
+## Server development
+
+```bash
+npm install
+npm run dev
+npm run build
+git push
+```
+
+On mac you can [install Chromium with homebrew](https://dev.to/pixelrena/installing-chromium-on-mac-apple-m2-pro-tutorial-4i4i). Connect gamepad or joystick with USB.
+
+> Update juni 2024 : vite met typescript toegevoegd. Custom components toegevoegd.
+
+#### TODO:
+
+- About page.
+- SPA, elke page is een component in plaats van een HTML file.
 
 ## NWJS
 
-The DOCS folder of this repository will be [served](https://hr-cmgt.github.io/arcade-server/) on the arcade cabinet at CMGT. The browser is [NWJS](http://docs.nwjs.io/en/latest/For%20Users/Getting%20Started/#get-nwjs) in Kiosk Mode.
+[NWJS](http://docs.nwjs.io/en/latest/For%20Users/Getting%20Started/#get-nwjs) is the kiosk app met Chromium die draait op de arcade kast. Deze staat altijd in fullscreen en springt altijd terug naar de game page als je op 🟡 🟡 drukt. The [DOCS](https://hr-cmgt.github.io/arcade-server/) folder of this repository will be automatically loaded by NWJS.
 
 Student games are also github repositories or other urls where their game is served.
 
-The NWJS shortcut CTRL+A will always redirect from any game back to the main page. The NWJS folder of this repo contains the package.json and index.js files for NWJS. These files have to be placed on the actual arcade machine, with the Linux version of [NWJS](https://nwjs.io/downloads/).
+The NWJS shortcut CTRL+A (🟡 🟡 ) will always redirect from any game back to the main page. The NWJS folder of this repo contains the package.json and index.js files for NWJS. These files have to be placed on the actual arcade machine, with the Linux version of [NWJS](https://nwjs.io/downloads/).
 
 ### Updating NWJS and Chromium
 
 Download the latest [NWJS](https://nwjs.io/downloads/) on ubuntu. Unzip and place all the files in the existing nwjs project. Do not remove/replace `index.js, app.js, bg.js`.
-
-### Testing
-
-- Development : `npm run dev` to start `vite`.
-- Deploy: build the `docs` folder with `npm run build`.
-- Testing : on mac you can [install Chromium with homebrew](https://dev.to/pixelrena/installing-chromium-on-mac-apple-m2-pro-tutorial-4i4i). Connect gamepad or joystick with USB.
 
 
 <br><br><br>

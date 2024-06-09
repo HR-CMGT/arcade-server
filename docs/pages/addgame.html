@@ -6,15 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <link rel="stylesheet" href="../css/animations.css">
-    <link rel="stylesheet" href="../css/addgame.css">
     <title>CMGT ARCADE</title>
 </head>
+
+<!-- HACK couldnt find a way to build multiple vite html pages each with their own css files -->
+<style>
+    body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'Press Start 2P', cursive;
+        background: black;
+        color: #FFF;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    container,
+    foreground,
+    background {
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        display: block;
+        position: absolute;
+    }
+
+    container {
+        cursor: none;
+    }
+
+    /* image in background to allow animation */
+    background img,
+    background video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    foreground {
+        background-color: rgba(51, 26, 141, 0.6);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    header {
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 1.14vw;
+    }
+
+    instructions {
+        flex-grow: 1;
+        line-height: 140%;
+        display: flex;
+    }
+
+    instructions div {
+        padding: 2vh 4vw;
+    }
+
+    footer {
+        justify-content: center;
+        display: flex;
+        height: 6vh;
+        font-size: 1.4em;
+    }
+</style>
 
 <body>
     <container>
         <background>
-            <img src="/images/grid.gif">
+            <img src="../images/grid.gif">
             <!-- video stutters <video id="bgvideo" src="./images/grid.mp4" autoplay loop muted></video>-->
         </background>
 
@@ -36,7 +106,7 @@
                 <div>
                     <h2>Adding games</h2>
                     <p>You can add Excalibur, Phaser, Makecode, etc. games by publishing your game live, for example on github pages. </p>
-                        
+
                     <p>You can add Unity, GameMaker or GoDot games if you export to WebGL.</p>
                     </p>
                     <h3>Steps</h3>
@@ -49,7 +119,7 @@
                     </ul>
                 </div>
                 <div>
-                    <img src="/images/qr-server.png">
+                    <img src="../images/qr-server.png">
                 </div>
             </instructions>
 
@@ -62,8 +132,7 @@
 
     <div id="logo"></div>
 
-    
+
 </body>
 
 </html>
-

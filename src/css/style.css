@@ -9,10 +9,10 @@ body {
     color: #FFF;
 }
 
-container, foreground, background {
+container, main-application, background {
     box-sizing: border-box;
     width: 100vw;
-    height: 100vh;
+    height: 97vh;
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -28,7 +28,7 @@ container {
 
 
 
-/* add this class to container or foreground sporadically */
+/* add this class to container or main-application sporadically */
 .monitorEffect {
     animation: MonitorAnimation 6s 2;
     /* animation: BlurScale 6s ease infinite alternate-reverse; */
@@ -41,7 +41,7 @@ background img, background video {
     object-fit: cover;
 }
 
-foreground {
+main-application {
     background-color: rgba(51, 26, 141, 0.6);
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@ foreground {
 }
 
 /*
-foreground div {
+main-application div {
      outline: 3px solid red; 
 }
 */
@@ -132,8 +132,16 @@ game-grid div.chosengame {
 }
 
 
-
-
+/* footer with instructions */
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
+    background-color: black;
+    font-size: 1em;
+    text-align: center;
+    color:rgb(99, 91, 115);
+}
 
 /* MENU ROW */
 
@@ -152,16 +160,18 @@ page-menu div {
 
 credits-menu {
     padding: 0vw 1vw;
-    justify-content: space-between;
+    justify-content: space-around;
     display: flex;
     height: 4vh;
 }
 
+/* only way to the the middle item truly centered */
 credits-menu div {
     font-size: 1.3vw;
     height: 1.3vw;
-    padding:3px;
+    padding: 3px;
 }
+
 
 
 /* SELECTION AND CURSOR POSITION */
