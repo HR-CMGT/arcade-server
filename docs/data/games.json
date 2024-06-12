@@ -267,6 +267,7 @@
         "name": "Ritme Renner",
         "url": "https://ritmerenner.nl/",
         "players" : 1,
+        "cover": "cart-ritmerenner.png",
         "makecode" : false
     }
 ]
