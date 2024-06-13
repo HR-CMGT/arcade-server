@@ -1,8 +1,3 @@
-
-
-
-
-
 export class AnimatedLogo extends HTMLElement {
 
     pre
@@ -32,7 +27,7 @@ export class AnimatedLogo extends HTMLElement {
     // called by main app update
     //
     update(){
-        // todo more fun animation
+        // todo more fun animation  
 
         // const currentText = this.pre.innerText;
         // const index = Math.floor(Math.random() * currentText.length);

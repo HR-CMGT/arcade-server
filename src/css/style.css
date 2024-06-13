@@ -174,7 +174,39 @@ credits-menu {
 credits-menu div {
     font-size: 1.3vw;
     height: 1.3vw;
-    padding: 3px;
+    padding: 4px 18px;
+}
+
+credits-menu div:nth-child(2) {
+    background: white;
+    color: rgb(64, 27, 99);
+    outline: 4px solid red;
+    /* ja mensen het is een pixelated border radius */
+    clip-path: polygon(0px calc(100% - 8px),
+            4px calc(100% - 8px),
+            4px calc(100% - 4px),
+            8px calc(100% - 4px),
+            8px 100%,
+            calc(100% - 8px) 100%,
+            calc(100% - 8px) calc(100% - 4px),
+            calc(100% - 4px) calc(100% - 4px),
+            calc(100% - 4px) calc(100% - 8px),
+            100% calc(100% - 8px),
+            100% 8px,
+            calc(100% - 4px) 8px,
+            calc(100% - 4px) 4px,
+            calc(100% - 8px) 4px,
+            calc(100% - 8px) 0px,
+            8px 0px,
+            8px 4px,
+            4px 4px,
+            4px 8px,
+            0px 8px);
+}
+
+credits-menu div.cursor {
+    color: magenta !important;
+    outline: 3px solid magenta !important;
 }
 
 
@@ -185,10 +217,10 @@ credits-menu div {
     outline-offset: -3px;
 } */
 
-credits-menu .selected {
+/* credits-menu .selected {
     outline: 3px solid white;
     outline-offset: 3px;
-}
+} */
 
 page-menu div {
     padding: 4px;
@@ -196,12 +228,11 @@ page-menu div {
 }
 
 page-menu .selected {
-    color: rgba(61, 19, 95, 0.6);
+    color: rgba(43, 8, 71, 0.879);
     background-color: white;
 }
 
-
-credits-menu div.cursor, page-menu .cursor {
+page-menu .cursor {
     color: magenta !important;
     outline: 3px solid magenta !important;
 }
