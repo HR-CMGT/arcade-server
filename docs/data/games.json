@@ -29,6 +29,13 @@
         "players": 1,
         "cover": "cartridge_skimountain.png"
     },
+        {
+        "name": "HeemraadsHive",
+        "url": "https://severhaak.github.io/CLE4-Game/",
+        "players" : 1,
+        "cover": "logo_cart.png",
+        "makecode" : false
+    },
     {
         "name": "Don't Stop Jumping",
         "url": "https://hr-cmgt.github.io/PRG04-2023-2024-finished/dont-stop-jumping/docs/",
