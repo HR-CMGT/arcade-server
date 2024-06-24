@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-        crossorigin="anonymous">
+    <link rel="icon" href="./assets/favicon-DLlCJIkZ.ico">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">   
     <link rel="stylesheet" href="./css/animations.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>CMGT ARCADE</title>
+  <script type="module" crossorigin src="./assets/main-BcZcD4Xp.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-Bb0Qz9Xd.css">
 </head>
 
 <body>
@@ -19,61 +19,23 @@
             <!-- video stutters <video id="bgvideo" src="./images/grid.mp4" autoplay loop muted></video>--> 
         </background>
 
-        <foreground>
-            <header>
-    <pre class="rainbow">
+        <main-application>
+            <!-- added by app.ts -->
 
- ██████╗███╗   ███╗ ██████╗████████╗     █████╗ ██████╗  ██████╗ █████╗ ██████╗ ███████╗
-██╔════╝████╗ ████║██╔════╝╚══██╔══╝    ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝
-██║     ██╔████╔██║██║  ███╗  ██║       ███████║██████╔╝██║     ███████║██║  ██║█████╗  
-██║     ██║╚██╔╝██║██║   ██║  ██║       ██╔══██║██╔══██╗██║     ██╔══██║██║  ██║██╔══╝  
-╚██████╗██║ ╚═╝ ██║╚██████╔╝  ██║       ██║  ██║██║  ██║╚██████╗██║  ██║██████╔╝███████╗
- ╚═════╝╚═╝     ╚═╝ ╚═════╝   ╚═╝       ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═════╝ ╚══════╝
-                                                                                        
-</pre>
-            </header>
-
-            <div id="player-menu">
-                <div class="selected cursor">
-                    <i class="fas fa-male"></i>
-                    Singleplayer
-                </div>
-                <div>
-                    <i class="fas fa-male"></i>
-                    <i class="fas fa-male"></i>
-                    Multiplayer
-                </div>
-            </div>
-            
-            <div id="genre-menu">
-                <div class="selected">All</div>
-                <div>Strategy</div>
-                <div>Action</div>
-                <div>Puzzle</div>
-                <div>Shooter</div>
-                <div>RPG</div>
-                <div>Simulation</div>
-                <div>Stealth</div>
-                <div>Race</div>
-                <div>Sports</div>
-            </div>
-
-            <div id="game-grid"></div>
-            
-            <div id="page-menu"></div>
-            
-            <div id="credits-menu">
-                <div>SOUND:ON</div>
-                <div>Credits</div>
-                <div>Instructions</div>
-                <div>About CMGT</div>
-            </div>
-
-        </foreground>
-
-        <div id="logo"></div>
+            <!-- header met ascii logo --> 
+            <!-- grid --> 
+            <!-- paging --> 
+            <!-- redits -->
+        </main-application>   
 
     </container>
+
+
+    <footer>
+        <div>Press 🟡 🟡 to return here from any game</div>
+    </footer>
+    
+    <div id="logo"></div>
 
     <warning>
         <h3>HR CMGT ARCADE SERVER</h3>
@@ -83,6 +45,32 @@
         <p><span class="small">These games were developed for an Arcade Machine, and may not support touchscreens.</span></p>
     </warning>
 
-    <script src="js/main.js?v=2"></script>
 </body>
 </html>
+
+
+<!-- BACKUP OLD MENU -->
+<!--
+<div id="player-menu">
+    <div class="selected cursor">
+        <i class="fas fa-male"></i>
+        Singleplayer
+    </div>
+    <div>
+        <i class="fas fa-male"></i>
+        <i class="fas fa-male"></i>
+        Multiplayer
+    </div>
+</div>
+    <div id="genre-menu">
+    <div class="selected">All</div>
+    <div>Strategy</div>
+    <div>Action</div>
+    <div>Puzzle</div>
+    <div>Shooter</div>
+    <div>RPG</div>
+    <div>Simulation</div>
+    <div>Stealth</div>
+    <div>Race</div>
+    <div>Sports</div>
+</div> -->

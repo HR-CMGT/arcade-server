@@ -4,20 +4,49 @@ The Frontend for the [CMGT Arcade Machine](https://hr-cmgt.github.io/arcade-serv
 
 ![screenshot](./docs/images/screenshot.png)
 
+## Server development
+
+```bash
+npm install
+npm run dev
+npm run build
+git push
+```
+
+On mac you can [install Chromium with homebrew](https://dev.to/pixelrena/installing-chromium-on-mac-apple-m2-pro-tutorial-4i4i). Connect gamepad or joystick with USB.
+
+> Update juni 2024 : vite met typescript toegevoegd. Custom components toegevoegd.
+
+#### TODO:
+
+- About page.
+- Drop shadow on cartridges.
+- Index.html cleanup duties.
+- SPA, elke page is een component in plaats van een HTML file.
+
 ## NWJS
 
-The DOCS folder of this repository will be [served](https://hr-cmgt.github.io/arcade-server/) on the arcade cabinet at CMGT. The browser is [NWJS](http://docs.nwjs.io/en/latest/For%20Users/Getting%20Started/#get-nwjs) in Kiosk Mode.
+[NWJS](http://docs.nwjs.io/en/latest/For%20Users/Getting%20Started/#get-nwjs) is the kiosk app met Chromium die draait op de arcade kast. Deze staat altijd in fullscreen en springt altijd terug naar de game page als je op 🟡 🟡 drukt. The [DOCS](https://hr-cmgt.github.io/arcade-server/) folder of this repository will be automatically loaded by NWJS.
 
 Student games are also github repositories or other urls where their game is served.
 
-The NWJS shortcut CTRL+A will always redirect from any game back to the main page. The NWJS folder of this repo contains the package.json and index.js files for NWJS. These files have to be placed on the actual arcade machine, with the Linux version of [NWJS](https://nwjs.io/downloads/).
+The NWJS shortcut CTRL+A (🟡 🟡 ) will always redirect from any game back to the main page. The NWJS folder of this repo contains the package.json and index.js files for NWJS. These files have to be placed on the actual arcade machine, with the Linux version of [NWJS](https://nwjs.io/downloads/).
+
+### Updating NWJS and Chromium
+
+Download the latest [NWJS](https://nwjs.io/downloads/) on ubuntu. Unzip and place all the files in the existing nwjs project. Do not remove/replace `index.js, app.js, bg.js`.
+
+
+<br><br><br>
 
 ## Game requirements
 
 [Check the Arcade Game repository](https://github.com/HR-CMGT/arcade-game) for exact game requirements:
 
-- Resolution: 1440 x 900 (16:10), scaling may be preferable for performance reasons
-- Support for Arcade stick and buttons
+- Screen aspect ratio is 16:10. Resolutions could be: 1440x900, 800x500, etc.
+- Support for Gamepad
+
+<br><br><br>
 
 ## JSON
 
@@ -25,41 +54,42 @@ The NWJS shortcut CTRL+A will always redirect from any game back to the main pag
 
 Supply the game title, url, number of players, genres and *optionally* a cartridge image. Currently, cross-domain loading of cartridge images is not supported. The cartridge images will have to be added to this repository manually...😰 (loading them remotely is too slow...😴)
 
+If you set `makecode` to `true`, an alternative cartridge image will be used.
+
 ```
 {
     "name": "Ruimtegruis",
     "url": "https://kokodoko.github.io/ruimtegruis/",
-    "genres" : [1,1,1,0,0,0,0,0,0],
     "players" : 1,
-    "cover": "cover_ruimtegruis.png"
+    "cover": "cover_ruimtegruis.png",
+    "makecode" : false
 }
 ```
+## Cartridge image
+
+Gebruik dit image als basis 
+
+<img src="./docs/images/cart.png">
+
+## Makecode Arcade
+
+Je kan een link naar je makecode arcade game toevoegen aan games.json. Dan zet je `makecode` op true, je krijgt dan automatisch onderstaand cartridge image:
+
+<img src="./docs/images/cart-makecode.png">
+
+## Running this project
+
+Aanpassingen in de typescript `dev` map moet je publiceren naar de `docs` map met `tsc` (typescript compiler). In VS Code doe je ***CMD+SHIFT+B***.
 
 ## TODO
 
-- shortcut doesn't work on LINUX (window args not found)
-- improve paging (detect left right in game menu)
-- select by criteria (players and genre)
-- credits page
-- instructions page
-- about page
-- keyboard input separate
-- enable touch input when touch detected
-
-## Nice to have
-
-- Mobile view (just for showcase purposes)
-- Open Unity games from NWJS menu
-```
-var exec = require('child_process').execFile;
-
-exec('C:/asd/test.exe', function(err, data) {  
-        console.log(err)
-        console.log(data.toString());                       
-});
-```
+- Vertical flex layout (of css grid)
+- Rewrite the whole pagination spaghetti code
 
 ## Credits
 
 - [Tim Borowy](https://github.com/TimBorowy) and [GrunkHead Dave](https://github.com/Grunkhead) for setting up the first iteration of the UI and the server.
 - [Louis](https://github.com/KokoDoko/ruimtegruis/issues?q=is%3Apr+author%3Alouis-lau) for fixing the game scaling bug.
+- Leanne, Rob, Erik, Bob voor het bestellen en timmeren van de kast
+- Hamid voor het updaten van Ubuntu
+- Antwan voor het boos kijken

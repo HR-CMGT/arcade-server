@@ -1,0 +1,329 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Press Start 2P', cursive;
+    background: black;
+    color: #FFF;
+}
+
+container, main-application, background {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 95vh;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+}
+
+container {
+    cursor: none;
+}
+
+
+
+
+
+/* add this class to container or main-application sporadically */
+.monitorEffect {
+    animation: MonitorAnimation 6s 2;
+    /* animation: BlurScale 6s ease infinite alternate-reverse; */
+}
+
+/* image in background to allow animation */
+background img, background video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+main-application {
+    background-color: rgba(51, 26, 141, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* animation op video testen - CPU hit */
+    /* filter: blur(2px); */
+}
+
+/*
+main-application div {
+     outline: 3px solid red; 
+}
+*/
+
+
+animated-logo {
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.14vw;
+    /* height: 22vh; */
+}
+
+game-grid {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+    justify-items: stretch;
+    align-items: stretch;
+    text-align: center;
+    padding: 1vh 1vw;
+}
+
+/* cartridges */
+game-grid div {
+    box-sizing: border-box;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    /* 
+    * center text horizontally and vertically 
+    */
+    display: flex;
+    transition: transform 0.2s ease-out;
+    justify-content: center;
+    line-height: 170%;
+}
+
+/* regular cartridges */
+.cartridge {
+    font-size: 1.2vw;
+    padding: 2vw 5vw;
+    align-items: center;
+}
+
+/* makecode cartridges */
+.makecode {
+    font-size: 0.75vw;
+    padding-top: 6.2vh;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    background-size: contain;
+}
+
+/* will get added if we are in the games row for all unselected games - currently not used */
+.unselected {
+    transform: scale(0.92);
+    opacity: 0.7;
+}
+
+/* select a cartridge */
+game-grid div.cursor {
+    transform: scale(1.2);
+    /* opacity: 1; */
+    /* use a css filter for the drop shadow here, but this only works if the image is an img tag with object-fit */
+    /* filter: drop-shadow(10 10 20px rgba(157, 5, 71, 0.6)); */
+    z-index: 1;
+    animation: GameSelectAnimation 1s ease-in-out infinite alternate;
+}
+
+game-grid div.chosengame {
+    z-index: 1;
+    transform: scale(1.2);
+    animation: GameChosenAnimation 1.2s ease-in-out forwards;
+}
+
+
+/* footer with instructions */
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
+    background-color: rgb(15, 8, 35);
+    font-size: 1em;
+    text-align: center;
+    height: 5vh;
+    color: rgb(121, 102, 163);
+}
+
+footer div {
+    padding-top: 10px;
+}
+
+/* MENU ROW */
+
+page-menu {
+    justify-content: center;
+    display: flex;
+    height: 6vh;
+}
+
+page-menu div {
+    font-size: 1.4vw;
+    height: 1.4vw;
+}
+
+/* MENU ROW */
+
+credits-menu {
+    padding: 0vw 1vw;
+    justify-content: space-around;
+    display: flex;
+    height: 4vh;
+}
+
+/* only way to the the middle item truly centered */
+credits-menu div {
+    font-size: 1.3vw;
+    height: 1.3vw;
+    padding: 4px 18px;
+}
+
+credits-menu div:nth-child(2) {
+    background: white;
+    color: rgb(64, 27, 99);
+    outline: 4px solid red;
+    /* ja mensen het is een pixelated border radius */
+    clip-path: polygon(0px calc(100% - 8px),
+            4px calc(100% - 8px),
+            4px calc(100% - 4px),
+            8px calc(100% - 4px),
+            8px 100%,
+            calc(100% - 8px) 100%,
+            calc(100% - 8px) calc(100% - 4px),
+            calc(100% - 4px) calc(100% - 4px),
+            calc(100% - 4px) calc(100% - 8px),
+            100% calc(100% - 8px),
+            100% 8px,
+            calc(100% - 4px) 8px,
+            calc(100% - 4px) 4px,
+            calc(100% - 8px) 4px,
+            calc(100% - 8px) 0px,
+            8px 0px,
+            8px 4px,
+            4px 4px,
+            4px 8px,
+            0px 8px);
+}
+
+credits-menu div.cursor {
+    color: magenta !important;
+    outline: 3px solid magenta !important;
+}
+
+
+
+/* SELECTION AND CURSOR POSITION */
+/* #player-menu .selected, #genre-menu .selected {
+    outline: 3px solid white;
+    outline-offset: -3px;
+} */
+
+/* credits-menu .selected {
+    outline: 3px solid white;
+    outline-offset: 3px;
+} */
+
+page-menu div {
+    padding: 4px;
+    margin: 0px 10px;
+}
+
+page-menu .selected {
+    color: rgba(43, 8, 71, 0.879);
+    background-color: white;
+}
+
+page-menu .cursor {
+    color: magenta !important;
+    outline: 3px solid magenta !important;
+}
+
+/* LOGO ALWAYS TOP RIGHT */
+
+#logo {
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    top: 1.2vh;
+    right: 1.2vw;
+    background-image: url(../images/hrlogo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* RESPONSIVE WARNING */
+
+warning {
+    display: none;
+}
+
+@media screen and (orientation:portrait) {
+    warning {
+        display: block !important;
+        box-sizing: border-box;
+        background-color: white;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        padding: 4vw;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        background-color: white;
+        color: purple;
+        text-align: center;
+        font-size: 3.6vw;
+        line-height: 2.4vh;
+    }
+
+    .small {
+        font-size: 2.2vw;
+    }
+}
+
+
+
+/* BACKUP
+#player-menu {
+    display: flex;
+    font-size: 1.8vw;
+    justify-content: center;
+    height: 10vh;
+    margin-bottom:4vh;
+}
+
+#player-menu div {
+    padding: 1.6vw;
+    height: 2vw;
+}
+
+#genre-menu {
+    padding: 0vh 1vw;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    height: 6vh;
+}
+
+#genre-menu div {
+    padding: 1vw;
+    font-size: 1.2vw;
+    height: 1.2vw;
+}
+
+*/
+
+
+/* works but only on divs AFTER the selection.... 
+#game-grid div.cursor ~ div {
+    transform:scale(0.92);
+    opacity:0.6;
+}
+*/
+
+/* works but should only be used when there is a cursor class on a sibling
+#game-grid div:not(.cursor) {
+    transform:scale(0.92);
+    opacity:0.6;
+}
+*/

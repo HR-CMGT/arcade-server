@@ -1,177 +1,280 @@
 [
     {
         "name": "Ruimtegruis",
-        "url": "https://bpikaar.github.io/ruimtegruis/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 2,
+        "url": "https://hr-cmgt.github.io/PRG04-2023-2024-finished/ruimtegruis/docs/",
+        "players": 2,
         "cover": "cover_ruimtegruis.png"
     },
     {
         "name": "Armadillo Dodge",
         "url": "https://jackhoefnagel.github.io/ExcaliburArcadeGame/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 2,
+        "players": 2,
         "cover": "cover_armadillo.png"
     },
     {
-        "name": "AKino",
-        "url": "https://isissss.github.io/CLE4/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover": ""
-        
+        "name": "Hefpark Hopper",
+        "url": "https://hr-cmgt.github.io/Hefpark-Hopper/",
+        "players": 1,
+        "cover": "cover_hefpark.png"
+    },
+    {
+        "name": "Googly Eyes?",
+        "url": "https://leabits.github.io/PRG04-Googly-Eyes/",
+        "players": 1,
+        "cover": "cart_googly_eyes.png"
     },
     {
         "name": "Ski Mountain",
         "url": "https://radiazom.github.io/prg4-javascript-2023/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
+        "players": 1,
         "cover": "cartridge_skimountain.png"
-        
     },
-    {
-        "name": "Soupreme Leader",
-        "url": "https://soupremeleader.github.io/Prg4/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
+        {
+        "name": "HeemraadsHive",
+        "url": "https://severhaak.github.io/CLE4-Game/",
         "players" : 1,
-        "cover": ""
+        "cover": "logo_cart.png",
+        "makecode" : false
     },
     {
-        "name": "Robot Royale",
-        "url": "https://programmeren9.cmgt.hr.nl:8080/viewer/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 2,
-        "cover": "cartridge_robotroyale.png"
-        
+        "name": "Don't Stop Jumping",
+        "url": "https://hr-cmgt.github.io/PRG04-2023-2024-finished/dont-stop-jumping/docs/",
+        "players": 2,
+        "cover": "cartridge-jumping.png",
+        "makecode": false
+    },
+    {
+        "name": "Bob the Dayman",
+        "url": "https://hidde-scheringa.github.io/Bob-The-Dayman-game/",
+        "players": 1,
+        "cover": "cartridge-dayman.png",
+        "makecode": false
+    },
+    {
+        "name": "Suzy the Witchy",
+        "url": "https://arcade.makecode.com/S05263-10706-41937-72354",
+        "players": 1,
+        "cover": "",
+        "makecode": true
+    },
+    {
+        "name": "You're aMAZEing",
+        "url": "https://arcade.makecode.com/13421-83082-88835-99355",
+        "players": 1,
+        "cover": "",
+        "makecode": true
+    },
+    {
+        "name": "CMGTerror",
+        "url": "https://arcade.makecode.com/10728-52325-89233-73608",
+        "players": 1,
+        "cover": "",
+        "makecode": true
+    },
+    {
+        "name": "Gobbo Quest",
+        "url": "https://arcade.makecode.com/97301-29339-79818-69048",
+        "players": 1,
+        "cover": "",
+        "makecode": true
+    },
+    {
+        "name": "Go Save Duck",
+        "url": "https://arcade.makecode.com/67259-00201-10477-38534",
+        "players": 1,
+        "cover": "",
+        "makecode": true
+    },
+    {
+        "name": "Javelin",
+        "url": "https://arcade.makecode.com/85271-46718-70307-70887",
+        "players": 1,
+        "cover": "",
+        "makecode": true
+    },
+    {
+        "name": "Jump Quest",
+        "url": "https://arcade.makecode.com/57358-07743-81626-49869",
+        "players": 1,
+        "cover": "",
+        "makecode": true
+    },
+    {
+        "name": "Spider Hell",
+        "url": "https://arcade.makecode.com/S65382-68460-60306-93511",
+        "players": 1,
+        "cover": "",
+        "makecode": true
+    },
+    {
+        "name": "Mia's monster quest",
+        "url": "https://arcade.makecode.com/S92737-05882-95164-37042",
+        "players": 1,
+        "cover": "",
+        "makecode": true
+    },
+    {
+        "name": "Candy Mountain",
+        "url": "https://arcade.makecode.com/S63501-87583-92670-87101",
+        "players": 1,
+        "cover": "",
+        "makecode": true
+    },
+    {
+        "name": "Gambling Game",
+        "url": "https://arcade.makecode.com/23461-05516-67769-91672",
+        "players": 1,
+        "cover": "",
+        "makecode": true
+    },
+    {
+        "name": "Brombeer",
+        "url": "https://arcade.makecode.com/S14111-71227-26685-67016",
+        "players": 1,
+        "cover": "",
+        "makecode": true
     },
     {
         "name": "ANTIVIRUS",
         "url": "https://hr-cmgt.github.io/antivirus/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 2,
+        "players": 2,
         "cover": "cartridge_antivirus.png"
+    },
+    {
+        "name": "AKino",
+        "url": "https://isissss.github.io/CLE4/",
+        "players": 1,
+        "cover": ""
+    },
+    {
+        "name": "Soupreme Leader",
+        "url": "https://soupremeleader.github.io/Prg4/",
+        "players": 1,
+        "cover": ""
+    },
+    {
+        "name": "schiejump",
+        "url": "https://hamid1103.github.io/CLE4Game/",
+          "players": 2,
+        "cover": "schiejump.png"
+    },
+    {
+        "name": "Melodies of Mystery",
+        "url": "https://zaidprojectsdev.github.io/HA_Agent_CLE4/",
+        "players": 1,
+        "cover": "Melodies.png"
+    },
+    {
+        "name": "Robot Royale",
+        "url": "https://programmeren9.cmgt.hr.nl:8080/viewer/",
+        "players": 2,
+        "cover": "cartridge_robotroyale.png"
     },
     {
         "name": "Frog and Pig",
         "url": "https://bpikaar.github.io/frog-and-pig/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover":"cartridge_frog_and_pig.png"
-    }
-    ,
+        "players": 1,
+        "cover": "cartridge_frog_and_pig.png"
+    },
     {
         "name": "Third Games",
         "url": "https://timonvw.github.io/ThirdGames/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover" : "cartridge_space_rubbers.png"
-    }
-    ,
+        "players": 1,
+        "cover": "cartridge_space_rubbers.png"
+    },
     {
-        "name" : "Addix Studio",
-        "url" : "https://tortleturtle.github.io/Addix/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
+        "name": "Addix Studio",
+        "url": "https://tortleturtle.github.io/Addix/",
+        "players": 1,
         "cover": "cart-AddixStudios.png"
+    },
+    {
+        "name": "Shoot all the things",
+        "url": "https://bpikaar.github.io/excalibur-shoot-them-up/",
+        "players": 2,
+        "cover": ""
     },
     {
         "name": "Team Arcade Studio",
         "url": "https://davekruithof.github.io/Team-Arcade-Studio/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover" : "cartridge_spookaway.png"
-    }
-    ,
+        "players": 1,
+        "cover": "cartridge_spookaway.png"
+    },
     {
         "name": "9-bit Potatoes",
         "url": "https://louis-lau.github.io/CMGT-CLE4/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
-    }
-    
-    ,
+        "players": 1
+    },
     {
         "name": "Hopper",
         "url": "https://bpikaar.github.io/hopper/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
-    }
-    ,
+        "players": 1
+    },
     {
         "name": "transcendence studios",
         "url": "https://wesdewess.github.io/transcendence/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1
-    }
-    ,
+        "players": 1
+    },
     {
         "name": "Balmundi Interactive",
         "url": " https://thijslander97.github.io/Balmundi_project/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover":"cartridge_balmundi.png"
-    }
-    ,
+        "players": 1,
+        "cover": "cartridge_balmundi.png"
+    },
     {
         "name": "Senpai Games",
         "url": "https://drelofs.github.io/N-3KO/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
+        "players": 1,
         "cover": "cart-senpai.gif"
-    }
-    ,
+    },
     {
         "name": "Winged Horse",
         "url": "http://jesseduijndam.github.io/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
+        "players": 1,
         "cover": "cart_winged_horse.png"
-    }
-    ,
+    },
     {
-        "name" : "Night Owls",
-        "url" : "https://igotnova.github.io/NightOwls/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover":"cartridge_run_lucha_libre.png"
+        "name": "Night Owls",
+        "url": "https://igotnova.github.io/NightOwls/",
+        "players": 1,
+        "cover": "cartridge_run_lucha_libre.png"
     },
     {
         "name": "Steeg Productions",
         "url": "https://grunkhead.github.io/arcade_game",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 2,
-        "cover" : "cartridge_steeg_productions.gif"
-    }
-    ,
+        "players": 2,
+        "cover": "cartridge_steeg_productions.gif"
+    },
     {
         "name": "TONK",
         "url": "https://helemaalniks.github.io/TonkGame",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover":"cartridge_tonk.png"
-    }
-    ,
+        "players": 1,
+        "cover": "cartridge_tonk.png"
+    },
     {
-        "name" : "Circles & Squares",
-        "url" : "https://sunnydegraaf.github.io/circlesandsquares/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
-        "players" : 1,
-        "cover":"cartridge_circles_squares.png"
-    }
-    ,
+        "name": "Circles & Squares",
+        "url": "https://sunnydegraaf.github.io/circlesandsquares/",
+        "players": 1,
+        "cover": "cartridge_circles_squares.png"
+    },
     {
-        "name" : "Rob.AI",
-        "url" : "https://0968128.github.io/Rob.AI/",
-        "genres" : [1,1,1,0,0,0,0,0,0],
+        "name": "Rob.AI",
+        "url": "https://lucashijman6.github.io/Rob.AI/",
+        "players": 1,
+        "cover": "cartridge_rob_ai.png"
+    },
+    {
+        "name": "Carmageddon",
+        "url": "https://hr-cmgt.github.io/PRG04-2023-2024-finished/carmageddon/docs/",
+        "players": 1,
+        "cover": "cart-mageddon.png",
+        "makecode": false
+    },
+    {
+        "name": "Ritme Renner",
+        "url": "https://ritmerenner.nl",
         "players" : 1,
-        "cover":"cartridge_rob_ai.png"
-    }
-	,
-	{
-        "name" : "schiejump",
-        "url" : "https://hamid1103.github.io/CLE4Game/",
-        "genres" : [0,1,0,0,0,0,0,0,0],
-        "players" : 2,
-        "cover":"schiejump.png"
+        "cover": "cart-ritmerenner.png",
+        "makecode" : false
     }
 ]
