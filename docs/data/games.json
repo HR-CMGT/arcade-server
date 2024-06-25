@@ -288,5 +288,12 @@
         "players" : 1,
         "cover": "cart-ritmerenner.png",
         "makecode" : false
+    },
+    {
+        "name": "I Mast Ascend",
+        "url": "https://thijskraaijenbos.github.io/CLE4-I-mast-ascend/",
+        "players": 1,
+        "cover": "cart_imastascend.png",
+        "makecode": false
     }
 ]
