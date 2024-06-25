@@ -24,6 +24,12 @@
         "cover": "cover_tltotc.png"
     },
     {
+        "name": "Punch Park",
+        "url": "https://vincentbenders.github.io/CLE4/",
+        "players": 1,
+        "cover": "cart-punchpark.png"
+    },
+    {
         "name": "Googly Eyes?",
         "url": "https://leabits.github.io/PRG04-Googly-Eyes/",
         "players": 1,

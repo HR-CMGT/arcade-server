@@ -24,6 +24,12 @@
         "cover": "cover_tltotc.png"
     },
     {
+        "name": "Punch Park",
+        "url": "https://vincentbenders.github.io/CLE4/",
+        "players": 1,
+        "cover": "cart-punchpark.png"
+    },
+    {
         "name": "Googly Eyes?",
         "url": "https://leabits.github.io/PRG04-Googly-Eyes/",
         "players": 1,
@@ -34,6 +40,13 @@
         "url": "https://radiazom.github.io/prg4-javascript-2023/",
         "players": 1,
         "cover": "cartridge_skimountain.png"
+    },
+    {
+        "name": "HeemraadsHive",
+        "url": "https://severhaak.github.io/CLE4-Game/",
+        "players": 1,
+        "cover": "logo_cart.png",
+        "makecode": false
     },
     {
         "name": "Don't Stop Jumping",
@@ -154,7 +167,7 @@
     {
         "name": "schiejump",
         "url": "https://hamid1103.github.io/CLE4Game/",
-          "players": 2,
+        "players": 2,
         "cover": "schiejump.png"
     },
     {
@@ -272,8 +285,8 @@
     {
         "name": "Ritme Renner",
         "url": "https://ritmerenner.nl",
-        "players" : 1,
+        "players": 1,
         "cover": "cart-ritmerenner.png",
-        "makecode" : false
+        "makecode": false
     }
 ]
