@@ -41,12 +41,12 @@
         "players": 1,
         "cover": "cartridge_skimountain.png"
     },
-        {
+    {
         "name": "HeemraadsHive",
         "url": "https://severhaak.github.io/CLE4-Game/",
-        "players" : 1,
+        "players": 1,
         "cover": "logo_cart.png",
-        "makecode" : false
+        "makecode": false
     },
     {
         "name": "Don't Stop Jumping",
@@ -167,7 +167,7 @@
     {
         "name": "schiejump",
         "url": "https://hamid1103.github.io/CLE4Game/",
-          "players": 2,
+        "players": 2,
         "cover": "schiejump.png"
     },
     {
@@ -285,9 +285,9 @@
     {
         "name": "Ritme Renner",
         "url": "https://ritmerenner.nl",
-        "players" : 1,
+        "players": 1,
         "cover": "cart-ritmerenner.png",
-        "makecode" : false
+        "makecode": false
     },
     {
         "name": "I Mast Ascend",
