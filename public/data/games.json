@@ -6,16 +6,22 @@
         "cover": "cover_ruimtegruis.png"
     },
     {
-        "name": "Armadillo Dodge",
-        "url": "https://jackhoefnagel.github.io/ExcaliburArcadeGame/",
+        "name": "The Crypt",
+        "url": "http://boorzuur.github.io/CLE4-Game/game/",
         "players": 2,
-        "cover": "cover_armadillo.png"
+        "cover": "cart-the-crypt.png"
     },
     {
         "name": "Hefpark Hopper",
         "url": "https://hr-cmgt.github.io/Hefpark-Hopper/",
         "players": 1,
         "cover": "cover_hefpark.png"
+    },
+    {
+        "name": "Armadillo Dodge",
+        "url": "https://jackhoefnagel.github.io/ExcaliburArcadeGame/",
+        "players": 2,
+        "cover": "cover_armadillo.png"
     },
     {
         "name": "The last treasure of the cartograph",
