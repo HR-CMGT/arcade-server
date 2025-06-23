@@ -6,6 +6,12 @@
         "cover": "cover_ruimtegruis.png"
     },
     {
+        "name": "The Crypt",
+        "url": "http://boorzuur.github.io/CLE4-Game/game/",
+        "players": 2,
+        "cover": "cart-the-crypt.png"
+    },
+    {
         "name": "Armadillo Dodge",
         "url": "https://jackhoefnagel.github.io/ExcaliburArcadeGame/",
         "players": 2,
@@ -45,7 +51,7 @@
         "name": "HeemraadsHive",
         "url": "https://severhaak.github.io/CLE4-Game/",
         "players": 1,
-        "cover": "logo_cart.png",
+        "cover": "",
         "makecode": false
     },
     {
