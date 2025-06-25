@@ -1,12 +1,6 @@
 
 [
     {
-        "name": "Gray Status",
-        "url": "https://hiddebouwman.github.io/CLE4/",
-        "players": 2,
-        "cover": "cover_gray_status.png"
-    },
-    {
         "name": "Ruimtegruis",
         "url": "https://hr-cmgt.github.io/PRG04-2023-2024-finished/ruimtegruis/docs/",
         "players": 2,
@@ -35,6 +29,12 @@
         "url": "https://hamid1103.github.io/CLE4Team11/",
         "players": 1,
         "cover": "cover_tltotc.png"
+    },
+    {
+        "name": "Gray Status",
+        "url": "https://hiddebouwman.github.io/CLE4/",
+        "players": 2,
+        "cover": "cover_gray_status.png"
     },
     {
         "name": "Punch Park",
