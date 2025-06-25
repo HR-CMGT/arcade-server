@@ -36,6 +36,12 @@
         "cover": "cover_tltotc.png"
     },
     {
+        "name": "Gray Status",
+        "url": "https://hiddebouwman.github.io/CLE4/",
+        "players": 2,
+        "cover": "cover_gray_status.png"
+    },
+    {
         "name": "Punch Park",
         "url": "https://vincentbenders.github.io/CLE4/",
         "players": 1,
