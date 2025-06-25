@@ -12,22 +12,28 @@
         "cover": "cart-the-crypt.png"
     },
     {
-        "name": "Armadillo Dodge",
-        "url": "https://jackhoefnagel.github.io/ExcaliburArcadeGame/",
-        "players": 2,
-        "cover": "cover_armadillo.png"
-    },
-    {
         "name": "Hefpark Hopper",
         "url": "https://hr-cmgt.github.io/Hefpark-Hopper/",
         "players": 1,
         "cover": "cover_hefpark.png"
     },
     {
+        "name": "Armadillo Dodge",
+        "url": "https://jackhoefnagel.github.io/ExcaliburArcadeGame/",
+        "players": 2,
+        "cover": "cover_armadillo.png"
+    },
+    {
         "name": "The last treasure of the cartograph",
         "url": "https://hamid1103.github.io/CLE4Team11/",
         "players": 1,
         "cover": "cover_tltotc.png"
+    },
+    {
+        "name": "Gray Status",
+        "url": "https://hiddebouwman.github.io/CLE4/",
+        "players": 2,
+        "cover": "cover_gray_status.png"
     },
     {
         "name": "Punch Park",
