@@ -12,6 +12,12 @@
         "cover": "cart-the-crypt.png"
     },
     {
+        "name": "Treasure Divers",
+        "url": "https://rextheweeb.github.io/CLE4/",
+        "players": 2,
+        "cover": "cart-treasure-divers.png"
+    },
+    {
         "name": "Hefpark Hopper",
         "url": "https://hr-cmgt.github.io/Hefpark-Hopper/",
         "players": 1,

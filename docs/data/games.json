@@ -12,6 +12,12 @@
         "cover": "cart-the-crypt.png"
     },
     {
+        "name": "Treasure Divers",
+        "url": "https://rextheweeb.github.io/CLE4/",
+        "players": 2,
+        "cover": "cart-treasure-divers.png"
+    },
+    {
         "name": "Armadillo Dodge",
         "url": "https://jackhoefnagel.github.io/ExcaliburArcadeGame/",
         "players": 2,
