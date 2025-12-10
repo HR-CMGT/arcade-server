@@ -1,7 +1,7 @@
 [
     {
         "name": "Ruimtegruis",
-        "url": "https://hr-cmgt.github.io/PRG04-2023-2024-finished/ruimtegruis/docs/",
+        "url": "https://hr-cmgt.github.io/PRG04-2024-2025-finished/ruimtegruis/docs/",
         "players": 2,
         "cover": "cover_ruimtegruis.png"
     },
@@ -68,7 +68,7 @@
     },
     {
         "name": "Don't Stop Jumping",
-        "url": "https://hr-cmgt.github.io/PRG04-2023-2024-finished/dont-stop-jumping/docs/",
+        "url": "https://hr-cmgt.github.io/PRG04-2024-2025-finished/dont-stop-jumping/docs/",
         "players": 2,
         "cover": "cartridge-jumping.png",
         "makecode": false
