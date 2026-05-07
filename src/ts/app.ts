@@ -12,7 +12,7 @@ export class App extends HTMLElement {
 
     private selectedRow: number = 0
     private joystick: Joystick
-    private menus : [GameMenu, Paging, CreditsMenu]
+    private menus: [GameMenu, Paging, CreditsMenu]
     private animatedLogo: AnimatedLogo
 
     constructor() {
@@ -53,12 +53,12 @@ export class App extends HTMLElement {
 
         this.selectedRow = 0
         this.menus = [new GameMenu(data), new Paging(data.length), new CreditsMenu()]
-        for(let menu of this.menus) {
+        for (let menu of this.menus) {
             this.append(menu)
         }
     }
 
-   
+
     //
     // user selection updated by either joystick or keyboard
     //
@@ -85,7 +85,7 @@ export class App extends HTMLElement {
     // handle keyboard
     //
     private onKeyDown(e: KeyboardEvent) {
-         // Move right, left
+        // Move right, left
         if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') {
             this.userSelectedColumn(1);
         }
@@ -105,7 +105,7 @@ export class App extends HTMLElement {
         }
     }
 
-    
+
 
     private update() {
         // gamepad has no event system, we have to poll the gamepad manually // TODO is joystick class nog nodig?

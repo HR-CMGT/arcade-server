@@ -74,6 +74,13 @@
         "makecode": false
     },
     {
+        "name": "Celeste but it is hilariously short and you play as a dinosaur",
+        "url": "https://gd.games/gnatsnot/putformer",
+        "players" : 1,
+        "cover": "cover_cbiihsaypaad.png",
+        "makecode" : false
+    }
+    {
         "name": "Bob the Dayman",
         "url": "https://hidde-scheringa.github.io/Bob-The-Dayman-game/",
         "players": 1,
