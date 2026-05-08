@@ -74,6 +74,13 @@
         "makecode": false
     },
     {
+        "name": "Absolute Pigeon Mayhem",
+        "url": "https://gd.games/games/0a55deb0-d92f-4084-88d1-78158a982777",
+        "players" : 1,
+        "cover": "cartreidgePigeon.png",
+        "makecode" : false  
+    },
+    {
         "name": "Silly cats",
         "url": "https://gd.games/games/c840fddf-7005-4e19-9a61-777c0c075d26",
         "players" : 1,
