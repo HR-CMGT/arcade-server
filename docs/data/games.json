@@ -81,6 +81,13 @@
         "makecode" : false  
     },
     {
+        "name": "Coin Runner",
+        "url": "https://gd.games/games/81530c63-0002-43f7-88c7-0dab6f70ce2d",
+        "players" : 1,
+        "cover": "cover_coinrunner.png",
+        "makecode" : false
+    },
+    {
         "name": "Silly cats",
         "url": "https://gd.games/games/c840fddf-7005-4e19-9a61-777c0c075d26",
         "players" : 1,
