@@ -74,6 +74,13 @@
         "makecode": false
     },
     {
+        "name": "Space tower defense",
+        "url": "https://gd.games/games/43a01fc2-196a-42de-a3fc-60cd35bf3c2f",
+        "players" : 1,
+        "cover": "",
+        "makecode" : false
+    },
+    {
         "name": "Celeste but it is hilariously short and you play as a dinosaur",
         "url": "https://gd.games/gnatsnot/putformer",
         "players" : 1,
