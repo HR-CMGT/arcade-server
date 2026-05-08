@@ -81,6 +81,13 @@
         "makecode" : false
     },
     {
+        "name": "Space tower defense",
+        "url": "https://gd.games/games/43a01fc2-196a-42de-a3fc-60cd35bf3c2f",
+        "players" : 1,
+        "cover": "",
+        "makecode" : false
+    },
+    {
         "name": "Bob the Dayman",
         "url": "https://hidde-scheringa.github.io/Bob-The-Dayman-game/",
         "players": 1,
