@@ -81,6 +81,13 @@
         "makecode" : false  
     },
     {
+        "name": "Coin Runner",
+        "url": "https://gd.games/games/81530c63-0002-43f7-88c7-0dab6f70ce2d",
+        "players" : 1,
+        "cover": "cover_coinrunner.png",
+        "makecode" : false
+    },
+    {
         "name": "Space tower defense",
         "url": "https://gd.games/games/43a01fc2-196a-42de-a3fc-60cd35bf3c2f",
         "players" : 1,
