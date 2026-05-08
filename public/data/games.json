@@ -74,6 +74,13 @@
         "makecode": false
     },
     {
+        "name": "Absolute Pigeon Mayhem",
+        "url": "https://gd.games/games/0a55deb0-d92f-4084-88d1-78158a982777",
+        "players" : 1,
+        "cover": "cartreidgePigeon.png",
+        "makecode" : false  
+    },
+    {
         "name": "Space tower defense",
         "url": "https://gd.games/games/43a01fc2-196a-42de-a3fc-60cd35bf3c2f",
         "players" : 1,
