@@ -351,7 +351,7 @@
     },
     {
         "name": "Don't Blow It",
-        "url": "https://basboot.github.io/prg4-test/",
+        "url": "https://basboot.github.io/dontblowit/",
         "players": 1,
         "cover": "cart_dontblowit.png",
         "makecode": false
