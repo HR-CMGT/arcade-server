@@ -349,7 +349,14 @@
         "cover": "cart_imastascend.png",
         "makecode": false
     },
-        {
+    {
+        "name": "Reel it in",
+        "url": "https://bpikaar.github.io/fishing-game/",
+        "players": 1,
+        "cover": "cart-reel-it-in",
+        "makecode": false
+    },
+    {
         "name": "Don't Blow It",
         "url": "https://basboot.github.io/dontblowit/",
         "players": 1,
