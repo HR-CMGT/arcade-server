@@ -367,7 +367,7 @@
         "name": "Outrun",
         "url": "https://basboot.github.io/outrun/",
         "players": 1,
-        "cover": "outrun.png",
+        "cover": "outrun.png", 
         "makecode": false
     }
 ]
