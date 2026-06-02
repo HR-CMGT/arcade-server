@@ -362,5 +362,12 @@
         "players": 1,
         "cover": "cart_dontblowit.png",
         "makecode": false
+    },
+    {
+        "name": "Outrun",
+        "url": "https://basboot.github.io/outrun/",
+        "players": 1,
+        "cover": "outrun.png",
+        "makecode": false
     }
 ]
