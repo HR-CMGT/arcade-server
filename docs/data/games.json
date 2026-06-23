@@ -88,6 +88,13 @@
     "makecode": false
   },
   {
+    "name": "Space tower defense",
+    "url": "https://gd.games/games/43a01fc2-196a-42de-a3fc-60cd35bf3c2f",
+    "players": 1,
+    "cover": "",
+    "makecode": false
+  },
+  {
     "name": "Silly cats",
     "url": "https://gd.games/games/c840fddf-7005-4e19-9a61-777c0c075d26",
     "players": 1,
@@ -99,13 +106,6 @@
     "url": "https://gd.games/gnatsnot/putformer",
     "players": 1,
     "cover": "cover_cbiihsaypaad.png",
-    "makecode": false
-  },
-  {
-    "name": "Space tower defense",
-    "url": "https://gd.games/games/43a01fc2-196a-42de-a3fc-60cd35bf3c2f",
-    "players": 1,
-    "cover": "",
     "makecode": false
   },
   {
