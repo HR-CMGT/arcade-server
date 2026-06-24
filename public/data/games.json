@@ -19,6 +19,13 @@
         "makecode" : false
     },
     {
+        "name": "Pacman Runner",
+        "url": "https://pacmanrunnerarcade.web.app/",
+        "players": 1,
+        "cover": "pacman-runner.png",
+        "makecode": false
+    },
+    {
         "name": "Treasure Divers",
         "url": "https://rextheweeb.github.io/CLE4/",
         "players": 2,
