@@ -31,6 +31,13 @@
         "makecode" : false
     },
     {
+        "name": "Pacman Runner",
+        "url": "https://pacmanrunnerarcade.web.app/",
+        "players": 1,
+        "cover": "pacman-runner.png",
+        "makecode": false
+    },
+    {
         "name": "Armadillo Dodge",
         "url": "https://jackhoefnagel.github.io/ExcaliburArcadeGame/",
         "players": 2,
