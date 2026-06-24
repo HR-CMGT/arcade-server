@@ -12,6 +12,13 @@
         "cover": "cart-the-crypt.png"
     },
     {
+        "name": "Space Rats",
+        "url": "https://michh2005.github.io/prg04-eindopdracht/",
+        "players" : 1,
+        "cover": "SpaceRats.png",
+        "makecode" : false
+    },
+    {
         "name": "Treasure Divers",
         "url": "https://rextheweeb.github.io/CLE4/",
         "players": 2,
