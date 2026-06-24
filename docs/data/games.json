@@ -24,6 +24,13 @@
         "cover": "cover_hefpark.png"
     },
     {
+        "name": "Space Rats",
+        "url": "https://michh2005.github.io/prg04-eindopdracht/",
+        "players" : 1,
+        "cover": "SpaceRats.png",
+        "makecode" : false
+    },
+    {
         "name": "Armadillo Dodge",
         "url": "https://jackhoefnagel.github.io/ExcaliburArcadeGame/",
         "players": 2,
